@@ -1,0 +1,15 @@
+{
+    "name": "illuminated/testing-tools",
+    "description": "Provides Laravel-specific testing helpers and asserts.",
+    "keywords": ["laravel", "testing", "helpers", "asserts"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Ivanov",
+            "email": "dmitry.g.ivanov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4"
+    }
+}
