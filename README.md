@@ -1,6 +1,6 @@
 # Laravel testing tools
 
-[SensioLabsInsight]
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/dd09a6c5-ccae-4c6b-b126-79337cbb6cec/big.png)](https://insight.sensiolabs.com/projects/dd09a6c5-ccae-4c6b-b126-79337cbb6cec)
 
 [StyleCI]
 [Build Status]
