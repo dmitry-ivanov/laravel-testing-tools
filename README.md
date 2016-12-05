@@ -18,14 +18,14 @@ Provides Laravel-specific testing helpers and asserts.
 - `PHP >=5.6.4`
 - `Laravel >=5.2`
 
-## Helpers List
+## Available helpers
 
 > New helpers are always adding. Feel free to contribute.
 
 - [InteractsWithConsole](#interactswithconsole)
   - [runConsoleCommand](#runconsolecommand)
 
-## Asserts List
+## Available asserts
 
 > New asserts are always adding. Feel free to contribute.
 
