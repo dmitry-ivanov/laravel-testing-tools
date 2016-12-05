@@ -39,7 +39,7 @@ Provides Laravel-specific testing helpers and asserts.
 
 #### `runConsoleCommand()`
 
-Runs console command in a pure mode, via object. Returns command object:
+Runs console command by the method call, through the object. Returns command object:
 
 ```php
 $command = $this->runConsoleCommand(MyCommand::class);
