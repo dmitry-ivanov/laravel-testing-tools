@@ -18,7 +18,14 @@ Provides Laravel-specific testing helpers and asserts.
 - `PHP >=5.6.4`
 - `Laravel >=5.2`
 
-## Asserts
+## Helpers List
+
+> New helpers are always adding. Feel free to contribute.
+
+- [InteractsWithConsole](#interactswithconsole)
+  - [runConsoleCommand](#runconsolecommand)
+
+## Asserts List
 
 > New asserts are always adding. Feel free to contribute.
 
@@ -26,7 +33,21 @@ Provides Laravel-specific testing helpers and asserts.
   - [seeElementTimes](#seeelementtimes)
   - [dontSeeElementTimes](#dontseeelementtimes)
 
-## PageAsserts
+## Helpers
+
+### InteractsWithConsole
+
+#### `runConsoleCommand()`
+
+Runs console command in a pure mode, via object. Returns command object:
+
+```php
+$command = $this->runConsoleCommand(MyCommand::class);
+```
+
+## Asserts
+
+### PageAsserts
 
 #### `seeElementTimes()`
 
