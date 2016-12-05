@@ -17,3 +17,9 @@ Provides Laravel-specific testing helpers and asserts.
 
 - `PHP >=5.6.4`
 - `Laravel >=5.2`
+
+## Asserts
+
+- PageAsserts
+  - seeElementTimes
+  - dontSeeElementTimes
