@@ -22,9 +22,9 @@ Provides Laravel-specific testing helpers and asserts.
 
 > New assertions are always adding. Feel free to contribute.
 
-- [PageAsserts](#???)
-  - seeElementTimes
-  - dontSeeElementTimes
+- [PageAsserts](#pageasserts)
+  - [seeElementTimes](#seeelementtimes)
+  - [dontSeeElementTimes](#dontseeelementtimes)
 
 ## PageAsserts
 
@@ -34,4 +34,12 @@ Checks if specified element seen on the page exact number of times:
 
 ```php
 $this->seeElementTimes('.body-item', 3);
+```
+
+#### `dontSeeElementTimes()`
+
+Checks if specified element not seen on the page exact number of times:
+
+```php
+$this->dontSeeElementTimes('.body-item', 5);
 ```
