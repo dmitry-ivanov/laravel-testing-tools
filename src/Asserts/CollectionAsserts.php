@@ -2,6 +2,8 @@
 
 namespace Illuminated\Testing\Asserts;
 
+use Illuminate\Support\Collection;
+
 trait CollectionAsserts
 {
     protected function assertEqualCollections(Collection $collection1, Collection $collection2, $key = 'id')
