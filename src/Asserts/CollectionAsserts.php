@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 trait CollectionAsserts
 {
-    protected function assertEqualCollections(Collection $collection1, Collection $collection2, $key = 'id')
+    protected function assertEqualCollections(Collection $collection1, Collection $collection2, $key)
     {
         $collection1 = $collection1->pluck($key);
         $collection2 = $collection2->pluck($key);
@@ -15,7 +15,7 @@ trait CollectionAsserts
         $this->assertEmpty($diff, 'Failed asserting that collections are equal.');
     }
 
-    protected function assertNotEqualCollections(Collection $collection1, Collection $collection2, $key = 'id')
+    protected function assertNotEqualCollections(Collection $collection1, Collection $collection2, $key)
     {
         $collection1 = $collection1->pluck($key);
         $collection2 = $collection2->pluck($key);
