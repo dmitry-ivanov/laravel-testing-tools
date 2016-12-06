@@ -32,6 +32,9 @@ Provides Laravel-specific testing helpers and asserts.
 
 > New asserts are always adding. Feel free to contribute.
 
+- [CollectionAsserts](#collectionasserts)
+  - [assertEqualCollections](#assertequalcollections)
+  - [assertNotEqualCollections](#assertnotequalcollections)
 - [PageAsserts](#pageasserts)
   - [seeElementTimes](#seeelementtimes)
   - [dontSeeElementTimes](#dontseeelementtimes)
@@ -67,6 +70,24 @@ $command = $this->runConsoleCommand(MyCommand::class);
 ```
 
 ## Asserts
+
+### CollectionAsserts
+
+#### `assertEqualCollections()`
+
+Checks if passed collections are equal according to the specified key:
+
+```php
+$this->assertEqualCollections($collection1, $collection2, 'id');
+```
+
+#### `assertNotEqualCollections()`
+
+Checks if passed collections are not equal according to the specified key:
+
+```php
+$this->assertNotEqualCollections($collection1, $collection2, 'id');
+```
 
 ### PageAsserts
 
