@@ -22,6 +22,9 @@ Provides Laravel-specific testing helpers and asserts.
 
 > New helpers are always adding. Feel free to contribute.
 
+- [EmulatesEnvironment](#emulatesenvironment)
+  - [emulateLocal](#emulatelocal)
+  - [emulateProduction](#emulateproduction)
 - [InteractsWithConsole](#interactswithconsole)
   - [runConsoleCommand](#runconsolecommand)
 
@@ -34,6 +37,24 @@ Provides Laravel-specific testing helpers and asserts.
   - [dontSeeElementTimes](#dontseeelementtimes)
 
 ## Helpers
+
+### EmulatesEnvironment
+
+#### `emulateLocal()`
+
+Emulates that application is working at `local` environment:
+
+```php
+$this->emulateLocal();
+```
+
+#### `emulateProduction()`
+
+Emulates that application is working at `production` environment:
+
+```php
+$this->emulateProduction();
+```
 
 ### InteractsWithConsole
 
