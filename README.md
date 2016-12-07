@@ -38,6 +38,8 @@ Provides Laravel-specific testing helpers and asserts.
 - [LogFileAsserts](#logfileasserts)
   - [assertLogFileExists](#assertlogfileexists)
   - [assertLogFileNotExists](#assertlogfilenotexists)
+  - [assertLogFileContains](#assertlogfilecontains)
+  - [assertLogFileNotContains](#assertlogfilenotcontains)
 - [PageAsserts](#pageasserts)
   - [seeElementTimes](#seeelementtimes)
   - [dontSeeElementTimes](#dontseeelementtimes)
