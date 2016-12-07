@@ -8,6 +8,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         $this->setUpViews();
         $this->setUpRoutes();
+        $this->setUpStorage();
     }
 
     private function setUpViews()
@@ -18,5 +19,10 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     private function setUpRoutes()
     {
         app('router')->get('/', 'HomeController@index');
+    }
+
+    private function setUpStorage()
+    {
+        $this->app->useStoragePath(__DIR__ . '/fixture/storage');
     }
 }
