@@ -112,6 +112,21 @@ Checks if log file not exists by specified path. Path is relative to `storage/lo
 $this->assertLogFileNotExists('foobar.log');
 ```
 
+#### `assertLogFileContains()`
+
+Checks if log file contains specified content. Path is relative to `storage/logs` folder.
+
+```php
+$this->assertLogFileContains('example.log', 'Sample log message 1!');
+```
+
+These placeholders are also available for content:
+- `%datetime%` - any datetime string.
+
+```php
+$this->assertLogFileContains('example.log', '[%datetime%]: Sample log message 1!');
+```
+
 ### PageAsserts
 
 #### `seeElementTimes()`
