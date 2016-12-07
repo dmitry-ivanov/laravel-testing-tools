@@ -118,6 +118,14 @@ Checks if log file contains specified content. Path is relative to `storage/logs
 
 ```php
 $this->assertLogFileContains('example.log', 'Sample log message 1!');
+
+// or
+
+$this->assertLogFileContains('example.log', [
+    'Sample log message 1!',
+    'Sample log message 2!',
+    'Sample log message 3!',
+]);
 ```
 
 These placeholders are also available for content:
@@ -133,6 +141,14 @@ Checks if log file not contains specified content. Path is relative to `storage/
 
 ```php
 $this->assertLogFileNotContains('example.log', 'Sample log message 111!');
+
+// or
+
+$this->assertLogFileNotContains('example.log', [
+    'Sample log message 111!',
+    'Sample log message 222!',
+    'Sample log message 333!',
+]);
 ```
 
 ### PageAsserts
