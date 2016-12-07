@@ -92,6 +92,24 @@ Checks if passed collections are not equal according to the specified key:
 $this->assertNotEqualCollections($collection1, $collection2, 'id');
 ```
 
+### LogFileAsserts
+
+#### `assertLogFileExists()`
+
+Checks if log file exists by specified path. Path is relative to `storage/logs` folder:
+
+```php
+$this->assertLogFileExists('sample.log');
+```
+
+#### `assertLogFileNotExists()`
+
+Checks if log file not exists by specified path. Path is relative to `storage/logs` folder:
+
+```php
+$this->assertLogFileNotExists('sample.log');
+```
+
 ### PageAsserts
 
 #### `seeElementTimes()`
