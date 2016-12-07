@@ -99,7 +99,7 @@ $this->assertNotEqualCollections($collection1, $collection2, 'id');
 Checks if log file exists by specified path. Path is relative to `storage/logs` folder:
 
 ```php
-$this->assertLogFileExists('sample.log');
+$this->assertLogFileExists('example.log');
 ```
 
 #### `assertLogFileNotExists()`
@@ -107,7 +107,7 @@ $this->assertLogFileExists('sample.log');
 Checks if log file not exists by specified path. Path is relative to `storage/logs` folder:
 
 ```php
-$this->assertLogFileNotExists('sample.log');
+$this->assertLogFileNotExists('foobar.log');
 ```
 
 ### PageAsserts
