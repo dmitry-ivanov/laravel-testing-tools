@@ -37,6 +37,30 @@ class LogFileAssertsTest extends TestCase
         $this->assertLogFileNotExists('foobar.log');
     }
 
+    /** @test */
+    public function it_has_log_file_contains_assertion()
+    {
+        $this->assertLogFileContains('example.log', 'Sample log message 1!');
+        $this->assertLogFileContains('example.log', 'Sample log message 2!');
+        $this->assertLogFileContains('example.log', 'Sample log message 3!');
+    }
+
+    /** @test */
+    public function it_has_log_file_not_contains_assertion()
+    {
+        $this->assertLogFileNotContains('example.log', 'Sample log message 111!');
+        $this->assertLogFileNotContains('example.log', 'Sample log message 222!');
+        $this->assertLogFileNotContains('example.log', 'Sample log message 333!');
+    }
+
+    /** @test */
+    public function log_file_contains_assertion_supports_datetime_placeholder()
+    {
+        $this->assertLogFileContains('example.log', '[%datetime%]: Sample log message 1!');
+        $this->assertLogFileContains('example.log', '[%datetime%]: Sample log message 2!');
+        $this->assertLogFileContains('example.log', '[%datetime%]: Sample log message 3!');
+    }
+
     protected function tearDown()
     {
         File::delete(storage_path('logs/example.log'));
