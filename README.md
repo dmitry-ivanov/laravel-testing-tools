@@ -127,6 +127,14 @@ These placeholders are also available for content:
 $this->assertLogFileContains('example.log', '[%datetime%]: Sample log message 1!');
 ```
 
+#### `assertLogFileNotContains()`
+
+Checks if log file not contains specified content. Path is relative to `storage/logs` folder.
+
+```php
+$this->assertLogFileNotContains('example.log', 'Sample log message 111!');
+```
+
 ### PageAsserts
 
 #### `seeElementTimes()`
