@@ -31,6 +31,12 @@ class LogFileAssertsTest extends TestCase
         $this->assertLogFileExists('sample.log');
     }
 
+    /** @test */
+    public function it_has_log_file_not_exists_assertion()
+    {
+        $this->assertLogFileNotExists('foobar.log');
+    }
+
     protected function tearDown()
     {
         File::delete(storage_path('logs/sample.log'));
