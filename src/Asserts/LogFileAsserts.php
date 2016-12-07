@@ -2,6 +2,8 @@
 
 namespace Illuminated\Testing\Asserts;
 
+use Illuminate\Support\Facades\File;
+
 trait LogFileAsserts
 {
     protected function assertLogFileExists($path)
