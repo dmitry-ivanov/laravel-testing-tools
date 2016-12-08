@@ -118,9 +118,11 @@ Checks if log file contains specified content. Path is relative to `storage/logs
 
 ```php
 $this->assertLogFileContains('example.log', 'Sample log message 1!');
+```
 
-// or
+Or you can pass an array of expected content items:
 
+```php
 $this->assertLogFileContains('example.log', [
     'Sample log message 1!',
     'Sample log message 2!',
@@ -141,9 +143,11 @@ Checks if log file not contains specified content. Path is relative to `storage/
 
 ```php
 $this->assertLogFileNotContains('example.log', 'Sample log message 111!');
+```
 
-// or
+Or you can pass an array of unexpected content items:
 
+```php
 $this->assertLogFileNotContains('example.log', [
     'Sample log message 111!',
     'Sample log message 222!',
