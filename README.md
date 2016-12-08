@@ -182,7 +182,7 @@ $this->dontSeeElementTimes('.body-item', 5);
 
 #### `assertScheduleCount()`
 
-Checks that schedule events count is exactly as expected:
+Checks that schedule events count is exactly as specified:
 
 ```php
 $this->assertScheduleCount(3);
@@ -190,7 +190,7 @@ $this->assertScheduleCount(3);
 
 #### `assertNotScheduleCount()`
 
-Checks that schedule events count is not exactly as expected:
+Checks that schedule events count is not exactly as specified:
 
 ```php
 $this->assertNotScheduleCount(5);
