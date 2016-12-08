@@ -21,7 +21,7 @@ class CollectionAssertsTest extends TestCase
             ['id' => 1, 'name' => 'John Doe'],
         ]);
 
-        $this->assertEqualCollections($collection1, $collection2, 'id');
+        $this->assertCollectionsEqual($collection1, $collection2, 'id');
     }
 
     /** @test */
@@ -40,6 +40,6 @@ class CollectionAssertsTest extends TestCase
             ['id' => 1, 'name' => 'John Doe'],
         ]);
 
-        $this->assertNotEqualCollections($collection1, $collection2, 'id');
+        $this->assertCollectionsNotEqual($collection1, $collection2, 'id');
     }
 }
