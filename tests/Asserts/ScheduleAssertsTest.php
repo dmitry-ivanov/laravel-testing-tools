@@ -58,4 +58,10 @@ class ScheduleAssertsTest extends TestCase
         $this->seeInSchedule('bar', 'hourly');
         $this->seeInSchedule('baz', 'twiceDaily', true);
     }
+
+    /** @test */
+    public function it_has_dont_see_in_schedule_assertion()
+    {
+        $this->dontSeeInSchedule('foobarbaz');
+    }
 }
