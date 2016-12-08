@@ -114,7 +114,7 @@ $this->assertLogFileExists('example.log');
 Checks if log file not exists by specified path. Path is relative to `storage/logs` folder:
 
 ```php
-$this->assertLogFileNotExists('foobar.log');
+$this->assertLogFileNotExists('foobarbaz.log');
 ```
 
 #### `assertLogFileContains()`
@@ -122,7 +122,7 @@ $this->assertLogFileNotExists('foobar.log');
 Checks if log file contains specified content. Path is relative to `storage/logs` folder.
 
 ```php
-$this->assertLogFileContains('example.log', 'Sample log message 1!');
+$this->assertLogFileContains('example.log', 'Sample log message!');
 ```
 
 Or you can pass an array of expected content items:
@@ -139,7 +139,7 @@ These placeholders are also available for content:
 - `%datetime%` - any datetime string.
 
 ```php
-$this->assertLogFileContains('example.log', '[%datetime%]: Sample log message 1!');
+$this->assertLogFileContains('example.log', '[%datetime%]: Sample log message!');
 ```
 
 #### `assertLogFileNotContains()`
@@ -147,16 +147,16 @@ $this->assertLogFileContains('example.log', '[%datetime%]: Sample log message 1!
 Checks if log file not contains specified content. Path is relative to `storage/logs` folder.
 
 ```php
-$this->assertLogFileNotContains('example.log', 'Sample log message 111!');
+$this->assertLogFileNotContains('example.log', 'Unexisting log message!');
 ```
 
 Or you can pass an array of unexpected content items:
 
 ```php
 $this->assertLogFileNotContains('example.log', [
-    'Sample log message 111!',
-    'Sample log message 222!',
-    'Sample log message 333!',
+    'Unexisting log message 1!',
+    'Unexisting log message 2!',
+    'Unexisting log message 3!',
 ]);
 ```
 
