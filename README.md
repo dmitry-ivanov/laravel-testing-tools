@@ -211,3 +211,11 @@ $this->seeInSchedule('foo', '*/5 * * * * *');
 $this->seeInSchedule('bar', '0 * * * * *');
 $this->seeInSchedule('baz', '0 1,13 * * * *');
 ```
+
+#### `dontSeeInSchedule()`
+
+Checks that command is not in schedule.
+
+```php
+$this->dontSeeInSchedule('foobarbaz');
+```
