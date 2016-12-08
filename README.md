@@ -185,3 +185,11 @@ Checks that schedule events count is exactly as expected:
 ```php
 $this->assertScheduleCount(3);
 ```
+
+#### `assertNotScheduleCount()`
+
+Checks that schedule events count is not exactly as expected:
+
+```php
+$this->assertNotScheduleCount(5);
+```
