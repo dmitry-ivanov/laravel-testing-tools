@@ -28,6 +28,7 @@ trait ScheduleAsserts
         $this->assertInstanceOf(Event::class, $event, $message);
 
         $message = "Failed asserting that command `{$command}` is in schedule as `{$expression}`.";
+        $expression = $this->normalizeScheduleExpression($expression);
         $this->assertEquals($expression, $event->expression, $message);
 
         $message = "Failed asserting that command `{$command}` is scheduled with the same `run in background` mode.";
@@ -45,5 +46,16 @@ trait ScheduleAsserts
         }
 
         return false;
+    }
+
+    private function normalizeScheduleExpression($expression)
+    {
+        $event = new Event('command');
+        if (method_exists($event, $expression)) {
+            $event->$expression();
+            return $event->getExpression();
+        }
+
+        return $expression;
     }
 }

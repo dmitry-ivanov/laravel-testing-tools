@@ -22,9 +22,9 @@ class ScheduleAssertsTest extends TestCase
         app()->booted(function () {
             $schedule = app(Schedule::class);
 
-            $schedule->command('foo')->everyMinute();
-            $schedule->command('bar')->everyMinute();
-            $schedule->command('baz')->everyMinute();
+            $schedule->command('foo')->everyFiveMinutes();
+            $schedule->command('bar')->hourly();
+            $schedule->command('baz')->twiceDaily()->runInBackground();
         });
     }
 
@@ -41,5 +41,21 @@ class ScheduleAssertsTest extends TestCase
         $this->assertNotScheduleCount(2);
         $this->assertNotScheduleCount(4);
         $this->assertNotScheduleCount(5);
+    }
+
+    /** @test */
+    public function it_has_see_in_schedule_assertion()
+    {
+        $this->seeInSchedule('foo', '*/5 * * * * *');
+        $this->seeInSchedule('bar', '0 * * * * *');
+        $this->seeInSchedule('baz', '0 1,13 * * * *', true);
+    }
+
+    /** @test */
+    public function which_allows_expressions_same_as_schedule_methods()
+    {
+        $this->seeInSchedule('foo', 'everyFiveMinutes');
+        $this->seeInSchedule('bar', 'hourly');
+        $this->seeInSchedule('baz', 'twiceDaily', true);
     }
 }
