@@ -175,3 +175,13 @@ Checks if specified element not seen on the page exact number of times:
 ```php
 $this->dontSeeElementTimes('.body-item', 5);
 ```
+
+### ScheduleAsserts
+
+#### `assertScheduleCount()`
+
+Checks that schedule events count is exactly as expected:
+
+```php
+$this->assertScheduleCount(3);
+```
