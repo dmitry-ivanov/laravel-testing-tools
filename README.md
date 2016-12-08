@@ -18,6 +18,16 @@ Provides Laravel-specific testing helpers and asserts.
 - `PHP >=5.6.4`
 - `Laravel >=5.2`
 
+## Usage
+
+1. Install package through `composer`:
+
+    ```shell
+    composer require illuminated/testing-tools
+    ```
+
+2. That's it! Now you can use any of provided traits in your test classes.
+
 ## Available helpers
 
 > New helpers are always adding. Feel free to contribute.
