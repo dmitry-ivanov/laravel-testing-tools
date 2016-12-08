@@ -7,7 +7,7 @@ class CollectionAssertsTest extends TestCase
     use CollectionAsserts;
 
     /** @test */
-    public function it_has_equal_collections_assertion()
+    public function it_has_collections_equal_assertion()
     {
         $collection1 = collect([
             ['id' => 1, 'name' => 'John Doe'],
@@ -25,7 +25,7 @@ class CollectionAssertsTest extends TestCase
     }
 
     /** @test */
-    public function it_has_not_equal_collections_assertion()
+    public function it_has_collections_not_equal_assertion()
     {
         $collection1 = collect([
             ['id' => 1, 'name' => 'John Doe'],
