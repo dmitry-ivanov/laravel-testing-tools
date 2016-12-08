@@ -33,8 +33,8 @@ Provides Laravel-specific testing helpers and asserts.
 > New asserts are always adding. Feel free to contribute.
 
 - [CollectionAsserts](#collectionasserts)
-  - [assertEqualCollections](#assertequalcollections)
-  - [assertNotEqualCollections](#assertnotequalcollections)
+  - [assertCollectionsEqual](#assertcollectionsequal)
+  - [assertCollectionsNotEqual](#assertcollectionsnotequal)
 - [LogFileAsserts](#logfileasserts)
   - [assertLogFileExists](#assertlogfileexists)
   - [assertLogFileNotExists](#assertlogfilenotexists)
@@ -83,20 +83,20 @@ $command = $this->runConsoleCommand(MyCommand::class);
 
 ### CollectionAsserts
 
-#### `assertEqualCollections()`
+#### `assertCollectionsEqual()`
 
 Checks if passed collections are equal according to the specified key:
 
 ```php
-$this->assertEqualCollections($collection1, $collection2, 'id');
+$this->assertCollectionsEqual($collection1, $collection2, 'id');
 ```
 
-#### `assertNotEqualCollections()`
+#### `assertCollectionsNotEqual()`
 
 Checks if passed collections are not equal according to the specified key:
 
 ```php
-$this->assertNotEqualCollections($collection1, $collection2, 'id');
+$this->assertCollectionsNotEqual($collection1, $collection2, 'id');
 ```
 
 ### LogFileAsserts
