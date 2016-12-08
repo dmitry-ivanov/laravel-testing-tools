@@ -216,7 +216,7 @@ $this->seeInSchedule('baz', '0 1,13 * * * *');
 
 #### `dontSeeInSchedule()`
 
-Checks that command is not in schedule.
+Checks that command is not in schedule:
 
 ```php
 $this->dontSeeInSchedule('foobarbaz');
