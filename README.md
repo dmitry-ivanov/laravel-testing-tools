@@ -193,3 +193,21 @@ Checks that schedule events count is not exactly as expected:
 ```php
 $this->assertNotScheduleCount(5);
 ```
+
+#### `seeInSchedule()`
+
+Checks that command is in schedule. Expressions can be the same as schedule event methods:
+
+```php
+$this->seeInSchedule('foo', 'everyFiveMinutes');
+$this->seeInSchedule('bar', 'hourly');
+$this->seeInSchedule('baz', 'twiceDaily');
+```
+
+Also you can pass pure cron expressions if you wish:
+
+```php
+$this->seeInSchedule('foo', '*/5 * * * * *');
+$this->seeInSchedule('bar', '0 * * * * *');
+$this->seeInSchedule('baz', '0 1,13 * * * *');
+```
