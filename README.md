@@ -43,6 +43,9 @@ Provides Laravel-specific testing helpers and asserts.
 - [PageAsserts](#pageasserts)
   - [seeElementTimes](#seeelementtimes)
   - [dontSeeElementTimes](#dontseeelementtimes)
+- [ScheduleAsserts](#scheduleasserts)
+  - [assertScheduleCount](#assertschedulecount)
+  - [assertNotScheduleCount](#assertnotschedulecount)
 
 ## Helpers
 
