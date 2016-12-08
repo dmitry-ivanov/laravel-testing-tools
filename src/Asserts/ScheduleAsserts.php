@@ -35,6 +35,12 @@ trait ScheduleAsserts
         $this->assertEquals($runInBackground, $event->runInBackground, $message);
     }
 
+    protected function dontSeeInSchedule($command)
+    {
+        $message = "Failed asserting that command `{$command}` is not in schedule.";
+        $this->assertEmpty($this->getScheduleEvent($command), $message);
+    }
+
     private function getScheduleEvent($command)
     {
         $schedule = app(Schedule::class);
