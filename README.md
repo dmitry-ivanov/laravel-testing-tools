@@ -28,22 +28,22 @@ Provides Laravel-specific testing helpers and asserts.
 
 2. That's it! Now you can use any of provided traits in your test classes.
 
-```php
-use Illuminated\Testing\Asserts\PageAsserts;
+    ```php
+    use Illuminated\Testing\Asserts\PageAsserts;
 
-class HomePageTest extends TestCase
-{
-    use PageAsserts;
-
-    /** @test */
-    public function it_shows_three_featured_products()
+    class HomePageTest extends TestCase
     {
-        $this->visit('/');
+        use PageAsserts;
 
-        $this->seeElementTimes('.featured-product', 3);
+        /** @test */
+        public function it_shows_three_featured_products()
+        {
+            $this->visit('/');
+
+            $this->seeElementTimes('.featured-product', 3);
+        }
     }
-}
-```
+    ```
 
 ## Available helpers
 
