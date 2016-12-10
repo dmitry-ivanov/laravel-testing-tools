@@ -286,8 +286,16 @@ $this->dontSeeInSchedule('foobarbaz');
 
 #### `assertAliasRegistered()`
 
-Checks that specified alias was registered by alias loader:
+Checks that specified alias was successfully registered by alias loader:
 
 ```php
 $this->assertAliasRegistered('Acme\Alias\Post');
+```
+
+#### `assertAliasNotRegistered()`
+
+Checks that specified alias was not registered by alias loader:
+
+```php
+$this->assertAliasNotRegistered('Acme\Alias\Unexisting');
 ```
