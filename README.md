@@ -307,3 +307,11 @@ Checks that specified command was successfully registered by service provider:
 ```php
 $this->assertCommandRegistered('do-something');
 ```
+
+#### `assertCommandNotRegistered()`
+
+Checks that specified command was not registered by service provider:
+
+```php
+$this->assertCommandNotRegistered('unexisting');
+```
