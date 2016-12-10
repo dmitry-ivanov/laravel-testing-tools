@@ -79,10 +79,10 @@ Provides Laravel-specific testing helpers and asserts.
   - [seeInSchedule](#seeinschedule)
   - [dontSeeInSchedule](#dontseeinschedule)
 - [ServiceProviderAsserts](#serviceproviderasserts)
-  - [assertCommandRegistered](#assertcommandregistered)
-  - [assertCommandNotRegistered](#assertcommandnotregistered)
   - [assertAliasRegistered](#assertaliasregistered)
   - [assertAliasNotRegistered](#assertaliasnotregistered)
+  - [assertCommandRegistered](#assertcommandregistered)
+  - [assertCommandNotRegistered](#assertcommandnotregistered)
 
 ## Helpers
 
@@ -280,4 +280,14 @@ Checks that command is not in schedule:
 
 ```php
 $this->dontSeeInSchedule('foobarbaz');
+```
+
+### ServiceProviderAsserts
+
+#### `assertAliasRegistered()`
+
+Checks that specified alias was registered by alias loader:
+
+```php
+$this->assertAliasRegistered('Acme\Alias\Post');
 ```
