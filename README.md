@@ -299,3 +299,11 @@ Checks that specified alias was not registered by alias loader:
 ```php
 $this->assertAliasNotRegistered('Acme\Alias\Unexisting');
 ```
+
+#### `assertCommandRegistered()`
+
+Checks that specified command was successfully registered by service provider:
+
+```php
+$this->assertCommandRegistered('do-something');
+```
