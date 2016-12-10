@@ -36,18 +36,18 @@ class DatabaseAssertsTest extends TestCase
 
     private function seedDatabase()
     {
-        factory(Post::class)->create(['title' => 'First Post!']);
-        factory(Post::class)->create(['title' => 'Second Post!']);
-        factory(Post::class)->create(['title' => 'Third Post!']);
+        factory(Post::class)->create(['title' => 'First Post']);
+        factory(Post::class)->create(['title' => 'Second Post']);
+        factory(Post::class)->create(['title' => 'Third Post']);
     }
 
     /** @test */
     public function it_has_see_in_database_many_assertion()
     {
         $this->seeInDatabaseMany('posts', [
-            ['title' => 'First Post!'],
-            ['title' => 'Second Post!'],
-            ['title' => 'Third Post!'],
+            ['title' => 'First Post'],
+            ['title' => 'Second Post'],
+            ['title' => 'Third Post'],
         ]);
     }
 
@@ -55,8 +55,8 @@ class DatabaseAssertsTest extends TestCase
     public function it_has_dont_see_in_database_many_assertion()
     {
         $this->dontSeeInDatabaseMany('posts', [
-            ['title' => 'Fourth Post!'],
-            ['title' => 'Fifth Post!'],
+            ['title' => 'Fourth Post'],
+            ['title' => 'Fifth Post'],
         ]);
     }
 }
