@@ -14,13 +14,13 @@ class ServiceProviderAssertsTest extends TestCase
     /** @test */
     public function it_has_alias_registered_assertion()
     {
-        $this->assertAliasRegistered('Fixture\Alias\Post');
+        $this->assertAliasRegistered('Acme\Alias\Post');
     }
 
     /** @test */
     public function it_has_alias_not_registered_assertion()
     {
-        $this->assertAliasNotRegistered('Fixture\Alias\Unexisting');
+        $this->assertAliasNotRegistered('Acme\Alias\Unexisting');
     }
 
     /** @test */
