@@ -22,12 +22,12 @@ trait ServiceProviderAsserts
     protected function assertAliasRegistered($alias)
     {
         $message = "Failed asserting that alias `{$alias}` is registered.";
-        $this->assertTrue(AliasLoader::getInstance()->load($alias), $message);
+        $this->assertNotEmpty(AliasLoader::getInstance()->load($alias), $message);
     }
 
     protected function assertAliasNotRegistered($alias)
     {
         $message = "Failed asserting that alias `{$alias}` is not registered.";
-        $this->assertFalse(AliasLoader::getInstance()->load($alias), $message);
+        $this->assertEmpty(AliasLoader::getInstance()->load($alias), $message);
     }
 }
