@@ -9,6 +9,8 @@ trait DatabaseAsserts
         foreach ($rows as $row) {
             $this->seeInDatabase($table, $row);
         }
+
+        return $this;
     }
 
     protected function dontSeeInDatabaseMany($table, $rows)
@@ -16,5 +18,7 @@ trait DatabaseAsserts
         foreach ($rows as $row) {
             $this->dontSeeInDatabase($table, $row);
         }
+
+        return $this;
     }
 }
