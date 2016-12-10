@@ -50,4 +50,13 @@ class DatabaseAssertsTest extends TestCase
             ['title' => 'Third Post!'],
         ]);
     }
+
+    /** @test */
+    public function it_has_dont_see_in_database_many_assertion()
+    {
+        $this->dontSeeInDatabaseMany('posts', [
+            ['title' => 'Fourth Post!'],
+            ['title' => 'Fifth Post!'],
+        ]);
+    }
 }
