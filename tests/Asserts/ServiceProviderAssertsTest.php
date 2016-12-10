@@ -20,7 +20,7 @@ class ServiceProviderAssertsTest extends TestCase
     /** @test */
     public function it_has_alias_not_registered_assertion()
     {
-        $this->assertAliasNotRegistered('Acme\Alias\Unexisting');
+        $this->assertAliasNotRegistered('Acme\Alias\Fake');
     }
 
     /** @test */
@@ -32,6 +32,6 @@ class ServiceProviderAssertsTest extends TestCase
     /** @test */
     public function it_has_command_not_registered_assertion()
     {
-        $this->assertCommandNotRegistered('unexisting');
+        $this->assertCommandNotRegistered('fake');
     }
 }

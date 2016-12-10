@@ -297,7 +297,7 @@ $this->assertAliasRegistered('Acme\Alias\Post');
 Checks that specified alias was not registered by alias loader:
 
 ```php
-$this->assertAliasNotRegistered('Acme\Alias\Unexisting');
+$this->assertAliasNotRegistered('Acme\Alias\Fake');
 ```
 
 #### `assertCommandRegistered()`
@@ -313,5 +313,5 @@ $this->assertCommandRegistered('do-something');
 Checks that specified command was not registered by service provider:
 
 ```php
-$this->assertCommandNotRegistered('unexisting');
+$this->assertCommandNotRegistered('fake');
 ```
