@@ -79,6 +79,10 @@ Provides Laravel-specific testing helpers and asserts.
   - [seeInSchedule](#seeinschedule)
   - [dontSeeInSchedule](#dontseeinschedule)
 - [ServiceProviderAsserts](#serviceproviderasserts)
+  - [assertCommandRegistered](#assertcommandregistered)
+  - [assertCommandNotRegistered](#assertcommandnotregistered)
+  - [assertAliasRegistered](#assertaliasregistered)
+  - [assertAliasNotRegistered](#assertaliasnotregistered)
 
 ## Helpers
 
