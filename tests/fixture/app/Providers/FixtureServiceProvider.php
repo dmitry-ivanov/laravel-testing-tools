@@ -14,7 +14,7 @@ class FixtureServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $this->app->booting(function () {
             $loader = AliasLoader::getInstance();
-            $loader->alias('Fixture\Alias\Post', Post::class);
+            $loader->alias('Acme\Alias\Post', Post::class);
         });
     }
 
