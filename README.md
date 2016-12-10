@@ -143,6 +143,17 @@ $this->seeInDatabaseMany('posts', [
 ]);
 ```
 
+#### `dontSeeInDatabaseMany()`
+
+Checks if each of the specified rows is not exist in database:
+
+```php
+$this->dontSeeInDatabaseMany('posts', [
+    ['title' => 'Fourth Post!'],
+    ['title' => 'Fifth Post!'],
+]);
+```
+
 ### LogFileAsserts
 
 #### `assertLogFileExists()`
