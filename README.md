@@ -62,6 +62,9 @@ Provides Laravel-specific testing helpers and asserts.
 - [CollectionAsserts](#collectionasserts)
   - [assertCollectionsEqual](#assertcollectionsequal)
   - [assertCollectionsNotEqual](#assertcollectionsnotequal)
+- [DatabaseAsserts](#databaseasserts)
+  - [seeInDatabaseMany](#seeindatabasemany)
+  - [dontSeeInDatabaseMany](#dontseeindatabasemany)
 - [LogFileAsserts](#logfileasserts)
   - [assertLogFileExists](#assertlogfileexists)
   - [assertLogFileNotExists](#assertlogfilenotexists)
@@ -124,6 +127,20 @@ Checks if passed collections are not equal according to the specified key:
 
 ```php
 $this->assertCollectionsNotEqual($collection1, $collection2, 'id');
+```
+
+### DatabaseAsserts
+
+#### `seeInDatabaseMany()`
+
+Checks if each of the specified rows exists in database:
+
+```php
+$this->seeInDatabaseMany('posts', [
+    ['title' => 'First Post!'],
+    ['title' => 'Second Post!'],
+    ['title' => 'Third Post!'],
+]);
 ```
 
 ### LogFileAsserts
