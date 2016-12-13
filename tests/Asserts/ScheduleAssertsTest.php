@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Console\Scheduling\Schedule;
-use Illuminate\Contracts\Console\Kernel;
 use Illuminated\Testing\Asserts\ScheduleAsserts;
 
 class ScheduleAssertsTest extends TestCase
@@ -11,8 +10,6 @@ class ScheduleAssertsTest extends TestCase
     protected function resolveApplicationConsoleKernel($app)
     {
         parent::resolveApplicationConsoleKernel($app);
-
-        app(Kernel::class);
 
         $this->createSampleSchedule();
     }
