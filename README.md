@@ -122,6 +122,16 @@ $command = $this->runConsoleCommand(MyCommand::class);
 
 ## Asserts
 
+### ArtisanAsserts
+
+#### `seeArtisanOutput()`
+
+Checks if specified string is seen as artisan output:
+
+```php
+$this->seeArtisanOutput('Hello, World!');
+```
+
 ### CollectionAsserts
 
 #### `assertCollectionsEqual()`
