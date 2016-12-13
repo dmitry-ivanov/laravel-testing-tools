@@ -83,6 +83,9 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertAliasNotRegistered](#assertaliasnotregistered)
   - [assertCommandRegistered](#assertcommandregistered)
   - [assertCommandNotRegistered](#assertcommandnotregistered)
+- [TraitAsserts](#traitasserts)
+  - [assertTraitUsed](#asserttraitused)
+  - [assertTraitNotUsed](#asserttraitnotused)
 
 ## Helpers
 
