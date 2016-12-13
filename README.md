@@ -318,3 +318,21 @@ Checks that specified command was not registered by service provider:
 ```php
 $this->assertCommandNotRegistered('fake');
 ```
+
+### TraitAsserts
+
+#### `assertTraitUsed()`
+
+Checks that class is using specified trait:
+
+```php
+$this->assertTraitUsed(User::class, Notifiable::class);
+```
+
+#### `assertTraitNotUsed()`
+
+Checks that class is not using specified trait:
+
+```php
+$this->assertTraitNotUsed(Post::class, Notifiable::class);
+```
