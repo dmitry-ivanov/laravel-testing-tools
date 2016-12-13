@@ -132,6 +132,14 @@ Checks if specified string is seen as artisan output:
 $this->seeArtisanOutput('Hello, World!');
 ```
 
+#### `dontSeeArtisanOutput()`
+
+Checks if specified string is not seen as artisan output:
+
+```php
+$this->dontSeeArtisanOutput('Hello, Universe!');
+```
+
 ### CollectionAsserts
 
 #### `assertCollectionsEqual()`
