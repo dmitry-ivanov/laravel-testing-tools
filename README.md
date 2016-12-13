@@ -59,6 +59,9 @@ Provides Laravel-specific testing helpers and asserts.
 
 > New asserts are always adding. Feel free to contribute.
 
+- [ArtisanAsserts](#artisanasserts)
+  - [seeArtisanOutput](#seeartisanoutput)
+  - [dontSeeArtisanOutput](#dontseeartisanoutput)
 - [CollectionAsserts](#collectionasserts)
   - [assertCollectionsEqual](#assertcollectionsequal)
   - [assertCollectionsNotEqual](#assertcollectionsnotequal)
