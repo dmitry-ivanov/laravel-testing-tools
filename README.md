@@ -68,6 +68,8 @@ Provides Laravel-specific testing helpers and asserts.
 - [DatabaseAsserts](#databaseasserts)
   - [seeInDatabaseMany](#seeindatabasemany)
   - [dontSeeInDatabaseMany](#dontseeindatabasemany)
+- [ExceptionAsserts](#exceptionasserts)
+  - [willSeeException](#willseeexception)
 - [LogFileAsserts](#logfileasserts)
   - [assertLogFileExists](#assertlogfileexists)
   - [assertLogFileNotExists](#assertlogfilenotexists)
