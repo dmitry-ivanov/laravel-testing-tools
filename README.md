@@ -26,7 +26,7 @@ Provides Laravel-specific testing helpers and asserts.
     composer require illuminated/testing-tools --dev
     ```
 
-2. Use `Illuminated\Testing\TestingTools` trait in your base `TestCase` class:
+2. Use `Illuminated\Testing\TestingTools` in your `TestCase` class:
 
     ```php
     use Illuminated\Testing\TestingTools;
