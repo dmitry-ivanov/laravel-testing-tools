@@ -72,6 +72,7 @@ Provides Laravel-specific testing helpers and asserts.
   - [seeArtisanOutput](#seeartisanoutput)
   - [dontSeeArtisanOutput](#dontseeartisanoutput)
   - [seeArtisanTableOutput](#seeartisantableoutput)
+  - [dontSeeArtisanTableOutput](#dontseeartisantableoutput)
 - [CollectionAsserts](#collectionasserts)
   - [assertCollectionsEqual](#assertcollectionsequal)
   - [assertCollectionsNotEqual](#assertcollectionsnotequal)
@@ -161,6 +162,18 @@ $this->seeArtisanTableOutput([
     ['Date' => '2016-12-13 13:13:13', 'System' => 'Alpha', 'Status' => 'Enabled'],
     ['Date' => '2016-12-14 14:14:14', 'System' => 'Beta', 'Status' => 'Enabled'],
     ['Date' => '2016-12-15 15:15:15', 'System' => 'Gamma', 'Status' => 'Disabled'],
+]);
+```
+
+#### `dontSeeArtisanTableOutput()`
+
+Checks if specified data is not seen as artisan table output:
+
+```php
+$this->dontSeeArtisanTableOutput([
+    ['Date' => '2016-12-13 13:13:13', 'System' => 'Alpha', 'Status' => 'Enabled'],
+    ['Date' => '2016-12-14 14:14:14', 'System' => 'Beta', 'Status' => 'Enabled'],
+    ['Date' => '2016-12-15 15:15:15', 'System' => 'Gamma', 'Status' => 'Enabled'],
 ]);
 ```
 
