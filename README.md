@@ -159,9 +159,9 @@ Checks if specified data is seen as artisan table output:
 
 ```php
 $this->seeArtisanTableOutput([
-    ['Date' => '2016-12-13 13:13:13', 'System' => 'Alpha', 'Status' => 'Enabled'],
-    ['Date' => '2016-12-14 14:14:14', 'System' => 'Beta', 'Status' => 'Enabled'],
-    ['Date' => '2016-12-15 15:15:15', 'System' => 'Gamma', 'Status' => 'Disabled'],
+    ['System' => 'Node-1', 'Status' => 'Enabled'],
+    ['System' => 'Node-2', 'Status' => 'Enabled'],
+    ['System' => 'Node-3', 'Status' => 'Enabled'],
 ]);
 ```
 
@@ -171,9 +171,9 @@ Checks if specified data is not seen as artisan table output:
 
 ```php
 $this->dontSeeArtisanTableOutput([
-    ['Date' => '2016-12-13 13:13:13', 'System' => 'Alpha', 'Status' => 'Enabled'],
-    ['Date' => '2016-12-14 14:14:14', 'System' => 'Beta', 'Status' => 'Enabled'],
-    ['Date' => '2016-12-15 15:15:15', 'System' => 'Gamma', 'Status' => 'Enabled'],
+    ['System' => 'Node-1', 'Status' => 'Disabled'],
+    ['System' => 'Node-2', 'Status' => 'Disabled'],
+    ['System' => 'Node-3', 'Status' => 'Disabled'],
 ]);
 ```
 
