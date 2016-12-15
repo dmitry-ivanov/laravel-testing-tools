@@ -33,4 +33,16 @@ class ArtisanAssertsTest extends TestCase
             ['Date' => '2016-12-15 15:15:15', 'System' => 'Gamma', 'Status' => 'Disabled'],
         ]);
     }
+
+    /** @test */
+    public function it_has_dont_see_artisan_table_output_assertion()
+    {
+        $this->artisan('table-output');
+
+        $this->dontSeeArtisanTableOutput([
+            ['Date' => '2016-12-13 13:13:13', 'System' => 'Alpha', 'Status' => 'Enabled'],
+            ['Date' => '2016-12-14 14:14:14', 'System' => 'Beta', 'Status' => 'Enabled'],
+            ['Date' => '2016-12-15 15:15:15', 'System' => 'Gamma', 'Status' => 'Enabled'],
+        ]);
+    }
 }
