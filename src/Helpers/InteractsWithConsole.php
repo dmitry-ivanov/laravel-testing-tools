@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Testing;
+namespace Illuminated\Testing\Helpers;
 
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;

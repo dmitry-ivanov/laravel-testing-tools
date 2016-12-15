@@ -11,11 +11,16 @@ use Illuminated\Testing\Asserts\PageAsserts;
 use Illuminated\Testing\Asserts\ScheduleAsserts;
 use Illuminated\Testing\Asserts\ServiceProviderAsserts;
 use Illuminated\Testing\Asserts\TraitAsserts;
+use Illuminated\Testing\Helpers\EmulatesEnvironment;
+use Illuminated\Testing\Helpers\InteractsWithConsole;
 
 trait TestingTools
 {
+    // Helpers
     use EmulatesEnvironment;
     use InteractsWithConsole;
+
+    // Asserts
     use ArtisanAsserts;
     use CollectionAsserts;
     use DatabaseAsserts;

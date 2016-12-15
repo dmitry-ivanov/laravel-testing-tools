@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Testing;
+namespace Illuminated\Testing\Helpers;
 
 trait EmulatesEnvironment
 {
