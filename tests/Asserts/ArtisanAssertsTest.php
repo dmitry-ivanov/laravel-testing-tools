@@ -28,9 +28,9 @@ class ArtisanAssertsTest extends TestCase
         $this->artisan('table-output');
 
         $this->seeArtisanTableOutput([
-            ['Date' => '2016-12-13 13:13:13', 'System' => 'Alpha', 'Status' => 'Enabled'],
-            ['Date' => '2016-12-14 14:14:14', 'System' => 'Beta', 'Status' => 'Enabled'],
-            ['Date' => '2016-12-15 15:15:15', 'System' => 'Gamma', 'Status' => 'Disabled'],
+            ['System' => 'Node-1', 'Status' => 'Enabled'],
+            ['System' => 'Node-2', 'Status' => 'Enabled'],
+            ['System' => 'Node-3', 'Status' => 'Enabled'],
         ]);
     }
 
@@ -40,9 +40,9 @@ class ArtisanAssertsTest extends TestCase
         $this->artisan('table-output');
 
         $this->dontSeeArtisanTableOutput([
-            ['Date' => '2016-12-13 13:13:13', 'System' => 'Alpha', 'Status' => 'Enabled'],
-            ['Date' => '2016-12-14 14:14:14', 'System' => 'Beta', 'Status' => 'Enabled'],
-            ['Date' => '2016-12-15 15:15:15', 'System' => 'Gamma', 'Status' => 'Enabled'],
+            ['System' => 'Node-1', 'Status' => 'Disabled'],
+            ['System' => 'Node-2', 'Status' => 'Disabled'],
+            ['System' => 'Node-3', 'Status' => 'Disabled'],
         ]);
     }
 }
