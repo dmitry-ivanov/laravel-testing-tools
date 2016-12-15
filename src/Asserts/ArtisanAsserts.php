@@ -22,8 +22,14 @@ trait ArtisanAsserts
 
     protected function seeArtisanTableOutput(array $data)
     {
-        $message = 'Failed asserting that artisan table output equals to expected value.';
+        $message = 'Failed asserting that artisan table output consists of expected data.';
         $this->assertEquals($data, $this->parseArtisanTableOutput(Artisan::output()), $message);
+    }
+
+    protected function dontSeeArtisanTableOutput(array $data)
+    {
+        $message = 'Failed asserting that artisan table output not consists of expected data.';
+        $this->assertNotEquals($data, $this->parseArtisanTableOutput(Artisan::output()), $message);
     }
 
     private function parseArtisanTableOutput($output)
