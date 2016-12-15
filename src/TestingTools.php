@@ -16,7 +16,6 @@ trait TestingTools
 {
     use EmulatesEnvironment;
     use InteractsWithConsole;
-
     use ArtisanAsserts;
     use CollectionAsserts;
     use DatabaseAsserts;
