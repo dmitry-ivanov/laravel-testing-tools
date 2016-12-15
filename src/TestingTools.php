@@ -16,11 +16,9 @@ use Illuminated\Testing\Helpers\InteractsWithConsole;
 
 trait TestingTools
 {
-    // Helpers
     use EmulatesEnvironment;
     use InteractsWithConsole;
 
-    // Asserts
     use ArtisanAsserts;
     use CollectionAsserts;
     use DatabaseAsserts;
