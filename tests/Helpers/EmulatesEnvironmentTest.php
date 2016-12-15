@@ -1,6 +1,6 @@
 <?php
 
-use Illuminated\Testing\EmulatesEnvironment;
+use Illuminated\Testing\Helpers\EmulatesEnvironment;
 
 class EmulatesEnvironmentTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-use Illuminated\Testing\InteractsWithConsole;
+use Illuminated\Testing\Helpers\InteractsWithConsole;
 
 class InteractsWithConsoleTest extends TestCase
 {
