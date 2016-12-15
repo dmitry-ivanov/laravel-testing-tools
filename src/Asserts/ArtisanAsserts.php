@@ -22,7 +22,7 @@ trait ArtisanAsserts
 
     protected function seeArtisanTableOutput(array $data)
     {
-        $message = "Failed asserting that artisan table output equals to expected value.";
+        $message = 'Failed asserting that artisan table output equals to expected value.';
         $this->assertEquals($data, $this->parseArtisanTableOutput(Artisan::output()), $message);
     }
 
