@@ -198,7 +198,7 @@ $this->dontSeeInDatabaseMany('posts', [
 
 #### `willSeeException()`
 
-Adding expectation that exception of the specified class, with specified message and specified code will be thrown:
+Adds expectation that exception of the specified class, with specified message and specified code will be thrown:
 
 ```php
 $this->willSeeException(RuntimeException::class, 'Oops! Houston, we have a problem!');
