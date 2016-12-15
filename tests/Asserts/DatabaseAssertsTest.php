@@ -1,11 +1,7 @@
 <?php
 
-use Illuminated\Testing\Asserts\DatabaseAsserts;
-
 class DatabaseAssertsTest extends TestCase
 {
-    use DatabaseAsserts;
-
     protected function setUp()
     {
         parent::setUp();

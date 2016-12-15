@@ -1,11 +1,7 @@
 <?php
 
-use Illuminated\Testing\Helpers\EmulatesEnvironment;
-
 class EmulatesEnvironmentTest extends TestCase
 {
-    use EmulatesEnvironment;
-
     /** @test */
     public function it_can_emulate_local_environment()
     {

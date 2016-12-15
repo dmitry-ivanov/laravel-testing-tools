@@ -1,11 +1,7 @@
 <?php
 
-use Illuminated\Testing\Asserts\CollectionAsserts;
-
 class CollectionAssertsTest extends TestCase
 {
-    use CollectionAsserts;
-
     /** @test */
     public function it_has_collections_equal_assertion()
     {

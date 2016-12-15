@@ -2,12 +2,9 @@
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
-use Illuminated\Testing\Asserts\LogFileAsserts;
 
 class LogFileAssertsTest extends TestCase
 {
-    use LogFileAsserts;
-
     protected function setUp()
     {
         parent::setUp();

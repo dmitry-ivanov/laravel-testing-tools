@@ -15,8 +15,6 @@ use Illuminated\Testing\TestingTools;
 
 class TestingToolsTest extends TestCase
 {
-    use TestingTools;
-
     /** @test */
     public function it_is_using_all_testing_tools_helpers()
     {

@@ -1,11 +1,7 @@
 <?php
 
-use Illuminated\Testing\Asserts\ServiceProviderAsserts;
-
 class ServiceProviderAssertsTest extends TestCase
 {
-    use ServiceProviderAsserts;
-
     protected function getPackageProviders($app)
     {
         return [FixtureServiceProvider::class];

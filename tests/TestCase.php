@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Contracts\Console\Kernel as KernelContract;
+use Illuminated\Testing\TestingTools;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
+    use TestingTools;
+
     protected function setUp()
     {
         parent::setUp();

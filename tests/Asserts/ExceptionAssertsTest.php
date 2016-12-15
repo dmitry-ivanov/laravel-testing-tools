@@ -1,11 +1,7 @@
 <?php
 
-use Illuminated\Testing\Asserts\ExceptionAsserts;
-
 class ExceptionAssertsTest extends TestCase
 {
-    use ExceptionAsserts;
-
     /** @test */
     public function it_has_will_see_exception_assertion()
     {

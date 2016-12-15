@@ -1,12 +1,9 @@
 <?php
 
 use Illuminate\Console\Scheduling\Schedule;
-use Illuminated\Testing\Asserts\ScheduleAsserts;
 
 class ScheduleAssertsTest extends TestCase
 {
-    use ScheduleAsserts;
-
     protected function resolveApplicationConsoleKernel($app)
     {
         parent::resolveApplicationConsoleKernel($app);
