@@ -26,15 +26,24 @@ Provides Laravel-specific testing helpers and asserts.
     composer require illuminated/testing-tools --dev
     ```
 
-2. That's it! Now you can use any of provided traits in your test classes.
+2. Use `Illuminated\Testing\TestingTools` trait in your base `TestCase` class:
 
     ```php
-    use Illuminated\Testing\Asserts\PageAsserts;
+    use Illuminated\Testing\TestingTools;
 
+    abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
+    {
+        use TestingTools;
+
+        // ...
+    }
+    ```
+
+3. That's it! Now you can use any of provided helpers and asserts in your test classes.
+
+    ```php
     class HomePageTest extends TestCase
     {
-        use PageAsserts;
-
         /** @test */
         public function it_shows_three_featured_products()
         {
