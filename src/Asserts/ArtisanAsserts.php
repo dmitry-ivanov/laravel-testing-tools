@@ -34,13 +34,13 @@ trait ArtisanAsserts
 
     protected function seeArtisanTableRowsCount($count)
     {
-        $message = "Failed asserting that artisan table rows count is equals to `{$count}`.";
+        $message = "Failed asserting that artisan table rows count equals to `{$count}`.";
         $this->assertEquals($count, count($this->parseArtisanTableOutput(Artisan::output())), $message);
     }
 
     protected function dontSeeArtisanTableRowsCount($count)
     {
-        $message = "Failed asserting that artisan table rows count is not equals to `{$count}`.";
+        $message = "Failed asserting that artisan table rows count not equals to `{$count}`.";
         $this->assertNotEquals($count, count($this->parseArtisanTableOutput(Artisan::output())), $message);
     }
 
