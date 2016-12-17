@@ -41,4 +41,23 @@ class ArtisanAssertsTest extends TestCase
             ['System' => 'Node-3', 'Status' => 'Disabled'],
         ]);
     }
+
+    /** @test */
+    public function it_has_see_artisan_table_rows_count_assertion()
+    {
+        $this->artisan('table-output');
+
+        $this->seeArtisanTableRowsCount(3);
+    }
+
+    /** @test */
+    public function it_has_dont_see_artisan_table_rows_count_assertion()
+    {
+        $this->artisan('table-output');
+
+        $this->dontSeeArtisanTableRowsCount(1);
+        $this->dontSeeArtisanTableRowsCount(2);
+        $this->dontSeeArtisanTableRowsCount(4);
+        $this->dontSeeArtisanTableRowsCount(5);
+    }
 }
