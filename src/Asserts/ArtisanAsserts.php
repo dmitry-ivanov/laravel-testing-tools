@@ -32,6 +32,18 @@ trait ArtisanAsserts
         $this->assertNotEquals($data, $this->parseArtisanTableOutput(Artisan::output()), $message);
     }
 
+    protected function seeArtisanTableRowsCount($count)
+    {
+        $message = "Failed asserting that artisan table rows count is equals to `{$count}`.";
+        $this->assertEquals($count, count($this->parseArtisanTableOutput(Artisan::output())), $message);
+    }
+
+    protected function dontSeeArtisanTableRowsCount($count)
+    {
+        $message = "Failed asserting that artisan table rows count is not equals to `{$count}`.";
+        $this->assertNotEquals($count, count($this->parseArtisanTableOutput(Artisan::output())), $message);
+    }
+
     private function parseArtisanTableOutput($output)
     {
         $parsed = [];
