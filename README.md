@@ -73,6 +73,8 @@ Provides Laravel-specific testing helpers and asserts.
   - [dontSeeArtisanOutput](#dontseeartisanoutput)
   - [seeArtisanTableOutput](#seeartisantableoutput)
   - [dontSeeArtisanTableOutput](#dontseeartisantableoutput)
+  - [seeArtisanTableRowsCount](#seeartisantablerowscount)
+  - [dontSeeArtisanTableRowsCount](#dontseeartisantablerowscount)
 - [CollectionAsserts](#collectionasserts)
   - [assertCollectionsEqual](#assertcollectionsequal)
   - [assertCollectionsNotEqual](#assertcollectionsnotequal)
