@@ -2018,7 +2018,7 @@
         },
         {
             "name": "orchestra/database",
-            "version": "v3.3.2",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/database.git",
