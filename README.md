@@ -187,6 +187,14 @@ Checks if artisan table rows count is equals to specified value:
 $this->seeArtisanTableRowsCount(3);
 ```
 
+#### `dontSeeArtisanTableRowsCount()`
+
+Checks if artisan table rows count is not equals to specified value:
+
+```php
+$this->dontSeeArtisanTableRowsCount(5);
+```
+
 ### CollectionAsserts
 
 #### `assertCollectionsEqual()`
