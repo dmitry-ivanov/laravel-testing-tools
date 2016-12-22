@@ -11,11 +11,27 @@ class ArtisanAssertsTest extends TestCase
     }
 
     /** @test */
+    public function which_accepts_file_path_as_output_parameter()
+    {
+        $this->artisan('generic');
+
+        $this->seeArtisanOutput(__DIR__ . '/ArtisanAssertsTest/correct.output.txt');
+    }
+
+    /** @test */
     public function it_has_dont_see_artisan_output_assertion()
     {
         $this->artisan('generic');
 
         $this->dontSeeArtisanOutput('Hello, Universe!');
+    }
+
+    /** @test */
+    public function which_also_accepts_file_path_as_output_parameter()
+    {
+        $this->artisan('generic');
+
+        $this->dontSeeArtisanOutput(__DIR__ . '/ArtisanAssertsTest/incorrect.output.txt');
     }
 
     /** @test */
