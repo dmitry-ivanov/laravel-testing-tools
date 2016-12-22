@@ -129,13 +129,13 @@ $this->emulateProduction();
 
 #### `runConsoleCommand()`
 
-Runs console command by the direct `run` method call, through the class name with ability to set parameters:
+Runs console command directly by the class name, and return it:
 
 ```php
 $command = $this->runConsoleCommand(MyCommand::class, ['--name' => 'John']);
 ```
 
-Also, you can pass command object directly instead of class name:
+Also, you can run command via command object directly:
 
 ```php
 $command = $this->runConsoleCommand(new MyCommand, ['--name' => 'Jane']);
