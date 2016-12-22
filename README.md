@@ -86,6 +86,8 @@ Provides Laravel-specific testing helpers and asserts.
 - [FilesystemAsserts](#filesystemasserts)
   - [assertDirectoryEmpty](#assertdirectoryempty)
   - [assertDirectoryNotEmpty](#assertdirectorynotempty)
+  - [assertFilesCount](#assertfilescount)
+  - [assertNotFilesCount](#assertnotfilescount)
 - [LogFileAsserts](#logfileasserts)
   - [assertLogFileExists](#assertlogfileexists)
   - [assertLogFileNotExists](#assertlogfilenotexists)
