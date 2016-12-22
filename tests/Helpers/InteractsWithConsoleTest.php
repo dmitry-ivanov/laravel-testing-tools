@@ -9,4 +9,12 @@ class InteractsWithConsoleTest extends TestCase
         $this->assertInstanceOf(GenericCommand::class, $command);
         $this->assertEquals('Important!', $command->getSomethingImportant());
     }
+
+    /** @test */
+    public function it_can_run_console_command_by_passed_object_and_return_it()
+    {
+        $command = $this->runConsoleCommand(new GenericCommand);
+        $this->assertInstanceOf(GenericCommand::class, $command);
+        $this->assertEquals('Important!', $command->getSomethingImportant());
+    }
 }
