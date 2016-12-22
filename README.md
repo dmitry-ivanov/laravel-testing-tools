@@ -269,6 +269,24 @@ Adds expectation that exception of the specified class, with specified message a
 $this->willSeeException(RuntimeException::class, 'Oops! Houston, we have a problem!');
 ```
 
+### FilesystemAsserts
+
+#### `assertDirectoryEmpty()`
+
+Checks if specified directory is empty:
+
+```php
+$this->assertDirectoryEmpty('./some/folder');
+```
+
+#### `assertDirectoryNotEmpty()`
+
+Checks if specified directory is not empty:
+
+```php
+$this->assertDirectoryNotEmpty('./some/folder');
+```
+
 ### LogFileAsserts
 
 #### `assertLogFileExists()`
