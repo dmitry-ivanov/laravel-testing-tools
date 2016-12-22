@@ -289,6 +289,22 @@ Checks if specified directory is not empty:
 $this->assertDirectoryNotEmpty('./some/folder');
 ```
 
+#### `assertFilesCount()`
+
+Checks if specified directory has specified number of files:
+
+```php
+$this->assertFilesCount('./some/folder', 3);
+```
+
+#### `assertNotFilesCount()`
+
+Checks if specified directory not has specified number of files:
+
+```php
+$this->assertNotFilesCount('./some/folder', 5);
+```
+
 ### LogFileAsserts
 
 #### `assertLogFileExists()`
