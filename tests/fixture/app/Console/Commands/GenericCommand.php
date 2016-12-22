@@ -4,11 +4,12 @@ use Illuminate\Console\Command;
 
 class GenericCommand extends Command
 {
-    protected $signature = 'generic';
+    protected $signature = 'generic {--name= : Name for greeting message}';
 
-    public function getSomethingImportant()
+    public function getGreetingMessage()
     {
-        return 'Important!';
+        $name = $this->option('name') ?: 'Dude';
+        return "Hello, {$name}!";
     }
 
     public function handle()
