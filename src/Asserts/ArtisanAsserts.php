@@ -3,11 +3,16 @@
 namespace Illuminated\Testing\Asserts;
 
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 
 trait ArtisanAsserts
 {
     protected function seeArtisanOutput($output)
     {
+        if (File::exists($output)) {
+            $output = File::get($output);
+        }
+
         $expected = trim($output);
         $actual = trim(Artisan::output());
         $this->assertEquals($expected, $actual, "Failed asserting that artisan output is `{$expected}`.");
@@ -15,6 +20,10 @@ trait ArtisanAsserts
 
     protected function dontSeeArtisanOutput($output)
     {
+        if (File::exists($output)) {
+            $output = File::get($output);
+        }
+
         $expected = trim($output);
         $actual = trim(Artisan::output());
         $this->assertNotEquals($expected, $actual, "Failed asserting that artisan output is not `{$expected}`.");
