@@ -153,12 +153,24 @@ Checks if specified string is seen as artisan output:
 $this->seeArtisanOutput('Hello, World!');
 ```
 
+Also, path to text file containing output can be provided:
+
+```php
+$this->seeArtisanOutput('correct.output.txt');
+```
+
 #### `dontSeeArtisanOutput()`
 
 Checks if specified string is not seen as artisan output:
 
 ```php
 $this->dontSeeArtisanOutput('Hello, Universe!');
+```
+
+Also, path to text file containing output can be provided:
+
+```php
+$this->dontSeeArtisanOutput('incorrect.output.txt');
 ```
 
 #### `seeArtisanTableOutput()`
