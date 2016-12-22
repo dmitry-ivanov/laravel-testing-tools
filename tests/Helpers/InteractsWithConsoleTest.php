@@ -3,7 +3,16 @@
 class InteractsWithConsoleTest extends TestCase
 {
     /** @test */
-    public function it_can_run_console_command_by_class_name_and_optional_parameters()
+    public function it_can_run_console_command_by_class_name()
+    {
+        $command = $this->runConsoleCommand(GenericCommand::class);
+
+        $this->assertInstanceOf(GenericCommand::class, $command);
+        $this->assertEquals('Hello, Dude!', $command->getGreetingMessage());
+    }
+
+    /** @test */
+    public function it_can_run_console_command_by_class_name_and_parameters()
     {
         $command = $this->runConsoleCommand(GenericCommand::class, ['--name' => 'John']);
 
@@ -12,7 +21,16 @@ class InteractsWithConsoleTest extends TestCase
     }
 
     /** @test */
-    public function it_can_run_console_command_by_object_and_optional_parameters()
+    public function it_can_run_console_command_by_object()
+    {
+        $command = $this->runConsoleCommand(new GenericCommand);
+
+        $this->assertInstanceOf(GenericCommand::class, $command);
+        $this->assertEquals('Hello, Dude!', $command->getGreetingMessage());
+    }
+
+    /** @test */
+    public function it_can_run_console_command_by_object_and_parameters()
     {
         $command = $this->runConsoleCommand(new GenericCommand, ['--name' => 'Jane']);
 
