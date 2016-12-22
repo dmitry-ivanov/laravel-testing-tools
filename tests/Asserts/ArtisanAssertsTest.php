@@ -11,7 +11,7 @@ class ArtisanAssertsTest extends TestCase
     }
 
     /** @test */
-    public function which_accepts_file_path_as_output_parameter()
+    public function which_accepts_file_path_instead_of_string_output()
     {
         $this->artisan('generic');
 
@@ -27,7 +27,7 @@ class ArtisanAssertsTest extends TestCase
     }
 
     /** @test */
-    public function which_also_accepts_file_path_as_output_parameter()
+    public function which_also_accepts_file_path_instead_of_string_output()
     {
         $this->artisan('generic');
 
