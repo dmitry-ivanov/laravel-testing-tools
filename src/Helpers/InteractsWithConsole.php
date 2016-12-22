@@ -7,12 +7,12 @@ use Symfony\Component\Console\Output\BufferedOutput;
 
 trait InteractsWithConsole
 {
-    protected function runConsoleCommand($class)
+    protected function runConsoleCommand($class, array $parameters = [])
     {
         $command = new $class;
 
         $command->setLaravel($this->app);
-        $command->run(new ArrayInput([]), new BufferedOutput);
+        $command->run(new ArrayInput($parameters), new BufferedOutput);
 
         return $command;
     }
