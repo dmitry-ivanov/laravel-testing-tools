@@ -6,6 +6,7 @@ use Illuminated\Testing\Asserts\ArtisanAsserts;
 use Illuminated\Testing\Asserts\CollectionAsserts;
 use Illuminated\Testing\Asserts\DatabaseAsserts;
 use Illuminated\Testing\Asserts\ExceptionAsserts;
+use Illuminated\Testing\Asserts\FilesystemAsserts;
 use Illuminated\Testing\Asserts\LogFileAsserts;
 use Illuminated\Testing\Asserts\PageAsserts;
 use Illuminated\Testing\Asserts\ScheduleAsserts;
@@ -23,6 +24,7 @@ trait TestingTools
     use CollectionAsserts;
     use DatabaseAsserts;
     use ExceptionAsserts;
+    use FilesystemAsserts;
     use LogFileAsserts;
     use PageAsserts;
     use ScheduleAsserts;
