@@ -33,7 +33,15 @@ class ArtisanAssertsTest extends TestCase
     {
         $this->willGiveConfirmation('Do you really wish to run this command?', ConfirmableTraitCommand::class);
 
-        $this->seeArtisanOutput(__DIR__ . '/ArtisanAssertsTest/confirmable.correct.output.txt');
+        $this->seeArtisanOutput(__DIR__ . '/ArtisanAssertsTest/confirmable.accepted.output.txt');
+    }
+
+    /** @test */
+    public function it_has_will_not_give_confirmation_assertion()
+    {
+        $this->willNotGiveConfirmation('Are you sure?', ConfirmationCommand::class);
+
+        $this->dontSeeArtisanOutput(__DIR__ . '/ArtisanAssertsTest/confirmable.accepted.output.txt');
     }
 
     /** @test */
