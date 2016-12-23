@@ -8,7 +8,7 @@ use Symfony\Component\Console\Output\BufferedOutput;
 
 trait ArtisanHelpers
 {
-    protected function runConsoleCommand($command, array $parameters = [])
+    protected function runArtisan($command, array $parameters = [])
     {
         if (!($command instanceof Command)) {
             $command = new $command;
