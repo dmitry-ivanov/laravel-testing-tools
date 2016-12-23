@@ -19,7 +19,7 @@ trait ArtisanAsserts
     protected function willNotSeeConfirmation($question, $command, array $parameters = [])
     {
         $mock = Mockery::mock("{$command}[confirm]");
-        $mock->shouldNotReceive('confirm')->once()->with($question);
+        $mock->shouldNotReceive('confirm')->with($question);
 
         $this->runArtisan($mock, $parameters);
     }
