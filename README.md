@@ -61,6 +61,7 @@ Provides Laravel-specific testing helpers and asserts.
 - [ApplicationHelpers](#applicationhelpers)
   - [emulateLocal](#emulatelocal)
   - [emulateProduction](#emulateproduction)
+  - [emulateEnvironment](#emulateenvironment)
 - [ArtisanHelpers](#artisanhelpers)
   - [runConsoleCommand](#runconsolecommand)
 
@@ -128,6 +129,14 @@ Emulates that application is working at `production` environment:
 
 ```php
 $this->emulateProduction();
+```
+
+#### `emulateEnvironment()`
+
+Emulates that application is working at specified environment:
+
+```php
+$this->emulateEnvironment('space');
 ```
 
 ### ArtisanHelpers
