@@ -161,6 +161,22 @@ $command = $this->runArtisan(new MyCommand, ['--name' => 'Jane']);
 
 ### ArtisanAsserts
 
+#### `willSeeConfirmation()`
+
+Checks if confirmation is seen while artisan command execution:
+
+```php
+$this->willSeeConfirmation('Are you sure?', MyCommand::class);
+```
+
+#### `willNotSeeConfirmation()`
+
+Checks if confirmation is not seen while artisan command execution:
+
+```php
+$this->willNotSeeConfirmation('Are you sure?', OtherCommand::class);
+```
+
 #### `seeArtisanOutput()`
 
 Checks if specified string is seen as artisan output:
