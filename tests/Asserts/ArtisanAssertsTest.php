@@ -29,6 +29,14 @@ class ArtisanAssertsTest extends TestCase
     }
 
     /** @test */
+    public function which_is_also_works_with_confirmable_trait()
+    {
+        $this->willGiveConfirmation('Do you really wish to run this command?', ConfirmableTraitCommand::class);
+
+        $this->seeArtisanOutput(__DIR__ . '/ArtisanAssertsTest/confirmable.correct.output.txt');
+    }
+
+    /** @test */
     public function it_has_see_artisan_output_assertion()
     {
         $this->artisan('generic');
@@ -41,7 +49,7 @@ class ArtisanAssertsTest extends TestCase
     {
         $this->artisan('generic');
 
-        $this->seeArtisanOutput(__DIR__ . '/ArtisanAssertsTest/correct.output.txt');
+        $this->seeArtisanOutput(__DIR__ . '/ArtisanAssertsTest/generic.correct.output.txt');
     }
 
     /** @test */
@@ -57,7 +65,7 @@ class ArtisanAssertsTest extends TestCase
     {
         $this->artisan('generic');
 
-        $this->dontSeeArtisanOutput(__DIR__ . '/ArtisanAssertsTest/incorrect.output.txt');
+        $this->dontSeeArtisanOutput(__DIR__ . '/ArtisanAssertsTest/generic.incorrect.output.txt');
     }
 
     /** @test */
