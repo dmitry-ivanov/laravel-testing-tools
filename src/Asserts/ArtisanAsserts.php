@@ -24,6 +24,22 @@ trait ArtisanAsserts
         $this->runArtisan($mock, $parameters);
     }
 
+    protected function willGiveConfirmation($question, $command, array $parameters = [])
+    {
+        $mock = Mockery::mock("{$command}[confirm]");
+        $mock->shouldReceive('confirm')->once()->with($question)->andReturn(true);
+
+        $this->runArtisan($mock, $parameters);
+    }
+
+    protected function willNotGiveConfirmation($question, $command, array $parameters = [])
+    {
+        $mock = Mockery::mock("{$command}[confirm]");
+        $mock->shouldReceive('confirm')->once()->with($question)->andReturn(false);
+
+        $this->runArtisan($mock, $parameters);
+    }
+
     protected function seeArtisanOutput($output)
     {
         if (File::exists($output)) {
