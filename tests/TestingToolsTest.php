@@ -10,8 +10,8 @@ use Illuminated\Testing\Asserts\PageAsserts;
 use Illuminated\Testing\Asserts\ScheduleAsserts;
 use Illuminated\Testing\Asserts\ServiceProviderAsserts;
 use Illuminated\Testing\Asserts\TraitAsserts;
+use Illuminated\Testing\Helpers\ArtisanHelpers;
 use Illuminated\Testing\Helpers\EmulatesEnvironment;
-use Illuminated\Testing\Helpers\InteractsWithConsole;
 use Illuminated\Testing\TestingTools;
 
 class TestingToolsTest extends TestCase
@@ -19,8 +19,8 @@ class TestingToolsTest extends TestCase
     /** @test */
     public function it_is_using_all_testing_tools_helpers()
     {
+        $this->assertTraitUsed(TestingTools::class, ArtisanHelpers::class);
         $this->assertTraitUsed(TestingTools::class, EmulatesEnvironment::class);
-        $this->assertTraitUsed(TestingTools::class, InteractsWithConsole::class);
     }
 
     /** @test */

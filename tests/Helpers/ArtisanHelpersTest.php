@@ -1,6 +1,6 @@
 <?php
 
-class InteractsWithConsoleTest extends TestCase
+class ArtisanHelpersTest extends TestCase
 {
     /** @test */
     public function it_can_run_console_command_by_class_name()

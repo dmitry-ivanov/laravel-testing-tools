@@ -58,11 +58,11 @@ Provides Laravel-specific testing helpers and asserts.
 
 > New helpers are always adding. Feel free to contribute.
 
+- [ArtisanHelpers](#artisanhelpers)
+  - [runConsoleCommand](#runconsolecommand)
 - [EmulatesEnvironment](#emulatesenvironment)
   - [emulateLocal](#emulatelocal)
   - [emulateProduction](#emulateproduction)
-- [InteractsWithConsole](#interactswithconsole)
-  - [runConsoleCommand](#runconsolecommand)
 
 ## Available asserts
 
@@ -112,6 +112,22 @@ Provides Laravel-specific testing helpers and asserts.
 
 ## Helpers
 
+### ArtisanHelpers
+
+#### `runConsoleCommand()`
+
+Runs console command directly by the class name, and return it:
+
+```php
+$command = $this->runConsoleCommand(MyCommand::class, ['--name' => 'John']);
+```
+
+Also, you can run command via command object directly:
+
+```php
+$command = $this->runConsoleCommand(new MyCommand, ['--name' => 'Jane']);
+```
+
 ### EmulatesEnvironment
 
 #### `emulateLocal()`
@@ -128,22 +144,6 @@ Emulates that application is working at `production` environment:
 
 ```php
 $this->emulateProduction();
-```
-
-### InteractsWithConsole
-
-#### `runConsoleCommand()`
-
-Runs console command directly by the class name, and return it:
-
-```php
-$command = $this->runConsoleCommand(MyCommand::class, ['--name' => 'John']);
-```
-
-Also, you can run command via command object directly:
-
-```php
-$command = $this->runConsoleCommand(new MyCommand, ['--name' => 'Jane']);
 ```
 
 ## Asserts

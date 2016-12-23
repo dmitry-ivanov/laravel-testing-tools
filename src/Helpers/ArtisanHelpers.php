@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 
-trait InteractsWithConsole
+trait ArtisanHelpers
 {
     protected function runConsoleCommand($command, array $parameters = [])
     {
