@@ -70,6 +70,8 @@ Provides Laravel-specific testing helpers and asserts.
 > New asserts are always adding. Feel free to contribute.
 
 - [ArtisanAsserts](#artisanasserts)
+  - [willSeeConfirmation](#willseeconfirmation)
+  - [willNotSeeConfirmation](#willnotseeconfirmation)
   - [seeArtisanOutput](#seeartisanoutput)
   - [dontSeeArtisanOutput](#dontseeartisanoutput)
   - [seeArtisanTableOutput](#seeartisantableoutput)
