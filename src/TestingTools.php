@@ -12,13 +12,13 @@ use Illuminated\Testing\Asserts\PageAsserts;
 use Illuminated\Testing\Asserts\ScheduleAsserts;
 use Illuminated\Testing\Asserts\ServiceProviderAsserts;
 use Illuminated\Testing\Asserts\TraitAsserts;
+use Illuminated\Testing\Helpers\ApplicationHelpers;
 use Illuminated\Testing\Helpers\ArtisanHelpers;
-use Illuminated\Testing\Helpers\EmulatesEnvironment;
 
 trait TestingTools
 {
+    use ApplicationHelpers;
     use ArtisanHelpers;
-    use EmulatesEnvironment;
 
     use ArtisanAsserts;
     use CollectionAsserts;

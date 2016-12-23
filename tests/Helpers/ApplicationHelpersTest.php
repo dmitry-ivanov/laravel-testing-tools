@@ -1,6 +1,6 @@
 <?php
 
-class EmulatesEnvironmentTest extends TestCase
+class ApplicationHelpersTest extends TestCase
 {
     /** @test */
     public function it_can_emulate_local_environment()

@@ -2,7 +2,7 @@
 
 namespace Illuminated\Testing\Helpers;
 
-trait EmulatesEnvironment
+trait ApplicationHelpers
 {
     protected function emulateLocal()
     {
