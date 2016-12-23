@@ -72,6 +72,8 @@ Provides Laravel-specific testing helpers and asserts.
 - [ArtisanAsserts](#artisanasserts)
   - [willSeeConfirmation](#willseeconfirmation)
   - [willNotSeeConfirmation](#willnotseeconfirmation)
+  - [willGiveConfirmation](#willgiveconfirmation)
+  - [willNotGiveConfirmation](#willnotgiveconfirmation)
   - [seeArtisanOutput](#seeartisanoutput)
   - [dontSeeArtisanOutput](#dontseeartisanoutput)
   - [seeArtisanTableOutput](#seeartisantableoutput)
