@@ -21,6 +21,14 @@ class ArtisanAssertsTest extends TestCase
     }
 
     /** @test */
+    public function it_has_will_give_confirmation_assertion()
+    {
+        $this->willGiveConfirmation('Are you sure?', ConfirmationCommand::class);
+
+        $this->seeArtisanOutput('Done!');
+    }
+
+    /** @test */
     public function it_has_see_artisan_output_assertion()
     {
         $this->artisan('generic');
