@@ -163,7 +163,7 @@ $command = $this->runArtisan(new MyCommand, ['--name' => 'Jane']);
 
 #### `willSeeConfirmation()`
 
-Checks if confirmation is seen while artisan command execution:
+Checks if confirmation is seen during artisan command execution:
 
 ```php
 $this->willSeeConfirmation('Are you sure?', MyCommand::class);
@@ -171,7 +171,7 @@ $this->willSeeConfirmation('Are you sure?', MyCommand::class);
 
 #### `willNotSeeConfirmation()`
 
-Checks if confirmation is not seen while artisan command execution:
+Checks if confirmation is not seen during artisan command execution:
 
 ```php
 $this->willNotSeeConfirmation('Are you sure?', OtherCommand::class);
