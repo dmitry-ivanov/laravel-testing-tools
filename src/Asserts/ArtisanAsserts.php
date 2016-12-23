@@ -4,9 +4,26 @@ namespace Illuminated\Testing\Asserts;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
+use Mockery;
 
 trait ArtisanAsserts
 {
+    protected function willSeeConfirmation($question, $command, array $parameters = [])
+    {
+        $mock = Mockery::mock("{$command}[confirm]");
+        $mock->shouldReceive('confirm')->once()->with($question);
+
+        $this->runArtisan($mock, $parameters);
+    }
+
+    protected function willNotSeeConfirmation($question, $command, array $parameters = [])
+    {
+        $mock = Mockery::mock("{$command}[confirm]");
+        $mock->shouldNotReceive('confirm')->once()->with($question);
+
+        $this->runArtisan($mock, $parameters);
+    }
+
     protected function seeArtisanOutput($output)
     {
         if (File::exists($output)) {
