@@ -3,6 +3,24 @@
 class ArtisanAssertsTest extends TestCase
 {
     /** @test */
+    public function it_has_will_see_confirmation_assertion()
+    {
+        $this->willSeeConfirmation('Are you sure?', ConfirmationCommand::class);
+    }
+
+    /** @test */
+    public function which_also_works_with_confirmable_trait()
+    {
+        $this->willSeeConfirmation('Do you really wish to run this command?', ConfirmableTraitCommand::class);
+    }
+
+    /** @test */
+    public function it_has_will_not_see_confirmation_assertion()
+    {
+        $this->willNotSeeConfirmation('Are you sure?', GenericCommand::class);
+    }
+
+    /** @test */
     public function it_has_see_artisan_output_assertion()
     {
         $this->artisan('generic');
