@@ -179,6 +179,26 @@ Checks if confirmation is not seen during artisan command execution:
 $this->willNotSeeConfirmation('Are you sure?', OtherCommand::class);
 ```
 
+#### `willGiveConfirmation()`
+
+Checks if confirmation is seen during artisan command execution and accepts it:
+
+```php
+$this->willGiveConfirmation('Are you sure?', MyCommand::class);
+
+$this->seeArtisanOutput('Done!');
+```
+
+#### `willNotGiveConfirmation()`
+
+Checks if confirmation is seen during artisan command execution and refuses it:
+
+```php
+$this->willNotGiveConfirmation('Are you sure?', MyCommand::class);
+
+$this->dontSeeArtisanOutput('Done!');
+```
+
 #### `seeArtisanOutput()`
 
 Checks if specified string is seen as artisan output:
