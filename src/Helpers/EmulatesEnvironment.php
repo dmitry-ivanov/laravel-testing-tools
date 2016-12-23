@@ -14,7 +14,7 @@ trait EmulatesEnvironment
         $this->emulateEnvironment('production');
     }
 
-    private function emulateEnvironment($environment)
+    protected function emulateEnvironment($environment)
     {
         $this->app->detectEnvironment(function () use ($environment) {
             return $environment;
