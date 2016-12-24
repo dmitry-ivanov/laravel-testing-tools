@@ -176,7 +176,7 @@ $this->willSeeConfirmation('Are you sure?', MyCommand::class);
 Checks if confirmation is not seen during artisan command execution:
 
 ```php
-$this->willNotSeeConfirmation('Are you sure?', OtherCommand::class);
+$this->willNotSeeConfirmation('Are you sure?', MyCommand::class);
 ```
 
 #### `willGiveConfirmation()`
