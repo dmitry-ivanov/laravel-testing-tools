@@ -144,7 +144,7 @@ $this->emulateProduction();
 Emulates that application is working at specified environment:
 
 ```php
-$this->emulateEnvironment('space');
+$this->emulateEnvironment('demo');
 ```
 
 ### ArtisanHelpers

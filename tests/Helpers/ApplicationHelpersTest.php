@@ -21,8 +21,8 @@ class ApplicationHelpersTest extends TestCase
     /** @test */
     public function it_can_emulate_any_environment()
     {
-        $this->emulateEnvironment('space');
+        $this->emulateEnvironment('demo');
 
-        $this->assertEquals('space', $this->app->environment());
+        $this->assertEquals('demo', $this->app->environment());
     }
 }
