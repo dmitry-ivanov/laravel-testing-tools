@@ -437,6 +437,22 @@ $this->dontSeeElementTimes('.body-item', 5);
 
 ### ReflectionAsserts
 
+#### `assertSubclassOf()`
+
+Checks that class is subclass of specified parent class:
+
+```php
+$this->assertSubclassOf(Post::class, Model::class);
+```
+
+#### `assertNotSubclassOf()`
+
+Checks that class is not subclass of specified parent class:
+
+```php
+$this->assertNotSubclassOf(Post::class, Command::class);
+```
+
 #### `assertTraitUsed()`
 
 Checks that class is using specified trait:
