@@ -291,6 +291,22 @@ $this->assertCollectionsNotEqual($collection1, $collection2, 'id');
 
 ### DatabaseAsserts
 
+#### `seeDatabaseTable()`
+
+Checks if specified table exists in database:
+
+```php
+$this->seeDatabaseTable('users');
+```
+
+#### `dontSeeDatabaseTable()`
+
+Checks if specified table not exists in database:
+
+```php
+$this->dontSeeDatabaseTable('unicorns');
+```
+
 #### `seeInDatabaseMany()`
 
 Checks if each of the specified rows exists in database:
