@@ -84,6 +84,8 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertCollectionsEqual](#assertcollectionsequal)
   - [assertCollectionsNotEqual](#assertcollectionsnotequal)
 - [DatabaseAsserts](#databaseasserts)
+  - [seeDatabaseTable](#seedatabasetable)
+  - [dontSeeDatabaseTable](#dontseedatabasetable)
   - [seeInDatabaseMany](#seeindatabasemany)
   - [dontSeeInDatabaseMany](#dontseeindatabasemany)
 - [ExceptionAsserts](#exceptionasserts)
