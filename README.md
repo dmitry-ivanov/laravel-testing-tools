@@ -102,6 +102,8 @@ Provides Laravel-specific testing helpers and asserts.
   - [seeElementTimes](#seeelementtimes)
   - [dontSeeElementTimes](#dontseeelementtimes)
 - [ReflectionAsserts](#reflectionasserts)
+  - [assertSubclassOf](#assertsubclassof)
+  - [assertNotSubclassOf](#assertnotsubclassof)
   - [assertTraitUsed](#asserttraitused)
   - [assertTraitNotUsed](#asserttraitnotused)
 - [ScheduleAsserts](#scheduleasserts)
