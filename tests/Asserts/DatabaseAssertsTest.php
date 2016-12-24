@@ -38,6 +38,18 @@ class DatabaseAssertsTest extends TestCase
     }
 
     /** @test */
+    public function it_has_see_database_table_assertion()
+    {
+        $this->seeDatabaseTable('posts');
+    }
+
+    /** @test */
+    public function it_has_dont_see_database_table_assertion()
+    {
+        $this->dontSeeDatabaseTable('unicorns');
+    }
+
+    /** @test */
     public function it_has_see_in_database_many_assertion()
     {
         $this->seeInDatabaseMany('posts', [
