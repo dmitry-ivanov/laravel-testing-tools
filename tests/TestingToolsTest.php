@@ -7,9 +7,9 @@ use Illuminated\Testing\Asserts\ExceptionAsserts;
 use Illuminated\Testing\Asserts\FilesystemAsserts;
 use Illuminated\Testing\Asserts\LogFileAsserts;
 use Illuminated\Testing\Asserts\PageAsserts;
+use Illuminated\Testing\Asserts\ReflectionAsserts;
 use Illuminated\Testing\Asserts\ScheduleAsserts;
 use Illuminated\Testing\Asserts\ServiceProviderAsserts;
-use Illuminated\Testing\Asserts\TraitAsserts;
 use Illuminated\Testing\Helpers\ApplicationHelpers;
 use Illuminated\Testing\Helpers\ArtisanHelpers;
 use Illuminated\Testing\TestingTools;
@@ -33,8 +33,8 @@ class TestingToolsTest extends TestCase
         $this->assertTraitUsed(TestingTools::class, FilesystemAsserts::class);
         $this->assertTraitUsed(TestingTools::class, LogFileAsserts::class);
         $this->assertTraitUsed(TestingTools::class, PageAsserts::class);
+        $this->assertTraitUsed(TestingTools::class, ReflectionAsserts::class);
         $this->assertTraitUsed(TestingTools::class, ScheduleAsserts::class);
         $this->assertTraitUsed(TestingTools::class, ServiceProviderAsserts::class);
-        $this->assertTraitUsed(TestingTools::class, TraitAsserts::class);
     }
 }

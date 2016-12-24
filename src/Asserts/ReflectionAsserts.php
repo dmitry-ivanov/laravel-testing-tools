@@ -2,7 +2,7 @@
 
 namespace Illuminated\Testing\Asserts;
 
-trait TraitAsserts
+trait ReflectionAsserts
 {
     protected function assertTraitUsed($class, $trait)
     {

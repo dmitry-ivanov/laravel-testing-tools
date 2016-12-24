@@ -9,9 +9,9 @@ use Illuminated\Testing\Asserts\ExceptionAsserts;
 use Illuminated\Testing\Asserts\FilesystemAsserts;
 use Illuminated\Testing\Asserts\LogFileAsserts;
 use Illuminated\Testing\Asserts\PageAsserts;
+use Illuminated\Testing\Asserts\ReflectionAsserts;
 use Illuminated\Testing\Asserts\ScheduleAsserts;
 use Illuminated\Testing\Asserts\ServiceProviderAsserts;
-use Illuminated\Testing\Asserts\TraitAsserts;
 use Illuminated\Testing\Helpers\ApplicationHelpers;
 use Illuminated\Testing\Helpers\ArtisanHelpers;
 
@@ -27,7 +27,7 @@ trait TestingTools
     use FilesystemAsserts;
     use LogFileAsserts;
     use PageAsserts;
+    use ReflectionAsserts;
     use ScheduleAsserts;
     use ServiceProviderAsserts;
-    use TraitAsserts;
 }

@@ -101,6 +101,9 @@ Provides Laravel-specific testing helpers and asserts.
 - [PageAsserts](#pageasserts)
   - [seeElementTimes](#seeelementtimes)
   - [dontSeeElementTimes](#dontseeelementtimes)
+- [ReflectionAsserts](#reflectionasserts)
+  - [assertTraitUsed](#asserttraitused)
+  - [assertTraitNotUsed](#asserttraitnotused)
 - [ScheduleAsserts](#scheduleasserts)
   - [assertScheduleCount](#assertschedulecount)
   - [assertNotScheduleCount](#assertnotschedulecount)
@@ -111,9 +114,6 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertAliasNotRegistered](#assertaliasnotregistered)
   - [assertCommandRegistered](#assertcommandregistered)
   - [assertCommandNotRegistered](#assertcommandnotregistered)
-- [TraitAsserts](#traitasserts)
-  - [assertTraitUsed](#asserttraitused)
-  - [assertTraitNotUsed](#asserttraitnotused)
 
 ## Helpers
 
@@ -433,6 +433,24 @@ Checks if specified element not seen on the page exact number of times:
 $this->dontSeeElementTimes('.body-item', 5);
 ```
 
+### ReflectionAsserts
+
+#### `assertTraitUsed()`
+
+Checks that class is using specified trait:
+
+```php
+$this->assertTraitUsed(User::class, Notifiable::class);
+```
+
+#### `assertTraitNotUsed()`
+
+Checks that class is not using specified trait:
+
+```php
+$this->assertTraitNotUsed(Post::class, Notifiable::class);
+```
+
 ### ScheduleAsserts
 
 #### `assertScheduleCount()`
@@ -509,22 +527,4 @@ Checks that specified command was not registered by service provider:
 
 ```php
 $this->assertCommandNotRegistered('fake');
-```
-
-### TraitAsserts
-
-#### `assertTraitUsed()`
-
-Checks that class is using specified trait:
-
-```php
-$this->assertTraitUsed(User::class, Notifiable::class);
-```
-
-#### `assertTraitNotUsed()`
-
-Checks that class is not using specified trait:
-
-```php
-$this->assertTraitNotUsed(Post::class, Notifiable::class);
 ```

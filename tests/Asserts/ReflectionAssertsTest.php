@@ -2,7 +2,7 @@
 
 use Illuminate\Notifications\Notifiable;
 
-class TraitAssertsTest extends TestCase
+class ReflectionAssertsTest extends TestCase
 {
     /** @test */
     public function it_has_trait_used_assertion()
