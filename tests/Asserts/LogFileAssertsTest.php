@@ -23,15 +23,15 @@ class LogFileAssertsTest extends TestCase
     }
 
     /** @test */
-    public function it_has_log_file_exists_assertion()
+    public function it_has_see_log_file_assertion()
     {
         $this->seeLogFile('example.log');
     }
 
     /** @test */
-    public function it_has_log_file_not_exists_assertion()
+    public function it_has_dont_see_log_file_assertion()
     {
-        $this->assertLogFileNotExists('foobarbaz.log');
+        $this->dontSeeLogFile('foobarbaz.log');
     }
 
     /** @test */

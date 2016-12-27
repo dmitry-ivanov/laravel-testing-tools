@@ -12,7 +12,7 @@ trait LogFileAsserts
         $this->assertFileExists($this->composeLogFilePath($path), $message);
     }
 
-    protected function assertLogFileNotExists($path)
+    protected function dontSeeLogFile($path)
     {
         $message = "Failed asserting that log file `{$path}` not exists.";
         $this->assertFileNotExists($this->composeLogFilePath($path), $message);
