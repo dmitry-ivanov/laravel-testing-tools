@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\File;
 
 trait LogFileAsserts
 {
-    protected function assertLogFileExists($path)
+    protected function seeLogFile($path)
     {
         $message = "Failed asserting that log file `{$path}` exists.";
         $this->assertFileExists($this->composeLogFilePath($path), $message);

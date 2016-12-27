@@ -96,7 +96,7 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertFilesCount](#assertfilescount)
   - [assertNotFilesCount](#assertnotfilescount)
 - [LogFileAsserts](#logfileasserts)
-  - [assertLogFileExists](#assertlogfileexists)
+  - [seeLogFile](#seelogfile)
   - [assertLogFileNotExists](#assertlogfilenotexists)
   - [assertLogFileContains](#assertlogfilecontains)
   - [assertLogFileNotContains](#assertlogfilenotcontains)
@@ -376,12 +376,12 @@ $this->assertNotFilesCount('./some/folder', 5);
 
 ### LogFileAsserts
 
-#### `assertLogFileExists()`
+#### `seeLogFile()`
 
 Checks if log file exists by specified path. Path is relative to `storage/logs` folder:
 
 ```php
-$this->assertLogFileExists('example.log');
+$this->seeLogFile('example.log');
 ```
 
 #### `assertLogFileNotExists()`

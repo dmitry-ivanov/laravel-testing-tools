@@ -25,7 +25,7 @@ class LogFileAssertsTest extends TestCase
     /** @test */
     public function it_has_log_file_exists_assertion()
     {
-        $this->assertLogFileExists('example.log');
+        $this->seeLogFile('example.log');
     }
 
     /** @test */
