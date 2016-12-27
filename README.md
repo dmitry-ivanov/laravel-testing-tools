@@ -119,11 +119,11 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertCommandRegistered](#assertcommandregistered)
   - [assertCommandNotRegistered](#assertcommandnotregistered)
 
-## Helpers
+## Helpers [↑][#available-helpers]
 
-### ApplicationHelpers
+### ApplicationHelpers [↑][#available-helpers]
 
-#### `emulateLocal()`
+#### `emulateLocal()` [↑][#available-helpers]
 
 Emulates that application is working at `local` environment:
 
@@ -131,7 +131,7 @@ Emulates that application is working at `local` environment:
 $this->emulateLocal();
 ```
 
-#### `emulateProduction()`
+#### `emulateProduction()` [↑][#available-helpers]
 
 Emulates that application is working at `production` environment:
 
@@ -139,7 +139,7 @@ Emulates that application is working at `production` environment:
 $this->emulateProduction();
 ```
 
-#### `emulateEnvironment()`
+#### `emulateEnvironment()` [↑][#available-helpers]
 
 Emulates that application is working at specified environment:
 
@@ -147,9 +147,9 @@ Emulates that application is working at specified environment:
 $this->emulateEnvironment('demo');
 ```
 
-### ArtisanHelpers
+### ArtisanHelpers [↑][#available-helpers]
 
-#### `runArtisan()`
+#### `runArtisan()` [↑][#available-helpers]
 
 Runs artisan command directly by the class name, and return it:
 
