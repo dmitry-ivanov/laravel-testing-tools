@@ -20,9 +20,9 @@ class ServiceProviderAssertsTest extends TestCase
     }
 
     /** @test */
-    public function it_has_command_registered_assertion()
+    public function it_has_see_registered_command_assertion()
     {
-        $this->assertCommandRegistered('generic');
+        $this->seeRegisteredCommand('generic');
     }
 
     /** @test */

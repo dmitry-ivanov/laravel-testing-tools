@@ -19,7 +19,7 @@ trait ServiceProviderAsserts
         $this->assertEmpty(AliasLoader::getInstance()->load($alias), $message);
     }
 
-    protected function assertCommandRegistered($name)
+    protected function seeRegisteredCommand($name)
     {
         $message = "Failed asserting that command `{$name}` is registered.";
         $this->assertArrayHasKey($name, Artisan::all(), $message);
