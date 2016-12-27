@@ -8,9 +8,9 @@ class ServiceProviderAssertsTest extends TestCase
     }
 
     /** @test */
-    public function it_has_alias_registered_assertion()
+    public function it_has_see_registered_alias_assertion()
     {
-        $this->assertAliasRegistered('Acme\Alias\Post');
+        $this->seeRegisteredAlias('Acme\Alias\Post');
     }
 
     /** @test */

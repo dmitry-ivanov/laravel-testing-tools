@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Artisan;
 
 trait ServiceProviderAsserts
 {
-    protected function assertAliasRegistered($alias)
+    protected function seeRegisteredAlias($alias)
     {
         $message = "Failed asserting that alias `{$alias}` is registered.";
         $this->assertNotEmpty(AliasLoader::getInstance()->load($alias), $message);
