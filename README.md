@@ -99,7 +99,7 @@ Provides Laravel-specific testing helpers and asserts.
   - [seeLogFile](#seelogfile)
   - [dontSeeLogFile](#dontseelogfile)
   - [seeInLogFile](#seeinlogfile)
-  - [assertLogFileNotContains](#assertlogfilenotcontains)
+  - [dontSeeInLogFile](#dontseeinlogfile)
 - [PageAsserts](#pageasserts)
   - [seeElementTimes](#seeelementtimes)
   - [dontSeeElementTimes](#dontseeelementtimes)
@@ -417,18 +417,18 @@ These placeholders are also available for content:
 $this->seeInLogFile('example.log', '[%datetime%]: Sample log message!');
 ```
 
-#### `assertLogFileNotContains()`
+#### `dontSeeInLogFile()`
 
 Checks if log file not contains specified content. Path is relative to `storage/logs` folder.
 
 ```php
-$this->assertLogFileNotContains('example.log', 'Unexisting log message!');
+$this->dontSeeInLogFile('example.log', 'Unexisting log message!');
 ```
 
 Or you can pass an array of unexpected content items:
 
 ```php
-$this->assertLogFileNotContains('example.log', [
+$this->dontSeeInLogFile('example.log', [
     'Unexisting log message 1!',
     'Unexisting log message 2!',
     'Unexisting log message 3!',

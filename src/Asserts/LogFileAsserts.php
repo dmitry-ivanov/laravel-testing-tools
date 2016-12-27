@@ -29,7 +29,7 @@ trait LogFileAsserts
         }
     }
 
-    protected function assertLogFileNotContains($path, $expected)
+    protected function dontSeeInLogFile($path, $expected)
     {
         $content = File::get($this->composeLogFilePath($path));
         $expected = !is_array($expected) ? [$expected] : $expected;

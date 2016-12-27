@@ -61,17 +61,17 @@ class LogFileAssertsTest extends TestCase
     }
 
     /** @test */
-    public function it_has_log_file_not_contains_assertion()
+    public function it_has_dont_see_in_log_file_assertion()
     {
-        $this->assertLogFileNotContains('example.log', 'Unexisting log message 1!');
-        $this->assertLogFileNotContains('example.log', 'Unexisting log message 2!');
-        $this->assertLogFileNotContains('example.log', 'Unexisting log message 3!');
+        $this->dontSeeInLogFile('example.log', 'Unexisting log message 1!');
+        $this->dontSeeInLogFile('example.log', 'Unexisting log message 2!');
+        $this->dontSeeInLogFile('example.log', 'Unexisting log message 3!');
     }
 
     /** @test */
     public function which_also_supports_array_of_contents()
     {
-        $this->assertLogFileNotContains('example.log', [
+        $this->dontSeeInLogFile('example.log', [
             'Unexisting log message 1!',
             'Unexisting log message 2!',
             'Unexisting log message 3!',
