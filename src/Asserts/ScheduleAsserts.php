@@ -7,7 +7,7 @@ use Illuminate\Console\Scheduling\Schedule;
 
 trait ScheduleAsserts
 {
-    protected function assertScheduleCount($count)
+    protected function seeScheduleCount($count)
     {
         $message = "Failed asserting that schedule events count is {$count}.";
         $this->assertCount($count, app(Schedule::class)->events(), $message);

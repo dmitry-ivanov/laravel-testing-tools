@@ -109,7 +109,7 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertTraitUsed](#asserttraitused)
   - [assertTraitNotUsed](#asserttraitnotused)
 - [ScheduleAsserts](#scheduleasserts)
-  - [assertScheduleCount](#assertschedulecount)
+  - [seeScheduleCount](#seeschedulecount)
   - [assertNotScheduleCount](#assertnotschedulecount)
   - [seeInSchedule](#seeinschedule)
   - [dontSeeInSchedule](#dontseeinschedule)
@@ -489,12 +489,12 @@ $this->assertTraitNotUsed(Post::class, Notifiable::class);
 
 ### ScheduleAsserts
 
-#### `assertScheduleCount()`
+#### `seeScheduleCount()`
 
 Checks that schedule events count is exactly as specified:
 
 ```php
-$this->assertScheduleCount(3);
+$this->seeScheduleCount(3);
 ```
 
 #### `assertNotScheduleCount()`
