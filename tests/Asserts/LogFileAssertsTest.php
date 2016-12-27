@@ -35,17 +35,17 @@ class LogFileAssertsTest extends TestCase
     }
 
     /** @test */
-    public function it_has_log_file_contains_assertion()
+    public function it_has_see_in_log_file_assertion()
     {
-        $this->assertLogFileContains('example.log', 'Sample log message 1!');
-        $this->assertLogFileContains('example.log', 'Sample log message 2!');
-        $this->assertLogFileContains('example.log', 'Sample log message 3!');
+        $this->seeInLogFile('example.log', 'Sample log message 1!');
+        $this->seeInLogFile('example.log', 'Sample log message 2!');
+        $this->seeInLogFile('example.log', 'Sample log message 3!');
     }
 
     /** @test */
     public function which_supports_array_of_contents()
     {
-        $this->assertLogFileContains('example.log', [
+        $this->seeInLogFile('example.log', [
             'Sample log message 1!',
             'Sample log message 2!',
             'Sample log message 3!',
@@ -55,9 +55,9 @@ class LogFileAssertsTest extends TestCase
     /** @test */
     public function which_supports_datetime_placeholder()
     {
-        $this->assertLogFileContains('example.log', '[%datetime%]: Sample log message 1!');
-        $this->assertLogFileContains('example.log', '[%datetime%]: Sample log message 2!');
-        $this->assertLogFileContains('example.log', '[%datetime%]: Sample log message 3!');
+        $this->seeInLogFile('example.log', '[%datetime%]: Sample log message 1!');
+        $this->seeInLogFile('example.log', '[%datetime%]: Sample log message 2!');
+        $this->seeInLogFile('example.log', '[%datetime%]: Sample log message 3!');
     }
 
     /** @test */

@@ -18,7 +18,7 @@ trait LogFileAsserts
         $this->assertFileNotExists($this->composeLogFilePath($path), $message);
     }
 
-    protected function assertLogFileContains($path, $expected)
+    protected function seeInLogFile($path, $expected)
     {
         $content = File::get($this->composeLogFilePath($path));
         $expected = !is_array($expected) ? [$expected] : $expected;
