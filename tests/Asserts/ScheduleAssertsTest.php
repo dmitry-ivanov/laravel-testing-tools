@@ -29,12 +29,12 @@ class ScheduleAssertsTest extends TestCase
     }
 
     /** @test */
-    public function it_has_not_schedule_count_assertion()
+    public function it_has_dont_see_schedule_count_assertion()
     {
-        $this->assertNotScheduleCount(1);
-        $this->assertNotScheduleCount(2);
-        $this->assertNotScheduleCount(4);
-        $this->assertNotScheduleCount(5);
+        $this->dontSeeScheduleCount(1);
+        $this->dontSeeScheduleCount(2);
+        $this->dontSeeScheduleCount(4);
+        $this->dontSeeScheduleCount(5);
     }
 
     /** @test */

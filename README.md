@@ -110,7 +110,7 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertTraitNotUsed](#asserttraitnotused)
 - [ScheduleAsserts](#scheduleasserts)
   - [seeScheduleCount](#seeschedulecount)
-  - [assertNotScheduleCount](#assertnotschedulecount)
+  - [dontSeeScheduleCount](#dontseeschedulecount)
   - [seeInSchedule](#seeinschedule)
   - [dontSeeInSchedule](#dontseeinschedule)
 - [ServiceProviderAsserts](#serviceproviderasserts)
@@ -497,12 +497,12 @@ Checks that schedule events count is exactly as specified:
 $this->seeScheduleCount(3);
 ```
 
-#### `assertNotScheduleCount()`
+#### `dontSeeScheduleCount()`
 
 Checks that schedule events count is not exactly as specified:
 
 ```php
-$this->assertNotScheduleCount(5);
+$this->dontSeeScheduleCount(5);
 ```
 
 #### `seeInSchedule()`

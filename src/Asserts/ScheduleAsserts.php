@@ -13,7 +13,7 @@ trait ScheduleAsserts
         $this->assertCount($count, app(Schedule::class)->events(), $message);
     }
 
-    protected function assertNotScheduleCount($count)
+    protected function dontSeeScheduleCount($count)
     {
         $message = "Failed asserting that schedule events count is not {$count}.";
         $this->assertNotCount($count, app(Schedule::class)->events(), $message);
