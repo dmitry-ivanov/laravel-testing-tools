@@ -14,9 +14,9 @@ class ServiceProviderAssertsTest extends TestCase
     }
 
     /** @test */
-    public function it_has_alias_not_registered_assertion()
+    public function it_has_dont_see_registered_alias_assertion()
     {
-        $this->assertAliasNotRegistered('Acme\Alias\Fake');
+        $this->dontSeeRegisteredAlias('Acme\Alias\Fake');
     }
 
     /** @test */

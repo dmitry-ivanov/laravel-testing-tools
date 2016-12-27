@@ -13,7 +13,7 @@ trait ServiceProviderAsserts
         $this->assertNotEmpty(AliasLoader::getInstance()->load($alias), $message);
     }
 
-    protected function assertAliasNotRegistered($alias)
+    protected function dontSeeRegisteredAlias($alias)
     {
         $message = "Failed asserting that alias `{$alias}` is not registered.";
         $this->assertEmpty(AliasLoader::getInstance()->load($alias), $message);
