@@ -25,7 +25,7 @@ trait ServiceProviderAsserts
         $this->assertArrayHasKey($name, Artisan::all(), $message);
     }
 
-    protected function assertCommandNotRegistered($name)
+    protected function dontSeeRegisteredCommand($name)
     {
         $message = "Failed asserting that command `{$name}` is not registered.";
         $this->assertArrayNotHasKey($name, Artisan::all(), $message);

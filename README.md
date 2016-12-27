@@ -117,7 +117,7 @@ Provides Laravel-specific testing helpers and asserts.
   - [seeRegisteredAlias](#seeregisteredalias)
   - [dontSeeRegisteredAlias](#dontseeregisteredalias)
   - [seeRegisteredCommand](#seeregisteredcommand)
-  - [assertCommandNotRegistered](#assertcommandnotregistered)
+  - [dontSeeRegisteredCommand](#dontSeeRegisteredCommand)
 
 ## Helpers
 
@@ -557,10 +557,10 @@ Checks that specified command was successfully registered by service provider:
 $this->seeRegisteredCommand('do-something');
 ```
 
-#### `assertCommandNotRegistered()`
+#### `dontSeeRegisteredCommand()`
 
 Checks that specified command was not registered by service provider:
 
 ```php
-$this->assertCommandNotRegistered('fake');
+$this->dontSeeRegisteredCommand('fake');
 ```

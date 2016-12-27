@@ -26,8 +26,8 @@ class ServiceProviderAssertsTest extends TestCase
     }
 
     /** @test */
-    public function it_has_command_not_registered_assertion()
+    public function it_has_dont_see_registered_command_assertion()
     {
-        $this->assertCommandNotRegistered('fake');
+        $this->dontSeeRegisteredCommand('fake');
     }
 }
