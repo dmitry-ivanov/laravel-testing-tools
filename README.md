@@ -117,7 +117,7 @@ Provides Laravel-specific testing helpers and asserts.
   - [seeRegisteredAlias](#seeregisteredalias)
   - [dontSeeRegisteredAlias](#dontseeregisteredalias)
   - [seeRegisteredCommand](#seeregisteredcommand)
-  - [dontSeeRegisteredCommand](#dontSeeRegisteredCommand)
+  - [dontSeeRegisteredCommand](#dontseeregisteredcommand)
 
 ## Helpers
 
