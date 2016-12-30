@@ -29,4 +29,16 @@ class ReflectionAssertsTest extends TestCase
     {
         $this->assertTraitNotUsed(Post::class, 'Acme\Trait\Fake');
     }
+
+    /** @test */
+    public function it_has_method_exists_assertion()
+    {
+        $this->assertMethodExists(Post::class, 'save');
+    }
+
+    /** @test */
+    public function it_has_method_not_exists_assertion()
+    {
+        $this->assertMethodNotExists(Post::class, 'foobarbaz');
+    }
 }
