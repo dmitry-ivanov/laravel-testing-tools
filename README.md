@@ -489,6 +489,22 @@ Checks that class is not using specified trait:
 $this->assertTraitNotUsed(Post::class, Notifiable::class);
 ```
 
+#### `assertMethodExists()`
+
+Checks that method exists on specified object or class name:
+
+```php
+$this->assertMethodExists(Post::class, 'save');
+```
+
+#### `assertMethodNotExists()`
+
+Checks that method not exists on specified object or class name:
+
+```php
+$this->assertMethodNotExists(Post::class, 'fly');
+```
+
 ### ScheduleAsserts
 
 #### `seeScheduleCount()`
