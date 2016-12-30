@@ -27,4 +27,16 @@ trait ReflectionAsserts
         $message = "Failed asserting that class `{$class}` is not using trait `{$trait}`.";
         $this->assertNotContains($trait, class_uses($class), $message);
     }
+
+    protected function assertMethodExists($object, $method)
+    {
+        $message = "Failed asserting that `{$method}` method exists on specified object.";
+        $this->assertTrue(method_exists($object, $method), $message);
+    }
+
+    protected function assertMethodNotExists($object, $method)
+    {
+        $message = "Failed asserting that `{$method}` method not exists on specified object.";
+        $this->assertFalse(method_exists($object, $method), $message);
+    }
 }
