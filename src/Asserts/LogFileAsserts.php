@@ -47,7 +47,7 @@ trait LogFileAsserts
 
     private function normalizeExpectedLogFileContent($content)
     {
-        $content = '/' . preg_quote($content) . (starts_with($content, 'array:') ? '' : '\n') . '/';
+        $content = '/' . preg_quote($content, '/') . (starts_with($content, 'array:') ? '' : '\n') . '/';
         $content = str_replace('%datetime%', '\d{4}-\d{2}-\d{2} \d{2}\:\d{2}\:\d{2}', $content);
 
         return $content;
