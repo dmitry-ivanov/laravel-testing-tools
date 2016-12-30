@@ -108,6 +108,8 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertNotSubclassOf](#assertnotsubclassof)
   - [assertTraitUsed](#asserttraitused)
   - [assertTraitNotUsed](#asserttraitnotused)
+  - [assertMethodExists](#assertmethodexists)
+  - [assertMethodNotExists](#assertmethodnotexists)
 - [ScheduleAsserts](#scheduleasserts)
   - [seeScheduleCount](#seeschedulecount)
   - [dontSeeScheduleCount](#dontseeschedulecount)
