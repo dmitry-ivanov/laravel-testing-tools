@@ -335,6 +335,24 @@ $this->dontSeeInDatabaseMany('posts', [
 ]);
 ```
 
+### EloquentAsserts
+
+#### `assertEloquentTableEquals()`
+
+Checks if Eloquent model table equals to specified value:
+
+```php
+$this->assertEloquentTableEquals(User::class, 'users');
+```
+
+#### `assertEloquentTableNotEquals()`
+
+Checks if Eloquent model table not equals to specified value:
+
+```php
+$this->assertEloquentTableNotEquals(User::class, 'posts');
+```
+
 ### ExceptionAsserts
 
 #### `willSeeException()`
