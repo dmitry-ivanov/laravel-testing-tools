@@ -7,5 +7,6 @@ class Post extends Model
 {
     use Notifiable;
 
+    protected $table = 'posts';
     protected $fillable = ['title'];
 }
