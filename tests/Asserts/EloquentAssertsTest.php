@@ -25,4 +25,16 @@ class EloquentAssertsTest extends TestCase
     {
         $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body']);
     }
+
+    /** @test */
+    public function it_has_eloquent_touches_equals_assertion()
+    {
+        $this->assertEloquentTouchesEquals(Post::class, []);
+    }
+
+    /** @test */
+    public function it_has_eloquent_touches_not_equals_assertion()
+    {
+        $this->assertEloquentTouchesNotEquals(Post::class, ['user']);
+    }
 }
