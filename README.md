@@ -373,6 +373,22 @@ Checks if Eloquent model fillable fields are not equal to specified value:
 $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body']);
 ```
 
+#### `assertEloquentTouchesEquals()`
+
+Checks if Eloquent model touched relations are equal to specified value:
+
+```php
+$this->assertEloquentTouchesEquals(Post::class, ['comment']);
+```
+
+#### `assertEloquentTouchesNotEquals()`
+
+Checks if Eloquent model touched relations are not equal to specified value:
+
+```php
+$this->assertEloquentTouchesNotEquals(Post::class, ['user']);
+```
+
 ### ExceptionAsserts
 
 #### `willSeeException()`
