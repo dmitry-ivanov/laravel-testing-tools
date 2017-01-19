@@ -13,4 +13,16 @@ class EloquentAssertsTest extends TestCase
     {
         $this->assertEloquentTableNotEquals(Post::class, 'users');
     }
+
+    /** @test */
+    public function it_has_eloquent_fillable_equals_assertion()
+    {
+        $this->assertEloquentFillableEquals(Post::class, ['title']);
+    }
+
+    /** @test */
+    public function it_has_eloquent_fillable_not_equals_assertion()
+    {
+        $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body']);
+    }
 }
