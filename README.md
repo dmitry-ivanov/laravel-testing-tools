@@ -91,6 +91,8 @@ Provides Laravel-specific testing helpers and asserts.
 - [EloquentAsserts](#eloquentasserts)
   - [assertEloquentTableEquals](#asserteloquenttableequals)
   - [assertEloquentTableNotEquals](#asserteloquenttablenotequals)
+  - [assertEloquentFillableEquals](#asserteloquentfillableequals)
+  - [assertEloquentFillableNotEquals](#asserteloquentfillablenotequals)
 - [ExceptionAsserts](#exceptionasserts)
   - [willSeeException](#willseeexception)
 - [FilesystemAsserts](#filesystemasserts)
@@ -351,6 +353,22 @@ Checks if Eloquent model table not equals to specified value:
 
 ```php
 $this->assertEloquentTableNotEquals(User::class, 'posts');
+```
+
+#### `assertEloquentFillableEquals()`
+
+Checks if Eloquent model fillable fields are equal to specified value:
+
+```php
+$this->assertEloquentFillableEquals(Post::class, ['title']);
+```
+
+#### `assertEloquentFillableNotEquals()`
+
+Checks if Eloquent model fillable fields are not equal to specified value:
+
+```php
+$this->assertEloquentFillableNotEquals(Post::class, ['title', 'body']);
 ```
 
 ### ExceptionAsserts
