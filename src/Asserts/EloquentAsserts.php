@@ -27,4 +27,16 @@ trait EloquentAsserts
         $message = 'Failed asserting that Eloquent fillable not equals to specified value.';
         $this->assertNotEquals($fillable, (new $class)->getFillable(), $message);
     }
+
+    protected function assertEloquentTouchesEquals($class, array $touches)
+    {
+        $message = 'Failed asserting that Eloquent touches equals to specified value.';
+        $this->assertEquals($touches, (new $class)->getTouchedRelations(), $message);
+    }
+
+    protected function assertEloquentTouchesNotEquals($class, array $touches)
+    {
+        $message = 'Failed asserting that Eloquent touches not equals to specified value.';
+        $this->assertNotEquals($touches, (new $class)->getTouchedRelations(), $message);
+    }
 }
