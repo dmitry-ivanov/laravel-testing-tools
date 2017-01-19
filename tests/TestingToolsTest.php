@@ -3,6 +3,7 @@
 use Illuminated\Testing\Asserts\ArtisanAsserts;
 use Illuminated\Testing\Asserts\CollectionAsserts;
 use Illuminated\Testing\Asserts\DatabaseAsserts;
+use Illuminated\Testing\Asserts\EloquentAsserts;
 use Illuminated\Testing\Asserts\ExceptionAsserts;
 use Illuminated\Testing\Asserts\FilesystemAsserts;
 use Illuminated\Testing\Asserts\LogFileAsserts;
@@ -29,6 +30,7 @@ class TestingToolsTest extends TestCase
         $this->assertTraitUsed(TestingTools::class, ArtisanAsserts::class);
         $this->assertTraitUsed(TestingTools::class, CollectionAsserts::class);
         $this->assertTraitUsed(TestingTools::class, DatabaseAsserts::class);
+        $this->assertTraitUsed(TestingTools::class, EloquentAsserts::class);
         $this->assertTraitUsed(TestingTools::class, ExceptionAsserts::class);
         $this->assertTraitUsed(TestingTools::class, FilesystemAsserts::class);
         $this->assertTraitUsed(TestingTools::class, LogFileAsserts::class);
