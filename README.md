@@ -93,6 +93,8 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertEloquentTableNotEquals](#asserteloquenttablenotequals)
   - [assertEloquentFillableEquals](#asserteloquentfillableequals)
   - [assertEloquentFillableNotEquals](#asserteloquentfillablenotequals)
+  - [assertEloquentTouchesEquals](#asserteloquenttouchesequals)
+  - [assertEloquentTouchesNotEquals](#asserteloquenttouchesnotequals)
 - [ExceptionAsserts](#exceptionasserts)
   - [willSeeException](#willseeexception)
 - [FilesystemAsserts](#filesystemasserts)
