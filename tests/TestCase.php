@@ -7,7 +7,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     use TestingTools;
 
-    protected function setUp()
+    public function setUp()
     {
         parent::setUp();
 
