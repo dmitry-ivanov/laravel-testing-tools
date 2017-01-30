@@ -18,8 +18,10 @@ trait DatabaseAsserts
 
     protected function seeInDatabaseMany($table, array $rows)
     {
+        $assert = method_exists($this, 'assertDatabaseHas') ? 'assertDatabaseHas' : 'seeInDatabase';
+
         foreach ($rows as $row) {
-            $this->seeInDatabase($table, $row);
+            $this->$assert($table, $row);
         }
 
         return $this;
@@ -27,8 +29,10 @@ trait DatabaseAsserts
 
     protected function dontSeeInDatabaseMany($table, array $rows)
     {
+        $assert = method_exists($this, 'assertDatabaseMissing') ? 'assertDatabaseMissing' : 'dontSeeInDatabase';
+
         foreach ($rows as $row) {
-            $this->dontSeeInDatabase($table, $row);
+            $this->$assert($table, $row);
         }
 
         return $this;
