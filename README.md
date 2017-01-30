@@ -107,9 +107,6 @@ Provides Laravel-specific testing helpers and asserts.
   - [dontSeeLogFile](#dontseelogfile)
   - [seeInLogFile](#seeinlogfile)
   - [dontSeeInLogFile](#dontseeinlogfile)
-- [PageAsserts](#pageasserts)
-  - [seeElementTimes](#seeelementtimes)
-  - [dontSeeElementTimes](#dontseeelementtimes)
 - [ReflectionAsserts](#reflectionasserts)
   - [assertSubclassOf](#assertsubclassof)
   - [assertNotSubclassOf](#assertnotsubclassof)
@@ -492,24 +489,6 @@ $this->dontSeeInLogFile('example.log', [
     'Unexisting log message 2!',
     'Unexisting log message 3!',
 ]);
-```
-
-### PageAsserts
-
-#### `seeElementTimes()`
-
-Checks if specified element seen on the page exact number of times:
-
-```php
-$this->seeElementTimes('.body-item', 3);
-```
-
-#### `dontSeeElementTimes()`
-
-Checks if specified element not seen on the page exact number of times:
-
-```php
-$this->dontSeeElementTimes('.body-item', 5);
 ```
 
 ### ReflectionAsserts

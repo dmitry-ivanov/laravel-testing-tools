@@ -9,7 +9,6 @@ use Illuminated\Testing\Asserts\EloquentAsserts;
 use Illuminated\Testing\Asserts\ExceptionAsserts;
 use Illuminated\Testing\Asserts\FilesystemAsserts;
 use Illuminated\Testing\Asserts\LogFileAsserts;
-use Illuminated\Testing\Asserts\PageAsserts;
 use Illuminated\Testing\Asserts\ReflectionAsserts;
 use Illuminated\Testing\Asserts\ScheduleAsserts;
 use Illuminated\Testing\Asserts\ServiceProviderAsserts;
@@ -28,7 +27,6 @@ trait TestingTools
     use ExceptionAsserts;
     use FilesystemAsserts;
     use LogFileAsserts;
-    use PageAsserts;
     use ReflectionAsserts;
     use ScheduleAsserts;
     use ServiceProviderAsserts;
