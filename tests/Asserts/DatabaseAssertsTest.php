@@ -2,7 +2,7 @@
 
 class DatabaseAssertsTest extends TestCase
 {
-    protected function setUp()
+    public function setUp()
     {
         parent::setUp();
 
