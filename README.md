@@ -23,7 +23,7 @@ Provides Laravel-specific testing helpers and asserts.
 1. Install package through `composer`:
 
     ```shell
-    composer require illuminated/testing-tools --dev
+    composer require --dev illuminated/testing-tools
     ```
 
 2. Use `Illuminated\Testing\TestingTools` in your `TestCase` class:
