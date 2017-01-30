@@ -12,6 +12,15 @@ class DatabaseAssertsTest extends TestCase
         $this->seedDatabase();
     }
 
+    protected function getPackageProviders($app)
+    {
+        if (class_exists(Orchestra\Database\ConsoleServiceProvider::class)) {
+            return [Orchestra\Database\ConsoleServiceProvider::class];
+        }
+
+        return [];
+    }
+
     protected function setUpDatabase()
     {
         config(['database.default' => 'testing']);
