@@ -2,7 +2,6 @@
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
 
 class ReflectionAssertsTest extends TestCase
 {
@@ -21,7 +20,7 @@ class ReflectionAssertsTest extends TestCase
     /** @test */
     public function it_has_trait_used_assertion()
     {
-        $this->assertTraitUsed(Post::class, Notifiable::class);
+        $this->assertTraitUsed(Post::class, Commentable::class);
     }
 
     /** @test */
