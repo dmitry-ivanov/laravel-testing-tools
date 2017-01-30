@@ -42,14 +42,14 @@ Provides Laravel-specific testing helpers and asserts.
 3. That's it! Now you can use any of provided helpers and asserts in your tests:
 
     ```php
-    class HomePageTest extends TestCase
+    class HelloCommandTest extends TestCase
     {
         /** @test */
-        public function it_shows_three_featured_products()
+        public function it_outputs_hello_world()
         {
-            $this->visit('/');
+            $this->artisan('hello');
 
-            $this->seeElementTimes('.featured-product', 3);
+            $this->seeArtisanOutput('Hello, World!');
         }
     }
     ```
