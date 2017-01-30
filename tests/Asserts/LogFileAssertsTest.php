@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\File;
 
 class LogFileAssertsTest extends TestCase
 {
-    protected function setUp()
+    public function setUp()
     {
         parent::setUp();
 
@@ -78,7 +78,7 @@ class LogFileAssertsTest extends TestCase
         ]);
     }
 
-    protected function tearDown()
+    public function tearDown()
     {
         File::delete(storage_path('logs/example.log'));
 
