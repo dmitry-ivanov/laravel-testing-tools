@@ -15,8 +15,8 @@ Provides Laravel-specific testing helpers and asserts.
 
 ## Requirements
 
-- `PHP >=5.6.4`
-- `Laravel >=5.2`
+- `PHP >=5.5.9`
+- `Laravel >=5.1`
 
 ## Usage
 
