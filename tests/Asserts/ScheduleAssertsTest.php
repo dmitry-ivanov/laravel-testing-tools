@@ -18,7 +18,11 @@ class ScheduleAssertsTest extends TestCase
 
             $schedule->command('foo')->everyFiveMinutes();
             $schedule->command('bar')->hourly();
-            $schedule->command('baz')->twiceDaily()->runInBackground();
+
+            $baz = $schedule->command('baz')->twiceDaily();
+            if (method_exists($baz, 'runInBackground')) {
+                $baz->runInBackground();
+            }
         });
     }
 
