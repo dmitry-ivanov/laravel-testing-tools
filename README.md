@@ -59,6 +59,7 @@ Provides Laravel-specific testing helpers and asserts.
 > New helpers are always adding. Feel free to contribute.
 
 - [ApplicationHelpers](#applicationhelpers)
+  - [isTravis](#istravis)
   - [emulateLocal](#emulatelocal)
   - [emulateProduction](#emulateproduction)
   - [emulateEnvironment](#emulateenvironment)
@@ -128,6 +129,16 @@ Provides Laravel-specific testing helpers and asserts.
 ## Helpers
 
 ### ApplicationHelpers
+
+#### `isTravis()`
+
+Checks if tests are running on [Travis CI](https://travis-ci.org) or not:
+
+```php
+if ($this->isTravis()) {
+    // Yep, it's Travis.
+}
+```
 
 #### `emulateLocal()`
 
