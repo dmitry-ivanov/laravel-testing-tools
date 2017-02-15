@@ -5,7 +5,8 @@ class ApplicationHelpersTest extends TestCase
     /** @test */
     public function it_can_check_if_tests_are_running_on_travis()
     {
-        $this->assertEquals(getenv('TRAVIS'), $this->isTravis());
+        $expected = (bool) getenv('TRAVIS');
+        $this->assertEquals($expected, $this->isTravis());
     }
 
     /** @test */
