@@ -4,11 +4,6 @@ namespace Illuminated\Testing\Helpers;
 
 trait ApplicationHelpers
 {
-    protected function isTravis()
-    {
-        return (bool) getenv('TRAVIS');
-    }
-
     protected function emulateLocal()
     {
         $this->emulateEnvironment('local');
@@ -24,5 +19,10 @@ trait ApplicationHelpers
         $this->app->detectEnvironment(function () use ($environment) {
             return $environment;
         });
+    }
+
+    protected function isTravis()
+    {
+        return (bool) getenv('TRAVIS');
     }
 }

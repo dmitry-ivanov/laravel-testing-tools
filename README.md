@@ -59,10 +59,10 @@ Provides Laravel-specific testing helpers and asserts.
 > New helpers are always adding. Feel free to contribute.
 
 - [ApplicationHelpers](#applicationhelpers)
-  - [isTravis](#istravis)
   - [emulateLocal](#emulatelocal)
   - [emulateProduction](#emulateproduction)
   - [emulateEnvironment](#emulateenvironment)
+  - [isTravis](#istravis)
 - [ArtisanHelpers](#artisanhelpers)
   - [runArtisan](#runartisan)
 
@@ -130,16 +130,6 @@ Provides Laravel-specific testing helpers and asserts.
 
 ### ApplicationHelpers
 
-#### `isTravis()`
-
-Checks if tests are running on [Travis CI](https://travis-ci.org) or not:
-
-```php
-if ($this->isTravis()) {
-    // Yep, it's Travis.
-}
-```
-
 #### `emulateLocal()`
 
 Emulates that application is working at `local` environment:
@@ -162,6 +152,16 @@ Emulates that application is working at specified environment:
 
 ```php
 $this->emulateEnvironment('demo');
+```
+
+#### `isTravis()`
+
+Checks if tests are running on [Travis CI](https://travis-ci.org) or not:
+
+```php
+if ($this->isTravis()) {
+    // Yep, it's Travis.
+}
 ```
 
 ### ArtisanHelpers
