@@ -4,6 +4,11 @@ namespace Illuminated\Testing\Helpers;
 
 trait ApplicationHelpers
 {
+    protected function isTravis()
+    {
+        return (bool) getenv('TRAVIS');
+    }
+
     protected function emulateLocal()
     {
         $this->emulateEnvironment('local');
