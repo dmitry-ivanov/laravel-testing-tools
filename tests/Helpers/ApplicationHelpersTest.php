@@ -3,6 +3,12 @@
 class ApplicationHelpersTest extends TestCase
 {
     /** @test */
+    public function it_can_check_if_tests_are_running_on_travis()
+    {
+        $this->assertEquals(getenv('TRAVIS'), $this->isTravis());
+    }
+
+    /** @test */
     public function it_can_emulate_local_environment()
     {
         $this->emulateLocal();
