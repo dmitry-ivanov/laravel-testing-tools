@@ -1,5 +1,7 @@
 <?php
 
+namespace Illuminated\Testing\TestingTools\Tests\Asserts;
+
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 use Illuminated\Testing\TestingTools\Tests\TestCase;
