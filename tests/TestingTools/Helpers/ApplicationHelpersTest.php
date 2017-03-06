@@ -1,5 +1,7 @@
 <?php
 
+namespace Illuminated\Testing\TestingTools\Tests\Helpers;
+
 use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class ApplicationHelpersTest extends TestCase
