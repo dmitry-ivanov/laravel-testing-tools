@@ -1,6 +1,9 @@
 <?php
 
+namespace Illuminated\Testing\TestingTools\Tests\Asserts;
+
 use Illuminated\Testing\TestingTools\Tests\TestCase;
+use Post;
 
 class EloquentAssertsTest extends TestCase
 {
