@@ -1,5 +1,8 @@
 <?php
 
+namespace Illuminated\Testing\TestingTools\Tests\Asserts;
+
+use FixtureServiceProvider;
 use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class ServiceProviderAssertsTest extends TestCase
