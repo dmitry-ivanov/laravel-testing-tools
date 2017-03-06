@@ -13,7 +13,7 @@ use Illuminated\Testing\Asserts\ServiceProviderAsserts;
 use Illuminated\Testing\Helpers\ApplicationHelpers;
 use Illuminated\Testing\Helpers\ArtisanHelpers;
 use Illuminated\Testing\TestingTools;
-use Illuminated\Testing\Tests\TestCase;
+use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class TestingToolsTest extends TestCase
 {
