@@ -1,5 +1,8 @@
 <?php
 
+namespace Illuminated\Testing\TestingTools\Tests\Helpers;
+
+use GenericCommand;
 use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class ArtisanHelpersTest extends TestCase
