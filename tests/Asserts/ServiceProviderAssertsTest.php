@@ -1,5 +1,7 @@
 <?php
 
+use Illuminated\Testing\Tests\TestCase;
+
 class ServiceProviderAssertsTest extends TestCase
 {
     protected function getPackageProviders($app)

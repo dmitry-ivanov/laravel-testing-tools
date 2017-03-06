@@ -2,6 +2,7 @@
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
+use Illuminated\Testing\Tests\TestCase;
 
 class ReflectionAssertsTest extends TestCase
 {

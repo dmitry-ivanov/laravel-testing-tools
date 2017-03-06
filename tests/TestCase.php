@@ -1,7 +1,10 @@
 <?php
 
+namespace Illuminated\Testing\Tests;
+
 use Illuminate\Contracts\Console\Kernel as KernelContract;
 use Illuminated\Testing\TestingTools;
+use Kernel;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
