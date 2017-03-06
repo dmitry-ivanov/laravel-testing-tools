@@ -1,6 +1,10 @@
 <?php
 
+namespace Illuminated\Testing\TestingTools\Tests\Asserts;
+
 use Illuminated\Testing\TestingTools\Tests\TestCase;
+use Orchestra\Database\ConsoleServiceProvider;
+use Post;
 
 class DatabaseAssertsTest extends TestCase
 {
@@ -16,8 +20,8 @@ class DatabaseAssertsTest extends TestCase
 
     protected function getPackageProviders($app)
     {
-        if (class_exists(Orchestra\Database\ConsoleServiceProvider::class)) {
-            return [Orchestra\Database\ConsoleServiceProvider::class];
+        if (class_exists(ConsoleServiceProvider::class)) {
+            return [ConsoleServiceProvider::class];
         }
 
         return [];
