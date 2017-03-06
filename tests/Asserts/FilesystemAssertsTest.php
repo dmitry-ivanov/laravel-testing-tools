@@ -1,5 +1,7 @@
 <?php
 
+use Illuminated\Testing\Tests\TestCase;
+
 class FilesystemAssertsTest extends TestCase
 {
     /** @test */

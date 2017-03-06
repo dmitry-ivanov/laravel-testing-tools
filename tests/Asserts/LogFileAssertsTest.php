@@ -2,6 +2,7 @@
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
+use Illuminated\Testing\Tests\TestCase;
 
 class LogFileAssertsTest extends TestCase
 {

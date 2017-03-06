@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Console\Scheduling\Schedule;
+use Illuminated\Testing\Tests\TestCase;
 
 class ScheduleAssertsTest extends TestCase
 {

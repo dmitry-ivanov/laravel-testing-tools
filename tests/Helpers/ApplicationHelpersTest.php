@@ -1,5 +1,7 @@
 <?php
 
+use Illuminated\Testing\Tests\TestCase;
+
 class ApplicationHelpersTest extends TestCase
 {
     /** @test */

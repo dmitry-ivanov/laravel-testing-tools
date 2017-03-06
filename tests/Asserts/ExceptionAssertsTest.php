@@ -1,5 +1,7 @@
 <?php
 
+use Illuminated\Testing\Tests\TestCase;
+
 class ExceptionAssertsTest extends TestCase
 {
     /** @test */
