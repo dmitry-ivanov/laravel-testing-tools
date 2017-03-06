@@ -1,5 +1,7 @@
 <?php
 
+namespace Illuminated\Testing\TestingTools\Tests;
+
 use Illuminated\Testing\Asserts\ArtisanAsserts;
 use Illuminated\Testing\Asserts\CollectionAsserts;
 use Illuminated\Testing\Asserts\DatabaseAsserts;
@@ -13,7 +15,6 @@ use Illuminated\Testing\Asserts\ServiceProviderAsserts;
 use Illuminated\Testing\Helpers\ApplicationHelpers;
 use Illuminated\Testing\Helpers\ArtisanHelpers;
 use Illuminated\Testing\TestingTools;
-use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class TestingToolsTest extends TestCase
 {
