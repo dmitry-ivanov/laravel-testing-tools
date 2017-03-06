@@ -1,5 +1,7 @@
 <?php
 
+namespace Illuminated\Testing\TestingTools\Tests\Asserts;
+
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminated\Testing\TestingTools\Tests\TestCase;
 
