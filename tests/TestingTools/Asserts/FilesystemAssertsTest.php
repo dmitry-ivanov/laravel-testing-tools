@@ -1,5 +1,7 @@
 <?php
 
+namespace Illuminated\Testing\TestingTools\Tests\Asserts;
+
 use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class FilesystemAssertsTest extends TestCase
