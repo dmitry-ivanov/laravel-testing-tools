@@ -1,5 +1,10 @@
 <?php
 
+namespace Illuminated\Testing\TestingTools\Tests\Asserts;
+
+use ConfirmableTraitCommand;
+use ConfirmationCommand;
+use GenericCommand;
 use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class ArtisanAssertsTest extends TestCase
