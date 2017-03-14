@@ -3,6 +3,7 @@
 namespace Illuminated\Testing\TestingTools\Tests;
 
 use Illuminate\Contracts\Console\Kernel as KernelContract;
+use Illuminate\Support\Facades\DB;
 use Illuminated\Testing\TestingTools;
 use Kernel;
 use Orchestra\Database\ConsoleServiceProvider;
@@ -20,7 +21,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->setUpStorage();
         $this->setUpDatabase();
         $this->setUpFactories();
-        $this->loadMigrations();
     }
 
     protected function getPackageProviders($app)
@@ -50,19 +50,18 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     protected function setUpDatabase()
     {
         config(['database.default' => 'testing']);
+
+        DB::statement('PRAGMA foreign_keys = ON');
+
+        $this->loadMigrationsFrom([
+            '--database' => 'testing',
+            '--realpath' => __DIR__ . '/fixture/database/migrations',
+        ]);
     }
 
     private function setUpFactories()
     {
         $this->withFactories(__DIR__ . '/fixture/database/factories');
-    }
-
-    private function loadMigrations()
-    {
-        $this->loadMigrationsFrom([
-            '--database' => 'testing',
-            '--realpath' => __DIR__ . '/fixture/database/migrations',
-        ]);
     }
 
     protected function resolveApplicationConsoleKernel($app)
