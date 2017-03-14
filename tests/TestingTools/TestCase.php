@@ -27,10 +27,10 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         if (class_exists(ConsoleServiceProvider::class)) {
-            return [FixtureServiceProvider::class, ConsoleServiceProvider::class];
+            return [ConsoleServiceProvider::class];
         }
 
-        return [FixtureServiceProvider::class];
+        return [];
     }
 
     protected function setUpDatabase()
