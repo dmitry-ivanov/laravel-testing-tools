@@ -2,10 +2,19 @@
 
 namespace Illuminated\Testing\TestingTools\Tests\Asserts;
 
+use FixtureServiceProvider;
 use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class ServiceProviderAssertsTest extends TestCase
 {
+    protected function getPackageProviders($app)
+    {
+        return array_merge(
+            parent::getPackageProviders($app),
+            [FixtureServiceProvider::class]
+        );
+    }
+
     /** @test */
     public function it_has_see_registered_alias_assertion()
     {

@@ -2,7 +2,6 @@
 
 namespace Illuminated\Testing\TestingTools\Tests;
 
-use FixtureServiceProvider;
 use Illuminate\Contracts\Console\Kernel as KernelContract;
 use Illuminate\Support\Facades\DB;
 use Illuminated\Testing\TestingTools;
@@ -27,10 +26,10 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         if (class_exists(ConsoleServiceProvider::class)) {
-            return [FixtureServiceProvider::class, ConsoleServiceProvider::class];
+            return [ConsoleServiceProvider::class];
         }
 
-        return [FixtureServiceProvider::class];
+        return [];
     }
 
     protected function setUpDatabase()
