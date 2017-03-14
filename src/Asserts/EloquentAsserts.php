@@ -2,6 +2,8 @@
 
 namespace Illuminated\Testing\Asserts;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 trait EloquentAsserts
 {
     protected function assertEloquentTableEquals($class, $table)
@@ -38,5 +40,22 @@ trait EloquentAsserts
     {
         $message = 'Failed asserting that Eloquent touches not equals to specified value.';
         $this->assertNotEquals($touches, (new $class)->getTouchedRelations(), $message);
+    }
+
+    protected function assertEloquentHasMany($class, $relation)
+    {
+        $this->assertMethodExists($class, $relation);
+
+        $parent = factory($class)->create();
+        $hasManyRelation = $parent->{$relation}();
+        $this->assertInstanceOf(HasMany::class, $hasManyRelation);
+
+        $parentKey = $parent->getKeyName();
+        $childClass = get_class($hasManyRelation->getRelated());
+        $childKey = (new $childClass)->getKeyName();
+        $childForeignKey = $hasManyRelation->getForeignKeyName();
+        $children = factory($childClass, 3)->create([$childForeignKey => $parent->{$parentKey}]);
+
+        $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
     }
 }
