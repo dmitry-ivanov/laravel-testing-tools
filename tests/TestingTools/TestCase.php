@@ -5,6 +5,7 @@ namespace Illuminated\Testing\TestingTools\Tests;
 use Illuminate\Contracts\Console\Kernel as KernelContract;
 use Illuminated\Testing\TestingTools;
 use Kernel;
+use Orchestra\Database\ConsoleServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -17,6 +18,18 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->setUpViews();
         $this->setUpRoutes();
         $this->setUpStorage();
+        $this->setUpDatabase();
+        $this->setUpFactories();
+        $this->loadMigrations();
+    }
+
+    protected function getPackageProviders($app)
+    {
+        if (class_exists(ConsoleServiceProvider::class)) {
+            return [ConsoleServiceProvider::class];
+        }
+
+        return [];
     }
 
     private function setUpViews()
@@ -32,6 +45,24 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     private function setUpStorage()
     {
         $this->app->useStoragePath(__DIR__ . '/fixture/storage');
+    }
+
+    protected function setUpDatabase()
+    {
+        config(['database.default' => 'testing']);
+    }
+
+    private function setUpFactories()
+    {
+        $this->withFactories(__DIR__ . '/fixture/database/factories');
+    }
+
+    private function loadMigrations()
+    {
+        $this->loadMigrationsFrom([
+            '--database' => 'testing',
+            '--realpath' => __DIR__ . '/fixture/database/migrations',
+        ]);
     }
 
     protected function resolveApplicationConsoleKernel($app)
