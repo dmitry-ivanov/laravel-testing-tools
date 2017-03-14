@@ -53,7 +53,12 @@ trait EloquentAsserts
         $parentKey = $parent->getKeyName();
         $childClass = get_class($hasManyRelation->getRelated());
         $childKey = (new $childClass)->getKeyName();
-        $childForeignKey = $hasManyRelation->getForeignKeyName();
+        if (method_exists($hasManyRelation, 'getForeignKeyName')) {
+            $childForeignKey = $hasManyRelation->getForeignKeyName();
+        } else {
+            $childForeignKey = last(explode('.', $hasManyRelation->getForeignKey()));
+        }
+
         $children = factory($childClass, 3)->create([$childForeignKey => $parent->{$parentKey}]);
 
         $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
