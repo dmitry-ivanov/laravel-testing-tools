@@ -42,4 +42,10 @@ class EloquentAssertsTest extends TestCase
     {
         $this->assertEloquentTouchesNotEquals(Post::class, ['user']);
     }
+
+    /** @test */
+    public function it_has_eloquent_has_many_assertion()
+    {
+        $this->assertEloquentHasMany(Post::class, 'comments');
+    }
 }
