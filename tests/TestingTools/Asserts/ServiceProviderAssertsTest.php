@@ -9,7 +9,10 @@ class ServiceProviderAssertsTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
-        return [FixtureServiceProvider::class];
+        return array_merge(
+            parent::getPackageProviders($app),
+            [FixtureServiceProvider::class]
+        );
     }
 
     /** @test */
