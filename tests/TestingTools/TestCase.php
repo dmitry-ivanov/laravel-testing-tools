@@ -2,11 +2,11 @@
 
 namespace Illuminated\Testing\TestingTools\Tests;
 
+use FixtureServiceProvider;
 use Illuminate\Contracts\Console\Kernel as KernelContract;
 use Illuminate\Support\Facades\DB;
 use Illuminated\Testing\TestingTools;
 use Kernel;
-use Orchestra\Database\ConsoleServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -25,11 +25,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     protected function getPackageProviders($app)
     {
-        if (class_exists(ConsoleServiceProvider::class)) {
-            return [ConsoleServiceProvider::class];
-        }
-
-        return [];
+        return [FixtureServiceProvider::class];
     }
 
     protected function setUpDatabase()
@@ -38,10 +34,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         DB::statement('PRAGMA foreign_keys = ON');
 
-        $this->loadMigrationsFrom([
-            '--database' => 'testing',
-            '--realpath' => __DIR__ . '/fixture/database/migrations',
-        ]);
+        $this->artisan('migrate', ['--database' => 'testing']);
+        $this->seeArtisanOutput(__DIR__ . '/migrate.output.txt');
     }
 
     private function setUpFactories()
