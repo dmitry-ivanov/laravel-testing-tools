@@ -27,7 +27,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         if (class_exists(ConsoleServiceProvider::class)) {
-            return [ConsoleServiceProvider::class, FixtureServiceProvider::class];
+            return [FixtureServiceProvider::class, ConsoleServiceProvider::class];
         }
 
         return [FixtureServiceProvider::class];
