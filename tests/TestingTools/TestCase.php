@@ -16,11 +16,11 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         parent::setUp();
 
+        $this->setUpDatabase();
+        $this->setUpFactories();
         $this->setUpViews();
         $this->setUpRoutes();
         $this->setUpStorage();
-        $this->setUpDatabase();
-        $this->setUpFactories();
     }
 
     protected function getPackageProviders($app)
@@ -30,21 +30,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         }
 
         return [];
-    }
-
-    private function setUpViews()
-    {
-        app('view')->addLocation(__DIR__ . '/fixture/resources/views');
-    }
-
-    private function setUpRoutes()
-    {
-        app('router')->get('/', 'HomeController@index');
-    }
-
-    private function setUpStorage()
-    {
-        $this->app->useStoragePath(__DIR__ . '/fixture/storage');
     }
 
     protected function setUpDatabase()
@@ -62,6 +47,21 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     private function setUpFactories()
     {
         $this->withFactories(__DIR__ . '/fixture/database/factories');
+    }
+
+    private function setUpViews()
+    {
+        app('view')->addLocation(__DIR__ . '/fixture/resources/views');
+    }
+
+    private function setUpRoutes()
+    {
+        app('router')->get('/', 'HomeController@index');
+    }
+
+    private function setUpStorage()
+    {
+        $this->app->useStoragePath(__DIR__ . '/fixture/storage');
     }
 
     protected function resolveApplicationConsoleKernel($app)
