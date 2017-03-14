@@ -6,11 +6,6 @@ use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class ApplicationHelpersTest extends TestCase
 {
-    protected function getPackageProviders($app)
-    {
-        return [];
-    }
-
     /** @test */
     public function it_can_emulate_local_environment()
     {
