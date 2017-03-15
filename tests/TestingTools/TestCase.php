@@ -34,7 +34,10 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         DB::statement('PRAGMA foreign_keys = ON');
 
-        $this->artisan('migrate', ['--database' => 'testing']);
+        $this->artisan('migrate', [
+            '--database' => 'testing',
+            '--realpath' => __DIR__ . '/fixture/database/migrations/',
+        ]);
         $this->seeArtisanOutput(__DIR__ . '/migrate.output.txt');
     }
 
