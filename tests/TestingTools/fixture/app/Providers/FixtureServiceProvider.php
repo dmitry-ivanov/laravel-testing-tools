@@ -10,13 +10,6 @@ class FixtureServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->registerCommands();
     }
 
-    public function boot()
-    {
-        if (method_exists($this, 'loadMigrationsFrom')) {
-            $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations/');
-        }
-    }
-
     private function registerAliases()
     {
         $this->app->booting(function () {
