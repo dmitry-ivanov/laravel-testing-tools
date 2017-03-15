@@ -23,6 +23,8 @@ class ScheduleAssertsTest extends TestCase
             $schedule->command('bar')->hourly();
 
             $baz = $schedule->command('baz')->twiceDaily();
+
+            /** @laravel-versions */
             if (method_exists($baz, 'runInBackground')) {
                 $baz->runInBackground();
             }
