@@ -25,8 +25,8 @@ class FixtureServiceProvider extends \Illuminate\Support\ServiceProvider
 
     private function registerCommands()
     {
-        $this->app->singleton('command.fixture.generic', GenericCommand::class);
+        $this->app->singleton('command.fixture.registered', RegisteredCommand::class);
 
-        $this->commands(['command.fixture.generic']);
+        $this->commands(['command.fixture.registered']);
     }
 }
