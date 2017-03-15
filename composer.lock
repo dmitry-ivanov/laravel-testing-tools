@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "122374e0946a83b328de4fdd18a49ac7",
+    "content-hash": "f17c1193a5553039d748b3990d8ad86a",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1775,6 +1775,62 @@
             "time": "2016-04-29T12:21:54+00:00"
         },
         {
+            "name": "illuminated/helper-functions",
+            "version": "1.0.22",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmitry-ivanov/laravel-helper-functions.git",
+                "reference": "965b1e70f8d519a22c051b82dfda7cc87d9207b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/965b1e70f8d519a22c051b82dfda7cc87d9207b6",
+                "reference": "965b1e70f8d519a22c051b82dfda7cc87d9207b6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "nesbot/carbon": "^1.19",
+                "php": ">=5.5.9",
+                "spatie/array-to-xml": "^2.2",
+                "symfony/filesystem": "^2.7|^3.0",
+                "symfony/finder": "^2.7|^3.0",
+                "symfony/process": "^2.7|^3.0",
+                "symfony/var-dumper": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "illuminated/testing-tools": "^0.5",
+                "mockery/mockery": "^0.9",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/autoload.php"
+                ],
+                "psr-4": {
+                    "Illuminated\\Helpers\\": "src/classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Ivanov",
+                    "email": "dmitry.g.ivanov@gmail.com"
+                }
+            ],
+            "description": "Provides Laravel-specific and pure PHP helper functions.",
+            "keywords": [
+                "function",
+                "helper",
+                "laravel"
+            ],
+            "time": "2017-03-15T11:14:22+00:00"
+        },
+        {
             "name": "myclabs/deep-copy",
             "version": "1.6.0",
             "source": {
@@ -2993,6 +3049,54 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2016-10-03T07:35:21+00:00"
+        },
+        {
+            "name": "spatie/array-to-xml",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/array-to-xml.git",
+                "reference": "48a71d57980a40a1f84d741df563a594272feae9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/48a71d57980a40a1f84d741df563a594272feae9",
+                "reference": "48a71d57980a40a1f84d741df563a594272feae9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4|^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\ArrayToXml\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://murze.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Convert an array to xml",
+            "homepage": "https://github.com/spatie/array-to-xml",
+            "keywords": [
+                "array",
+                "convert",
+                "xml"
+            ],
+            "time": "2017-02-18T10:05:46+00:00"
         },
         {
             "name": "symfony/dom-crawler",

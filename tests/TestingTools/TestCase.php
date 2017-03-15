@@ -7,7 +7,6 @@ use Illuminate\Contracts\Console\Kernel as KernelContract;
 use Illuminate\Support\Facades\DB;
 use Illuminated\Testing\TestingTools;
 use Kernel;
-use Symfony\Component\Filesystem\Filesystem;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -37,17 +36,9 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         $this->artisan('migrate', [
             '--database' => 'testing',
-            '--path' => $this->getMigrationsPath(),
+            '--path' => relative_path(__DIR__, base_path()) . '/fixture/database/migrations/',
         ]);
         $this->seeArtisanOutput(__DIR__ . '/migrate.output.txt');
-    }
-
-    private function getMigrationsPath()
-    {
-        $endPath = realpath(__DIR__);
-        $startPath = realpath(base_path());
-
-        return (new Filesystem)->makePathRelative($endPath, $startPath) . 'fixture/database/migrations/';
     }
 
     private function setUpFactories()
