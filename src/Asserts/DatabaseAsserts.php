@@ -18,7 +18,7 @@ trait DatabaseAsserts
 
     protected function seeInDatabaseMany($table, array $rows)
     {
-        /** @laravel-versions */
+        /* @laravel-versions */
         $assert = method_exists($this, 'assertDatabaseHas') ? 'assertDatabaseHas' : 'seeInDatabase';
 
         foreach ($rows as $row) {
@@ -30,7 +30,7 @@ trait DatabaseAsserts
 
     protected function dontSeeInDatabaseMany($table, array $rows)
     {
-        /** @laravel-versions */
+        /* @laravel-versions */
         $assert = method_exists($this, 'assertDatabaseMissing') ? 'assertDatabaseMissing' : 'dontSeeInDatabase';
 
         foreach ($rows as $row) {
