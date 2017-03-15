@@ -400,13 +400,13 @@ $this->assertEloquentTouchesNotEquals(Comment::class, ['user']);
 
 #### `assertEloquentHasMany()`
 
+> NOTE: In order to use this assertion, you have to create model factories for both classes.
+
 Checks if Eloquent model has specified `HasMany` relation:
 
 ```php
 $this->assertEloquentHasMany(Post::class, 'comments');
 ```
-
-> NOTE: In order to use this assertion, you have to create model factories for both classes.
 
 ### ExceptionAsserts
 
