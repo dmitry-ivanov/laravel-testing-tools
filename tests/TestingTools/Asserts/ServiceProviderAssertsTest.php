@@ -21,7 +21,7 @@ class ServiceProviderAssertsTest extends TestCase
     /** @test */
     public function it_has_see_registered_command_assertion()
     {
-        $this->seeRegisteredCommand('generic');
+        $this->seeRegisteredCommand('registered');
     }
 
     /** @test */
