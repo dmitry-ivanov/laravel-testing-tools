@@ -53,6 +53,8 @@ trait EloquentAsserts
         $parentKey = $parent->getKeyName();
         $childModel = $hasManyRelation->getRelated();
         $childKey = $childModel->getKeyName();
+
+        /** @laravel-versions */
         $childForeignKey = method_exists($hasManyRelation, 'getForeignKeyName')
             ? $hasManyRelation->getForeignKeyName() : last(explode('.', $hasManyRelation->getForeignKey()));
 
