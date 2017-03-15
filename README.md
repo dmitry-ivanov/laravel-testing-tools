@@ -96,6 +96,7 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertEloquentFillableNotEquals](#asserteloquentfillablenotequals)
   - [assertEloquentTouchesEquals](#asserteloquenttouchesequals)
   - [assertEloquentTouchesNotEquals](#asserteloquenttouchesnotequals)
+  - [assertEloquentHasMany](#asserteloquenthasmany)
 - [ExceptionAsserts](#exceptionasserts)
   - [willSeeException](#willseeexception)
 - [FilesystemAsserts](#filesystemasserts)
@@ -386,7 +387,7 @@ $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body']);
 Checks if Eloquent model touched relations are equal to specified value:
 
 ```php
-$this->assertEloquentTouchesEquals(Post::class, ['comment']);
+$this->assertEloquentTouchesEquals(Comment::class, ['post']);
 ```
 
 #### `assertEloquentTouchesNotEquals()`
@@ -394,8 +395,18 @@ $this->assertEloquentTouchesEquals(Post::class, ['comment']);
 Checks if Eloquent model touched relations are not equal to specified value:
 
 ```php
-$this->assertEloquentTouchesNotEquals(Post::class, ['user']);
+$this->assertEloquentTouchesNotEquals(Comment::class, ['user']);
 ```
+
+#### `assertEloquentHasMany()`
+
+Checks if Eloquent model has specified `HasMany` relation:
+
+```php
+$this->assertEloquentHasMany(Post::class, 'comments');
+```
+
+> NOTE: In order to use this assertion, you have to create model factories for both classes.
 
 ### ExceptionAsserts
 
