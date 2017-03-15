@@ -7,20 +7,6 @@ use Post;
 
 class DatabaseAssertsTest extends TestCase
 {
-    public function setUp()
-    {
-        parent::setUp();
-
-        $this->seedDatabase();
-    }
-
-    private function seedDatabase()
-    {
-        factory(Post::class)->create(['title' => 'First Post']);
-        factory(Post::class)->create(['title' => 'Second Post']);
-        factory(Post::class)->create(['title' => 'Third Post']);
-    }
-
     /** @test */
     public function it_has_see_database_table_assertion()
     {
@@ -36,6 +22,10 @@ class DatabaseAssertsTest extends TestCase
     /** @test */
     public function it_has_see_in_database_many_assertion()
     {
+        factory(Post::class)->create(['title' => 'First Post']);
+        factory(Post::class)->create(['title' => 'Second Post']);
+        factory(Post::class)->create(['title' => 'Third Post']);
+
         $this->seeInDatabaseMany('posts', [
             ['title' => 'First Post'],
             ['title' => 'Second Post'],
