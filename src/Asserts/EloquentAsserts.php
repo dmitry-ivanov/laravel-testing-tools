@@ -51,12 +51,12 @@ trait EloquentAsserts
         $this->assertInstanceOf(HasMany::class, $hasManyRelation);
 
         $parentKey = $parent->getKeyName();
-        $childClass = get_class($hasManyRelation->getRelated());
-        $childKey = (new $childClass)->getKeyName();
+        $childModel = $hasManyRelation->getRelated();
+        $childKey = $childModel->getKeyName();
         $childForeignKey = method_exists($hasManyRelation, 'getForeignKeyName')
             ? $hasManyRelation->getForeignKeyName() : last(explode('.', $hasManyRelation->getForeignKey()));
 
-        $children = factory($childClass, 3)->create([$childForeignKey => $parent->{$parentKey}]);
+        $children = factory(get_class($childModel), 3)->create([$childForeignKey => $parent->{$parentKey}]);
 
         $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
     }
