@@ -98,6 +98,6 @@ trait EloquentAsserts
         $parent = factory(get_class($parentModel))->create();
         $child = factory($class)->create([$childForeignKey => $parent->{$parentKey}]);
 
-        $this->assertEquals($parent->toArray(), $child->{$relation}->toArray());
+        $this->assertEquals($parent->fresh()->toArray(), $child->{$relation}->toArray());
     }
 }
