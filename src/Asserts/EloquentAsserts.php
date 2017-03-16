@@ -68,16 +68,19 @@ trait EloquentAsserts
     {
         $this->assertMethodExists($class, $relation);
 
-        $parent = factory($class)->create();
-        $hasManyRelation = $parent->{$relation}();
+        $hasManyRelation = (new $class)->{$relation}();
         $this->assertInstanceOf(HasMany::class, $hasManyRelation);
 
         $createMethod = 'create' . title_case(str_singular($relation));
         $this->assertMethodExists($class, $createMethod);
 
-        $childModel = $hasManyRelation->getRelated();
-        $childAttributes = factory(get_class($childModel))->make()->toArray();
-        $child = $parent->{$createMethod}($childAttributes);
+        $parent = factory($class)->create();
+        $child = $parent->{$createMethod}(
+            factory(get_class($hasManyRelation->getRelated()))
+                ->make()
+                ->toArray()
+        );
+
         $this->assertEquals($child->fresh()->toArray(), $parent->{$relation}->first()->toArray());
     }
 
