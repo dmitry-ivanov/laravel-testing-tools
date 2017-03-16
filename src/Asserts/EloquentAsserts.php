@@ -47,11 +47,10 @@ trait EloquentAsserts
     {
         $this->assertMethodExists($class, $relation);
 
-        $parent = factory($class)->create();
-        $hasManyRelation = $parent->{$relation}();
+        $hasManyRelation = (new $class)->{$relation}();
         $this->assertInstanceOf(HasMany::class, $hasManyRelation);
 
-        $parentKey = $parent->getKeyName();
+        $parentKey = $hasManyRelation->getParent()->getKeyName();
         $childModel = $hasManyRelation->getRelated();
         $childKey = $childModel->getKeyName();
 
@@ -59,6 +58,7 @@ trait EloquentAsserts
         $childForeignKey = method_exists($hasManyRelation, 'getForeignKeyName')
             ? $hasManyRelation->getForeignKeyName() : last(explode('.', $hasManyRelation->getForeignKey()));
 
+        $parent = factory($class)->create();
         $children = factory(get_class($childModel), 3)->create([$childForeignKey => $parent->{$parentKey}]);
 
         $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
