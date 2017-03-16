@@ -436,9 +436,9 @@ Assuming that `Post` class has `createComment` method:
 ```php
 class Post extends Model
 {
-    public function createComment(array $comment)
+    public function createComment(array $attributes)
     {
-        return $this->comments()->create($comment);
+        return $this->comments()->create($attributes);
     }
 }
 ```

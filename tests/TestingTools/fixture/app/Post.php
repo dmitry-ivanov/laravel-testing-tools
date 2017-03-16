@@ -14,8 +14,8 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
-    public function createComment(array $comment)
+    public function createComment(array $attributes)
     {
-        return $this->comments()->create($comment);
+        return $this->comments()->create($attributes);
     }
 }
