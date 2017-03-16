@@ -62,4 +62,21 @@ trait EloquentAsserts
 
         $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
     }
+
+    protected function assertEloquentHasCreateRelationMethod($class, $relation)
+    {
+        $this->assertMethodExists($class, $relation);
+
+        $parent = factory($class)->create();
+        $hasManyRelation = $parent->{$relation}();
+        $this->assertInstanceOf(HasMany::class, $hasManyRelation);
+
+        $createMethod = 'create' . title_case(str_singular($relation));
+        $this->assertMethodExists($class, $createMethod);
+
+        $childModel = $hasManyRelation->getRelated();
+        $childAttributes = factory(get_class($childModel))->make()->toArray();
+        $child = $parent->{$createMethod}($childAttributes);
+        $this->assertEquals($child->fresh()->toArray(), $parent->{$relation}->first()->toArray());
+    }
 }
