@@ -92,7 +92,7 @@ trait EloquentAsserts
         $this->assertInstanceOf(BelongsTo::class, $belongsToRelation);
 
         $parentModel = $belongsToRelation->getRelated();
-        $parentKey = $belongsToRelation->getOwnerKey();
+        $parentKey = $parentModel->getKeyName();
         $childForeignKey = $belongsToRelation->getForeignKey();
 
         $parent = factory(get_class($parentModel))->create();
