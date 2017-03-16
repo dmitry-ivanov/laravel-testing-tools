@@ -417,9 +417,11 @@ Checks if Eloquent model has create method for specified `HasMany` relation:
 
 ```php
 $this->assertEloquentHasCreateRelationMethod(Post::class, 'comments');
+```
 
-// Assuming that `Post` class has `createComment` method
+Assuming that `Post` class has `createComment` method:
 
+```php
 class Post extends Model
 {
     public function createComment(array $comment)
