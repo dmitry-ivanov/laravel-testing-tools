@@ -48,4 +48,10 @@ class EloquentAssertsTest extends TestCase
     {
         $this->assertEloquentHasMany(Post::class, 'comments');
     }
+
+    /** @test */
+    public function it_has_eloquent_has_create_relation_method_assertion()
+    {
+        $this->assertEloquentHasCreateRelationMethod(Post::class, 'comments');
+    }
 }
