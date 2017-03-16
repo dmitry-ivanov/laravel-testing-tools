@@ -2,6 +2,7 @@
 
 namespace Illuminated\Testing\Asserts;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait EloquentAsserts
@@ -78,5 +79,22 @@ trait EloquentAsserts
         $childAttributes = factory(get_class($childModel))->make()->toArray();
         $child = $parent->{$createMethod}($childAttributes);
         $this->assertEquals($child->fresh()->toArray(), $parent->{$relation}->first()->toArray());
+    }
+
+    protected function assertEloquentBelongsTo($class, $relation)
+    {
+        $this->assertMethodExists($class, $relation);
+
+        $belongsToRelation = (new $class)->{$relation}();
+        $this->assertInstanceOf(BelongsTo::class, $belongsToRelation);
+
+        $parentModel = $belongsToRelation->getRelated();
+        $parentKey = $belongsToRelation->getOwnerKey();
+        $childForeignKey = $belongsToRelation->getForeignKey();
+
+        $parent = factory(get_class($parentModel))->create();
+        $child = factory($class)->create([$childForeignKey => $parent->{$parentKey}]);
+
+        $this->assertEquals($parent->toArray(), $child->{$relation}->toArray());
     }
 }
