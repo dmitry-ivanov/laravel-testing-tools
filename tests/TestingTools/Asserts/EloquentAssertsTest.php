@@ -2,6 +2,7 @@
 
 namespace Illuminated\Testing\TestingTools\Tests\Asserts;
 
+use Comment;
 use Illuminated\Testing\TestingTools\Tests\TestCase;
 use Post;
 
@@ -53,5 +54,11 @@ class EloquentAssertsTest extends TestCase
     public function it_has_eloquent_has_create_relation_method_assertion()
     {
         $this->assertEloquentHasCreateRelationMethod(Post::class, 'comments');
+    }
+
+    /** @test */
+    public function it_has_eloquent_belongs_to_assertion()
+    {
+        $this->assertEloquentBelongsTo(Comment::class, 'post');
     }
 }

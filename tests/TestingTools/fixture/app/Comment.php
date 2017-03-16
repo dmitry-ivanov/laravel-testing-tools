@@ -6,4 +6,9 @@ class Comment extends Model
 {
     protected $table = 'comments';
     protected $fillable = ['body'];
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
 }
