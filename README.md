@@ -98,6 +98,7 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertEloquentTouchesNotEquals](#asserteloquenttouchesnotequals)
   - [assertEloquentHasMany](#asserteloquenthasmany)
   - [assertEloquentHasCreateRelationMethod](#asserteloquenthascreaterelationmethod)
+  - [assertEloquentBelongsTo](#asserteloquentbelongsto)
 - [ExceptionAsserts](#exceptionasserts)
   - [willSeeException](#willseeexception)
 - [FilesystemAsserts](#filesystemasserts)
@@ -439,6 +440,28 @@ class Post extends Model
     public function createComment(array $attributes)
     {
         return $this->comments()->create($attributes);
+    }
+}
+```
+
+#### `assertEloquentBelongsTo()`
+
+> NOTE: In order to use this assertion, you have to create model factories for both classes.
+
+Checks if Eloquent model has specified `BelongsTo` relation:
+
+```php
+$this->assertEloquentBelongsTo(Comment::class, 'post');
+```
+
+Assuming that `Comment` class has `post` relation:
+
+```php
+class Comment extends Model
+{
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
     }
 }
 ```
