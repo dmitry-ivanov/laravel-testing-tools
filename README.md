@@ -409,6 +409,18 @@ Checks if Eloquent model has specified `HasMany` relation:
 $this->assertEloquentHasMany(Post::class, 'comments');
 ```
 
+Assuming that `Post` class has `comments` relation:
+
+```php
+class Post extends Model
+{
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+}
+```
+
 #### `assertEloquentHasCreateRelationMethod()`
 
 > NOTE: In order to use this assertion, you have to create model factories for both classes.
