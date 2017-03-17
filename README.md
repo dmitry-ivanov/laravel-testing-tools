@@ -703,7 +703,7 @@ $this->seeRegisteredAlias('Twitter');
 Checks that specified alias was not registered by alias loader:
 
 ```php
-$this->dontSeeRegisteredAlias('Unicorn');
+$this->dontSeeRegisteredAlias('FooBarBaz');
 ```
 
 #### `seeRegisteredCommand()`
@@ -719,5 +719,5 @@ $this->seeRegisteredCommand('report');
 Checks that specified command was not registered by service provider:
 
 ```php
-$this->dontSeeRegisteredCommand('feed-unicorns');
+$this->dontSeeRegisteredCommand('foobarbaz');
 ```
