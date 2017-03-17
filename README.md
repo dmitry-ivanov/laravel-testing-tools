@@ -98,6 +98,7 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertEloquentTouchesNotEquals](#asserteloquenttouchesnotequals)
   - [assertEloquentHasMany](#asserteloquenthasmany)
   - [assertEloquentHasCreateRelationMethod](#asserteloquenthascreaterelationmethod)
+  - [assertEloquentHasCreateManyRelationsMethod](#asserteloquenthascreatemanyrelationsmethod)
   - [assertEloquentBelongsTo](#asserteloquentbelongsto)
 - [ExceptionAsserts](#exceptionasserts)
   - [willSeeException](#willseeexception)
@@ -426,7 +427,7 @@ class Post extends Model
 
 > NOTE: In order to use this assertion, you have to create model factories for both classes.
 
-Checks if Eloquent model has create method for specified `HasMany` relation:
+Checks if Eloquent model has `create` method for specified `HasMany` relation:
 
 ```php
 $this->assertEloquentHasCreateRelationMethod(Post::class, 'comments');
@@ -440,6 +441,28 @@ class Post extends Model
     public function createComment(array $attributes)
     {
         return $this->comments()->create($attributes);
+    }
+}
+```
+
+#### `assertEloquentHasCreateManyRelationsMethod()`
+
+> NOTE: In order to use this assertion, you have to create model factories for both classes.
+
+Checks if Eloquent model has `createMany` method for specified `HasMany` relation:
+
+```php
+$this->assertEloquentHasCreateManyRelationsMethod(Post::class, 'comments');
+```
+
+Assuming that `Post` class has `createManyComments` method:
+
+```php
+class Post extends Model
+{
+    public function createManyComments(array $comments)
+    {
+        return $this->comments()->createMany($comments);
     }
 }
 ```
