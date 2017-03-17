@@ -695,7 +695,7 @@ $this->dontSeeInSchedule('foobarbaz');
 Checks that specified alias was successfully registered by alias loader:
 
 ```php
-$this->seeRegisteredAlias('Acme\Alias\Post');
+$this->seeRegisteredAlias('Twitter');
 ```
 
 #### `dontSeeRegisteredAlias()`
@@ -703,7 +703,7 @@ $this->seeRegisteredAlias('Acme\Alias\Post');
 Checks that specified alias was not registered by alias loader:
 
 ```php
-$this->dontSeeRegisteredAlias('Acme\Alias\Fake');
+$this->dontSeeRegisteredAlias('Unicorn');
 ```
 
 #### `seeRegisteredCommand()`
@@ -711,7 +711,7 @@ $this->dontSeeRegisteredAlias('Acme\Alias\Fake');
 Checks that specified command was successfully registered by service provider:
 
 ```php
-$this->seeRegisteredCommand('do-something');
+$this->seeRegisteredCommand('report');
 ```
 
 #### `dontSeeRegisteredCommand()`
@@ -719,5 +719,5 @@ $this->seeRegisteredCommand('do-something');
 Checks that specified command was not registered by service provider:
 
 ```php
-$this->dontSeeRegisteredCommand('fake');
+$this->dontSeeRegisteredCommand('feed-unicorns');
 ```
