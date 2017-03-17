@@ -18,4 +18,9 @@ class Post extends Model
     {
         return $this->comments()->create($attributes);
     }
+
+    public function createManyComments(array $comments)
+    {
+        return $this->comments()->createMany($comments);
+    }
 }

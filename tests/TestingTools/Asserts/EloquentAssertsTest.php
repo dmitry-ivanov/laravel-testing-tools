@@ -57,6 +57,12 @@ class EloquentAssertsTest extends TestCase
     }
 
     /** @test */
+    public function it_has_eloquent_has_create_many_relations_method_assertion()
+    {
+        $this->assertEloquentHasCreateManyRelationsMethod(Post::class, 'comments');
+    }
+
+    /** @test */
     public function it_has_eloquent_belongs_to_assertion()
     {
         $this->assertEloquentBelongsTo(Comment::class, 'post');
