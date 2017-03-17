@@ -64,14 +64,14 @@ trait EloquentAsserts
         $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
     }
 
-    protected function assertEloquentHasCreateRelationMethod($class, $relation)
+    protected function assertEloquentHasCreateRelationMethod($class, $relation, $createMethod = null)
     {
         $this->assertMethodExists($class, $relation);
 
         $hasManyRelation = (new $class)->{$relation}();
         $this->assertInstanceOf(HasMany::class, $hasManyRelation);
 
-        $createMethod = 'create' . title_case(str_singular($relation));
+        $createMethod = !empty($createMethod) ? $createMethod : 'create' . title_case(str_singular($relation));
         $this->assertMethodExists($class, $createMethod);
 
         $parent = factory($class)->create();
@@ -84,14 +84,14 @@ trait EloquentAsserts
         $this->assertEquals($child->fresh()->toArray(), $parent->{$relation}->first()->toArray());
     }
 
-    protected function assertEloquentHasCreateManyRelationsMethod($class, $relation)
+    protected function assertEloquentHasCreateManyRelationsMethod($class, $relation, $createManyMethod = null)
     {
         $this->assertMethodExists($class, $relation);
 
         $hasManyRelation = (new $class)->{$relation}();
         $this->assertInstanceOf(HasMany::class, $hasManyRelation);
 
-        $createManyMethod = 'createMany' . title_case($relation);
+        $createManyMethod = !empty($createManyMethod) ? $createManyMethod : 'createMany' . title_case($relation);
         $this->assertMethodExists($class, $createManyMethod);
 
         $childModel = $hasManyRelation->getRelated();
