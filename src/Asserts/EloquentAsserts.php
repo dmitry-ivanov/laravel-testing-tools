@@ -104,6 +104,11 @@ trait EloquentAsserts
                 ->toArray()
         );
 
+        /* @laravel-versions */
+        if (is_array($children)) {
+            $children = collect($children);
+        }
+
         $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
     }
 
