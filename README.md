@@ -711,7 +711,7 @@ $this->dontSeeRegisteredAlias('FooBarBaz');
 Checks that specified command was successfully registered by service provider:
 
 ```php
-$this->seeRegisteredCommand('report');
+$this->seeRegisteredCommand('my-command');
 ```
 
 #### `dontSeeRegisteredCommand()`
