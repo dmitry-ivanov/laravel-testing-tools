@@ -51,15 +51,15 @@ class EloquentAssertsTest extends TestCase
     }
 
     /** @test */
-    public function it_has_eloquent_has_create_relation_method_assertion()
+    public function it_has_eloquent_has_create_for_assertion()
     {
-        $this->assertEloquentHasCreateRelationMethod(Post::class, 'comments');
+        $this->assertEloquentHasCreateFor(Post::class, 'comments');
     }
 
     /** @test */
     public function which_supports_optional_parameter_for_specifying_custom_create_method_name()
     {
-        $this->assertEloquentHasCreateRelationMethod(Post::class, 'comments', 'attachComment');
+        $this->assertEloquentHasCreateFor(Post::class, 'comments', 'attachComment');
     }
 
     /** @test */

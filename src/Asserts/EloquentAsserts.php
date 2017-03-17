@@ -64,7 +64,7 @@ trait EloquentAsserts
         $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
     }
 
-    protected function assertEloquentHasCreateRelationMethod($class, $relation, $createMethod = null)
+    protected function assertEloquentHasCreateFor($class, $relation, $createMethod = null)
     {
         $this->assertMethodExists($class, $relation);
 
