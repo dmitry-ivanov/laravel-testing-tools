@@ -84,7 +84,7 @@ trait EloquentAsserts
         $this->assertEquals($child->fresh()->toArray(), $parent->{$relation}->first()->toArray());
     }
 
-    protected function assertEloquentHasCreateManyRelationsMethod($class, $relation, $createManyMethod = null)
+    protected function assertEloquentHasCreateManyFor($class, $relation, $createManyMethod = null)
     {
         $this->assertMethodExists($class, $relation);
 

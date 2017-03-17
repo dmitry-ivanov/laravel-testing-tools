@@ -98,7 +98,7 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertEloquentTouchesNotEquals](#asserteloquenttouchesnotequals)
   - [assertEloquentHasMany](#asserteloquenthasmany)
   - [assertEloquentHasCreateFor](#asserteloquenthascreatefor)
-  - [assertEloquentHasCreateManyRelationsMethod](#asserteloquenthascreatemanyrelationsmethod)
+  - [assertEloquentHasCreateManyFor](#asserteloquenthascreatemanyfor)
   - [assertEloquentBelongsTo](#asserteloquentbelongsto)
 - [ExceptionAsserts](#exceptionasserts)
   - [willSeeException](#willseeexception)
@@ -445,14 +445,14 @@ class Post extends Model
 }
 ```
 
-#### `assertEloquentHasCreateManyRelationsMethod()`
+#### `assertEloquentHasCreateManyFor()`
 
 > NOTE: In order to use this assertion, you have to create model factories for both classes.
 
 Checks if Eloquent model has `createMany` method for specified `HasMany` relation:
 
 ```php
-$this->assertEloquentHasCreateManyRelationsMethod(Post::class, 'comments');
+$this->assertEloquentHasCreateManyFor(Post::class, 'comments');
 ```
 
 Assuming that `Post` class has `createManyComments` method:
