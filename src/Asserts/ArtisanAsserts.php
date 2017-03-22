@@ -61,6 +61,26 @@ trait ArtisanAsserts
         $this->assertNotEquals($expected, $actual, "Failed asserting that artisan output is not `{$expected}`.");
     }
 
+    protected function seeInArtisanOutput($needle)
+    {
+        if (File::exists($needle)) {
+            $needle = File::get($needle);
+        }
+
+        $output = $this->getArtisanOutput();
+        $this->assertContains($needle, $output, "Failed asserting that artisan output contains `{$needle}`.");
+    }
+
+    protected function dontSeeInArtisanOutput($needle)
+    {
+        if (File::exists($needle)) {
+            $needle = File::get($needle);
+        }
+
+        $output = $this->getArtisanOutput();
+        $this->assertNotContains($needle, $output, "Failed asserting that artisan output not contains `{$needle}`.");
+    }
+
     protected function seeArtisanTableOutput(array $data)
     {
         $message = 'Failed asserting that artisan table output consists of expected data.';
