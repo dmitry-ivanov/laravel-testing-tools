@@ -1,3 +1,0 @@
-Migration table created successfully.
-Migrated: 2016_11_01_131415_create_posts_table
-Migrated: 2016_11_01_131425_create_comments_table
