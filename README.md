@@ -77,6 +77,8 @@ Provides Laravel-specific testing helpers and asserts.
   - [willNotGiveConfirmation](#willnotgiveconfirmation)
   - [seeArtisanOutput](#seeartisanoutput)
   - [dontSeeArtisanOutput](#dontseeartisanoutput)
+  - [seeInArtisanOutput](#seeinartisanoutput)
+  - [dontSeeInArtisanOutput](#dontseeinartisanoutput)
   - [seeArtisanTableOutput](#seeartisantableoutput)
   - [dontSeeArtisanTableOutput](#dontseeartisantableoutput)
   - [seeArtisanTableRowsCount](#seeartisantablerowscount)
@@ -250,6 +252,34 @@ Also, path to text file containing output can be provided:
 
 ```php
 $this->dontSeeArtisanOutput('incorrect.output.txt');
+```
+
+#### `seeInArtisanOutput()`
+
+Checks if artisan output contains specified string:
+
+```php
+$this->seeInArtisanOutput('Hello');
+```
+
+Also, path to text file can be provided:
+
+```php
+$this->seeInArtisanOutput('needle.txt');
+```
+
+#### `dontSeeInArtisanOutput()`
+
+Checks if artisan output not contains specified string:
+
+```php
+$this->dontSeeInArtisanOutput('Universe');
+```
+
+Also, path to text file can be provided:
+
+```php
+$this->dontSeeInArtisanOutput('wrong-needle.txt');
 ```
 
 #### `seeArtisanTableOutput()`
