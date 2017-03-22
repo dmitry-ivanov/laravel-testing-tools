@@ -112,7 +112,7 @@ class ArtisanAssertsTest extends TestCase
     {
         $this->artisan('table-output');
 
-        $this->dontSeeInArtisanOutput(__DIR__ . '/ArtisanAssertsTest/table.fake-needle.output.txt');
+        $this->dontSeeInArtisanOutput(__DIR__ . '/ArtisanAssertsTest/table.wrong-needle.output.txt');
     }
 
     /** @test */
