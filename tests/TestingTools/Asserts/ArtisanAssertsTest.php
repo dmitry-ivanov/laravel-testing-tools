@@ -92,11 +92,27 @@ class ArtisanAssertsTest extends TestCase
     }
 
     /** @test */
-    public function which_also_accepts_file_path_instead_of_string_needle()
+    public function which_accepts_file_path_instead_of_string_needle()
     {
         $this->artisan('table-output');
 
         $this->seeInArtisanOutput(__DIR__ . '/ArtisanAssertsTest/table.needle.output.txt');
+    }
+
+    /** @test */
+    public function it_has_dont_see_in_artisan_output_assertion()
+    {
+        $this->artisan('table-output');
+
+        $this->dontSeeInArtisanOutput('Hello');
+    }
+
+    /** @test */
+    public function which_also_accepts_file_path_instead_of_string_needle()
+    {
+        $this->artisan('table-output');
+
+        $this->dontSeeInArtisanOutput(__DIR__ . '/ArtisanAssertsTest/table.fake-needle.output.txt');
     }
 
     /** @test */
