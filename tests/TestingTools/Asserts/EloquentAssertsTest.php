@@ -29,7 +29,7 @@ class EloquentAssertsTest extends TestCase
     /** @test */
     public function it_has_eloquent_fillable_not_equals_assertion()
     {
-        $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body']);
+        $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body', 'publish_at']);
     }
 
     /** @test */
