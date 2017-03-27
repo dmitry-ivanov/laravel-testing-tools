@@ -31,6 +31,18 @@ trait EloquentAsserts
         $this->assertNotEquals($fillable, (new $class)->getFillable(), $message);
     }
 
+    protected function assertEloquentDatesEquals($class, array $dates)
+    {
+        $message = 'Failed asserting that Eloquent dates equals to specified value.';
+        $this->assertEquals($dates, (new $class)->getDates(), $message);
+    }
+
+    protected function assertEloquentDatesNotEquals($class, array $dates)
+    {
+        $message = 'Failed asserting that Eloquent dates not equals to specified value.';
+        $this->assertNotEquals($dates, (new $class)->getDates(), $message);
+    }
+
     protected function assertEloquentTouchesEquals($class, array $touches)
     {
         $message = 'Failed asserting that Eloquent touches equals to specified value.';
