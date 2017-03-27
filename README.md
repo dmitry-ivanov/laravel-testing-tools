@@ -96,6 +96,8 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertEloquentTableNotEquals](#asserteloquenttablenotequals)
   - [assertEloquentFillableEquals](#asserteloquentfillableequals)
   - [assertEloquentFillableNotEquals](#asserteloquentfillablenotequals)
+  - [assertEloquentDatesEquals](#asserteloquentdatesequals)
+  - [assertEloquentDatesNotEquals](#asserteloquentdatesnotequals)
   - [assertEloquentTouchesEquals](#asserteloquenttouchesequals)
   - [assertEloquentTouchesNotEquals](#asserteloquenttouchesnotequals)
   - [assertEloquentHasMany](#asserteloquenthasmany)
@@ -404,7 +406,7 @@ $this->assertEloquentTableNotEquals(User::class, 'posts');
 Checks if Eloquent model fillable fields are equal to specified value:
 
 ```php
-$this->assertEloquentFillableEquals(Post::class, ['title']);
+$this->assertEloquentFillableEquals(Post::class, ['title', 'publish_at']);
 ```
 
 #### `assertEloquentFillableNotEquals()`
@@ -412,7 +414,23 @@ $this->assertEloquentFillableEquals(Post::class, ['title']);
 Checks if Eloquent model fillable fields are not equal to specified value:
 
 ```php
-$this->assertEloquentFillableNotEquals(Post::class, ['title', 'body']);
+$this->assertEloquentFillableNotEquals(Post::class, ['title', 'body', 'publish_at']);
+```
+
+#### `assertEloquentDatesEquals()`
+
+Checks if Eloquent model date fields are equal to specified value:
+
+```php
+$this->assertEloquentDatesEquals(Post::class, ['publish_at', 'created_at', 'updated_at']);
+```
+
+#### `assertEloquentDatesNotEquals()`
+
+Checks if Eloquent model date fields are not equal to specified value:
+
+```php
+$this->assertEloquentDatesNotEquals(Post::class, ['publish_at']);
 ```
 
 #### `assertEloquentTouchesEquals()`
