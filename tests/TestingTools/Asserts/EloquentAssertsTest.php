@@ -39,6 +39,12 @@ class EloquentAssertsTest extends TestCase
     }
 
     /** @test */
+    public function it_has_eloquent_dates_not_equals_assertion()
+    {
+        $this->assertEloquentDatesNotEquals(Post::class, ['publish_at']);
+    }
+
+    /** @test */
     public function it_has_eloquent_touches_equals_assertion()
     {
         $this->assertEloquentTouchesEquals(Post::class, []);
