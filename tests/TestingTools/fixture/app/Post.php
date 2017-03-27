@@ -7,7 +7,7 @@ class Post extends Model
     use Commentable;
 
     protected $table = 'posts';
-    protected $fillable = ['title'];
+    protected $fillable = ['title', 'publish_date'];
 
     public function comments()
     {
