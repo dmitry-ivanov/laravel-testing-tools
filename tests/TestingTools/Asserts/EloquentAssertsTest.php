@@ -2,6 +2,7 @@
 
 namespace Illuminated\Testing\TestingTools\Tests\Asserts;
 
+use Category;
 use Comment;
 use Illuminated\Testing\TestingTools\Tests\TestCase;
 use Post;
@@ -18,6 +19,18 @@ class EloquentAssertsTest extends TestCase
     public function it_has_eloquent_table_not_equals_assertion()
     {
         $this->assertEloquentTableNotEquals(Post::class, 'users');
+    }
+
+    /** @test */
+    public function it_has_eloquent_is_incrementing_assertion()
+    {
+        $this->assertEloquentIsIncrementing(Post::class);
+    }
+
+    /** @test */
+    public function it_has_eloquent_is_not_incrementing_assertion()
+    {
+        $this->assertEloquentIsNotIncrementing(Category::class);
     }
 
     /** @test */
