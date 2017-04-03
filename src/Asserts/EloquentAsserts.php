@@ -21,13 +21,13 @@ trait EloquentAsserts
 
     protected function assertEloquentIsIncrementing($class)
     {
-        $message = "Failed asserting that Eloquent model has incrementing primary key.";
+        $message = 'Failed asserting that Eloquent model has incrementing primary key.';
         $this->assertTrue((new $class)->getIncrementing(), $message);
     }
 
     protected function assertEloquentIsNotIncrementing($class)
     {
-        $message = "Failed asserting that Eloquent model has not incrementing primary key.";
+        $message = 'Failed asserting that Eloquent model has not incrementing primary key.';
         $this->assertFalse((new $class)->getIncrementing(), $message);
     }
 
