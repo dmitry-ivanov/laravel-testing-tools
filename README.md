@@ -94,6 +94,8 @@ Provides Laravel-specific testing helpers and asserts.
 - [EloquentAsserts](#eloquentasserts)
   - [assertEloquentTableEquals](#asserteloquenttableequals)
   - [assertEloquentTableNotEquals](#asserteloquenttablenotequals)
+  - [assertEloquentIsIncrementing](#asserteloquentisincrementing)
+  - [assertEloquentIsNotIncrementing](#asserteloquentisnotincrementing)
   - [assertEloquentFillableEquals](#asserteloquentfillableequals)
   - [assertEloquentFillableNotEquals](#asserteloquentfillablenotequals)
   - [assertEloquentDatesEquals](#asserteloquentdatesequals)
@@ -399,6 +401,22 @@ Checks if Eloquent model table not equals to specified value:
 
 ```php
 $this->assertEloquentTableNotEquals(User::class, 'posts');
+```
+
+#### `assertEloquentIsIncrementing()`
+
+Checks if Eloquent model has incrementing primary key:
+
+```php
+$this->assertEloquentIsIncrementing(Post::class);
+```
+
+#### `assertEloquentIsNotIncrementing()`
+
+Checks if Eloquent model has not incrementing primary key:
+
+```php
+$this->assertEloquentIsNotIncrementing(Category::class);
 ```
 
 #### `assertEloquentFillableEquals()`
