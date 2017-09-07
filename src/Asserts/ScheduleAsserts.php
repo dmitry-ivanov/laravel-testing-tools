@@ -31,11 +31,8 @@ trait ScheduleAsserts
         $expression = $this->normalizeScheduleExpression(clone $event, $expression);
         $this->assertEquals($expression, $event->expression, $message);
 
-        /* @laravel-versions */
-        if (isset($event->runInBackground)) {
-            $message = "Failed asserting that command `{$command}` is scheduled with the same `run in background` mode.";
-            $this->assertEquals($runInBackground, $event->runInBackground, $message);
-        }
+        $message = "Failed asserting that command `{$command}` is scheduled with the same `run in background` mode.";
+        $this->assertEquals($runInBackground, $event->runInBackground, $message);
     }
 
     protected function dontSeeInSchedule($command)
