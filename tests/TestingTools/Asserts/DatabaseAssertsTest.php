@@ -8,25 +8,25 @@ use Post;
 class DatabaseAssertsTest extends TestCase
 {
     /** @test */
-    public function it_has_see_database_table_assertion()
+    public function it_has_database_has_table_assertion()
     {
-        $this->seeDatabaseTable('posts');
+        $this->assertDatabaseHasTable('posts');
     }
 
     /** @test */
-    public function it_has_dont_see_database_table_assertion()
+    public function it_has_database_missing_table_assertion()
     {
-        $this->dontSeeDatabaseTable('unicorns');
+        $this->assertDatabaseMissingTable('unicorns');
     }
 
     /** @test */
-    public function it_has_see_in_database_many_assertion()
+    public function it_has_database_has_many_assertion()
     {
         factory(Post::class)->create(['title' => 'First Post']);
         factory(Post::class)->create(['title' => 'Second Post']);
         factory(Post::class)->create(['title' => 'Third Post']);
 
-        $this->seeInDatabaseMany('posts', [
+        $this->assertDatabaseHasMany('posts', [
             ['title' => 'First Post'],
             ['title' => 'Second Post'],
             ['title' => 'Third Post'],
@@ -34,9 +34,9 @@ class DatabaseAssertsTest extends TestCase
     }
 
     /** @test */
-    public function it_has_dont_see_in_database_many_assertion()
+    public function it_has_database_missing_many_assertion()
     {
-        $this->dontSeeInDatabaseMany('posts', [
+        $this->assertDatabaseMissingMany('posts', [
             ['title' => 'Fourth Post'],
             ['title' => 'Fifth Post'],
         ]);

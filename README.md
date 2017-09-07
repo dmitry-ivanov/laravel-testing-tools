@@ -82,10 +82,10 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertCollectionsEqual](#assertcollectionsequal)
   - [assertCollectionsNotEqual](#assertcollectionsnotequal)
 - [DatabaseAsserts](#databaseasserts)
-  - [seeDatabaseTable](#seedatabasetable)
-  - [dontSeeDatabaseTable](#dontseedatabasetable)
-  - [seeInDatabaseMany](#seeindatabasemany)
-  - [dontSeeInDatabaseMany](#dontseeindatabasemany)
+  - [assertDatabaseHasTable](#assertdatabasehastable)
+  - [assertDatabaseMissingTable](#assertdatabasemissingtable)
+  - [assertDatabaseHasMany](#assertdatabasehasmany)
+  - [assertDatabaseMissingMany](#assertdatabasemissingmany)
 - [EloquentAsserts](#eloquentasserts)
   - [assertEloquentTableEquals](#asserteloquenttableequals)
   - [assertEloquentTableNotEquals](#asserteloquenttablenotequals)
@@ -341,40 +341,40 @@ $this->assertCollectionsNotEqual($collection1, $collection2, 'id');
 
 ### DatabaseAsserts
 
-#### `seeDatabaseTable()`
+#### `assertDatabaseHasTable()`
 
 Checks if specified table exists in database:
 
 ```php
-$this->seeDatabaseTable('users');
+$this->assertDatabaseHasTable('users');
 ```
 
-#### `dontSeeDatabaseTable()`
+#### `assertDatabaseMissingTable()`
 
 Checks if specified table not exists in database:
 
 ```php
-$this->dontSeeDatabaseTable('unicorns');
+$this->assertDatabaseMissingTable('unicorns');
 ```
 
-#### `seeInDatabaseMany()`
+#### `assertDatabaseHasMany()`
 
 Checks if each of the specified rows exists in database:
 
 ```php
-$this->seeInDatabaseMany('posts', [
+$this->assertDatabaseHasMany('posts', [
     ['title' => 'First Post'],
     ['title' => 'Second Post'],
     ['title' => 'Third Post'],
 ]);
 ```
 
-#### `dontSeeInDatabaseMany()`
+#### `assertDatabaseMissingMany()`
 
 Checks if each of the specified rows is not exist in database:
 
 ```php
-$this->dontSeeInDatabaseMany('posts', [
+$this->assertDatabaseMissingMany('posts', [
     ['title' => 'Fourth Post'],
     ['title' => 'Fifth Post'],
 ]);
