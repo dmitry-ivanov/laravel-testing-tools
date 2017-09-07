@@ -16,7 +16,7 @@ trait DatabaseAsserts
         $this->assertFalse(Schema::hasTable($table), "Failed asserting that database missing table `{$table}`.");
     }
 
-    protected function seeInDatabaseMany($table, array $rows)
+    protected function assertDatabaseHasMany($table, array $rows)
     {
         foreach ($rows as $row) {
             $this->assertDatabaseHas($table, $row);
@@ -25,7 +25,7 @@ trait DatabaseAsserts
         return $this;
     }
 
-    protected function dontSeeInDatabaseMany($table, array $rows)
+    protected function assertDatabaseMissingMany($table, array $rows)
     {
         foreach ($rows as $row) {
             $this->assertDatabaseMissing($table, $row);
