@@ -19,7 +19,7 @@ trait ScheduleAsserts
         $this->assertNotCount($count, app(Schedule::class)->events(), $message);
     }
 
-    protected function seeInSchedule($command, $expression, $runInBackground = false)
+    protected function seeInSchedule($command, $expression)
     {
         $event = $this->getScheduleEvent($command);
 
