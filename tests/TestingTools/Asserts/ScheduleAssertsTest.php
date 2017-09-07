@@ -22,12 +22,7 @@ class ScheduleAssertsTest extends TestCase
             $schedule->command('foo')->everyFiveMinutes();
             $schedule->command('bar')->hourly();
 
-            $baz = $schedule->command('baz')->twiceDaily();
-
-            /* @laravel-versions */
-            if (method_exists($baz, 'runInBackground')) {
-                $baz->runInBackground();
-            }
+            $schedule->command('baz')->twiceDaily();
         });
     }
 
