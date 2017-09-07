@@ -8,15 +8,15 @@ use Post;
 class DatabaseAssertsTest extends TestCase
 {
     /** @test */
-    public function it_has_see_database_table_assertion()
+    public function it_has_assert_database_has_table_assertion()
     {
-        $this->seeDatabaseTable('posts');
+        $this->assertDatabaseHasTable('posts');
     }
 
     /** @test */
-    public function it_has_dont_see_database_table_assertion()
+    public function it_has_assert_database_missing_table_assertion()
     {
-        $this->dontSeeDatabaseTable('unicorns');
+        $this->assertDatabaseMissingTable('unicorns');
     }
 
     /** @test */

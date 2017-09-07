@@ -82,8 +82,8 @@ Provides Laravel-specific testing helpers and asserts.
   - [assertCollectionsEqual](#assertcollectionsequal)
   - [assertCollectionsNotEqual](#assertcollectionsnotequal)
 - [DatabaseAsserts](#databaseasserts)
-  - [seeDatabaseTable](#seedatabasetable)
-  - [dontSeeDatabaseTable](#dontseedatabasetable)
+  - [assertDatabaseHasTable](#assertdatabasehastable)
+  - [assertDatabaseMissingTable](#assertdatabasemissingtable)
   - [seeInDatabaseMany](#seeindatabasemany)
   - [dontSeeInDatabaseMany](#dontseeindatabasemany)
 - [EloquentAsserts](#eloquentasserts)
@@ -341,20 +341,20 @@ $this->assertCollectionsNotEqual($collection1, $collection2, 'id');
 
 ### DatabaseAsserts
 
-#### `seeDatabaseTable()`
+#### `assertDatabaseHasTable()`
 
 Checks if specified table exists in database:
 
 ```php
-$this->seeDatabaseTable('users');
+$this->assertDatabaseHasTable('users');
 ```
 
-#### `dontSeeDatabaseTable()`
+#### `assertDatabaseMissingTable()`
 
 Checks if specified table not exists in database:
 
 ```php
-$this->dontSeeDatabaseTable('unicorns');
+$this->assertDatabaseMissingTable('unicorns');
 ```
 
 #### `seeInDatabaseMany()`
