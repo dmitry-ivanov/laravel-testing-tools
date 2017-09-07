@@ -77,10 +77,7 @@ trait EloquentAsserts
         $parentKey = $hasManyRelation->getParent()->getKeyName();
         $childModel = $hasManyRelation->getRelated();
         $childKey = $childModel->getKeyName();
-
-        /* @laravel-versions */
-        $childForeignKey = method_exists($hasManyRelation, 'getForeignKeyName')
-            ? $hasManyRelation->getForeignKeyName() : last(explode('.', $hasManyRelation->getForeignKey()));
+        $childForeignKey = last(explode('.', $hasManyRelation->getForeignKey()));
 
         $parent = factory($class)->create();
         $children = factory(get_class($childModel), 3)->create([$childForeignKey => $parent->{$parentKey}]);
@@ -127,9 +124,7 @@ trait EloquentAsserts
                 ->make()
                 ->toArray()
         );
-
-        /* @laravel-versions */
-        $children = is_array($children) ? collect($children) : $children;
+        $children = collect($children);
 
         $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
     }
