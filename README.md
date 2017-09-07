@@ -2,9 +2,9 @@
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/dd09a6c5-ccae-4c6b-b126-79337cbb6cec/big.png)](https://insight.sensiolabs.com/projects/dd09a6c5-ccae-4c6b-b126-79337cbb6cec)
 
-[![StyleCI](https://styleci.io/repos/75414626/shield?branch=5.2&style=flat)](https://styleci.io/repos/75414626)
-[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-testing-tools.svg?branch=5.2)](https://travis-ci.org/dmitry-ivanov/laravel-testing-tools)
-[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-testing-tools/badge.svg?branch=5.2)](https://coveralls.io/github/dmitry-ivanov/laravel-testing-tools?branch=5.2)
+[![StyleCI](https://styleci.io/repos/75414626/shield?branch=5.3&style=flat)](https://styleci.io/repos/75414626)
+[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-testing-tools.svg?branch=5.3)](https://travis-ci.org/dmitry-ivanov/laravel-testing-tools)
+[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-testing-tools/badge.svg?branch=5.3)](https://coveralls.io/github/dmitry-ivanov/laravel-testing-tools?branch=5.3)
 
 [![Latest Stable Version](https://poser.pugx.org/illuminated/testing-tools/v/stable)](https://packagist.org/packages/illuminated/testing-tools)
 [![Latest Unstable Version](https://poser.pugx.org/illuminated/testing-tools/v/unstable)](https://packagist.org/packages/illuminated/testing-tools)
@@ -18,7 +18,7 @@ Provides Laravel-specific testing helpers and asserts.
 1. Install package through `composer`:
 
     ```shell
-    composer require --dev "illuminated/testing-tools:5.2.*"
+    composer require --dev "illuminated/testing-tools:5.3.*"
     ```
 
 2. Use `Illuminated\Testing\TestingTools` in your `TestCase` class:
