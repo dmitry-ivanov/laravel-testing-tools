@@ -26,7 +26,7 @@ Provides Laravel-specific testing helpers and asserts.
 1. Install package through `composer`:
 
     ```shell
-    composer require --dev illuminated/testing-tools
+    composer require --dev "illuminated/testing-tools:5.5.*"
     ```
 
 2. Use `Illuminated\Testing\TestingTools` in your `TestCase` class:
