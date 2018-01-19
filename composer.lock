@@ -2015,16 +2015,16 @@
         },
         {
             "name": "illuminated/helper-functions",
-            "version": "5.2.3",
+            "version": "5.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-helper-functions.git",
-                "reference": "21d2a217488fdd7e71d623beef1ea886181f0892"
+                "reference": "5ed4d7f26da4c792a065a8a4d812180610643b1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/21d2a217488fdd7e71d623beef1ea886181f0892",
-                "reference": "21d2a217488fdd7e71d623beef1ea886181f0892",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/5ed4d7f26da4c792a065a8a4d812180610643b1c",
+                "reference": "5ed4d7f26da4c792a065a8a4d812180610643b1c",
                 "shasum": ""
             },
             "require": {
@@ -2068,7 +2068,7 @@
                 "helper",
                 "laravel"
             ],
-            "time": "2018-01-12T11:09:36+00:00"
+            "time": "2018-01-19T10:01:51+00:00"
         },
         {
             "name": "myclabs/deep-copy",
