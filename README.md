@@ -1,7 +1,5 @@
 # Laravel Testing Tools
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/dd09a6c5-ccae-4c6b-b126-79337cbb6cec/big.png)](https://insight.sensiolabs.com/projects/dd09a6c5-ccae-4c6b-b126-79337cbb6cec)
-
 [![StyleCI](https://styleci.io/repos/75414626/shield?branch=5.2&style=flat)](https://styleci.io/repos/75414626)
 [![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-testing-tools.svg?branch=5.2)](https://travis-ci.org/dmitry-ivanov/laravel-testing-tools)
 [![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-testing-tools/badge.svg?branch=5.2)](https://coveralls.io/github/dmitry-ivanov/laravel-testing-tools?branch=5.2)
