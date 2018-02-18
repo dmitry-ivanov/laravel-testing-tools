@@ -43,9 +43,9 @@ class ScheduleAssertsTest extends TestCase
     /** @test */
     public function it_has_see_in_schedule_assertion()
     {
-        $this->seeInSchedule('foo', '*/5 * * * * *');
-        $this->seeInSchedule('bar', '0 * * * * *');
-        $this->seeInSchedule('baz', '0 1,13 * * * *', true);
+        $this->seeInSchedule('foo', '*/5 * * * *');
+        $this->seeInSchedule('bar', '0 * * * *');
+        $this->seeInSchedule('baz', '0 1,13 * * *', true);
     }
 
     /** @test */
