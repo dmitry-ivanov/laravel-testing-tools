@@ -652,7 +652,7 @@ Check if the log file doesn't contain the specified content. Path is relative to
 $this->dontSeeInLogFile('example.log', 'Unexisting log message!');
 ```
 
-Or you can pass an array of unexpected content items:
+You can pass an array of unexpected content items:
 
 ```php
 $this->dontSeeInLogFile('example.log', [
