@@ -732,7 +732,7 @@ $this->dontSeeScheduleCount(5);
 
 #### `seeInSchedule()`
 
-Checks that command is in schedule. Expressions can be the same as schedule event methods:
+Check that command is in the schedule. Expressions can be the same as schedule event methods:
 
 ```php
 $this->seeInSchedule('foo', 'everyFiveMinutes');
