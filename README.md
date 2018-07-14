@@ -768,7 +768,7 @@ $this->seeRegisteredAlias('Twitter');
 
 #### `dontSeeRegisteredAlias()`
 
-Checks that specified alias was not registered by alias loader:
+Check that the specified alias was not registered by alias loader:
 
 ```php
 $this->dontSeeRegisteredAlias('FooBarBaz');
