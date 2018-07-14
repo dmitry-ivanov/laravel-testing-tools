@@ -378,7 +378,7 @@ $this->assertDatabaseHasMany('posts', [
 
 #### `assertDatabaseMissingMany()`
 
-Checks if each of the specified rows is not exist in database:
+Check if each of the specified rows doesn't exist in database:
 
 ```php
 $this->assertDatabaseMissingMany('posts', [
