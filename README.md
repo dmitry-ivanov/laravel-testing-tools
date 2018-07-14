@@ -276,13 +276,13 @@ $this->seeInArtisanOutput('needle.txt');
 
 #### `dontSeeInArtisanOutput()`
 
-Checks if artisan output not contains specified string:
+Check if artisan output doesn't contain specified string:
 
 ```php
 $this->dontSeeInArtisanOutput('Universe');
 ```
 
-Also, path to text file can be provided:
+You can pass the path to the text file:
 
 ```php
 $this->dontSeeInArtisanOutput('wrong-needle.txt');
