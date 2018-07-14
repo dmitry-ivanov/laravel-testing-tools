@@ -740,7 +740,7 @@ $this->seeInSchedule('bar', 'hourly');
 $this->seeInSchedule('baz', 'twiceDaily');
 ```
 
-Also you can pass pure cron expressions if you wish:
+You can pass pure cron expressions:
 
 ```php
 $this->seeInSchedule('foo', '*/5 * * * * *');
