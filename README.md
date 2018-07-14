@@ -407,7 +407,7 @@ $this->assertEloquentTableNotEquals(User::class, 'posts');
 
 #### `assertEloquentIsIncrementing()`
 
-Checks if Eloquent model has incrementing primary key:
+Check if an Eloquent model has incrementing primary key:
 
 ```php
 $this->assertEloquentIsIncrementing(Post::class);
