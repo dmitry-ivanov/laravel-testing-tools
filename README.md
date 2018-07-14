@@ -268,7 +268,7 @@ Check if artisan output contains specified string:
 $this->seeInArtisanOutput('Hello');
 ```
 
-Also, path to text file can be provided:
+You can pass the path to the text file:
 
 ```php
 $this->seeInArtisanOutput('needle.txt');
