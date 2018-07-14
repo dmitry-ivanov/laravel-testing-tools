@@ -340,7 +340,7 @@ $this->assertCollectionsEqual($collection1, $collection2, 'id');
 
 #### `assertCollectionsNotEqual()`
 
-Checks if passed collections are not equal according to the specified key:
+Check if passed collections are not equal according to the specified key:
 
 ```php
 $this->assertCollectionsNotEqual($collection1, $collection2, 'id');
