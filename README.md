@@ -716,7 +716,7 @@ $this->assertMethodNotExists(Post::class, 'fly');
 
 #### `seeScheduleCount()`
 
-Checks that schedule events count is exactly as specified:
+Check that schedule events count equals to the specified:
 
 ```php
 $this->seeScheduleCount(3);
@@ -724,7 +724,7 @@ $this->seeScheduleCount(3);
 
 #### `dontSeeScheduleCount()`
 
-Checks that schedule events count is not exactly as specified:
+Check that schedule events count doesn't equal to the specified:
 
 ```php
 $this->dontSeeScheduleCount(5);
