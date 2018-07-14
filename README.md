@@ -431,7 +431,7 @@ $this->assertEloquentFillableEquals(Post::class, ['title', 'publish_at']);
 
 #### `assertEloquentFillableNotEquals()`
 
-Checks if Eloquent model fillable fields are not equal to specified value:
+Check if an Eloquent model fillable fields are not equal to the specified value:
 
 ```php
 $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body', 'publish_at']);
