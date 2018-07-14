@@ -613,7 +613,7 @@ $this->seeLogFile('example.log');
 
 #### `dontSeeLogFile()`
 
-Checks if log file not exists by specified path. Path is relative to `storage/logs` folder:
+Check if the log file doesn't exist by the specified path. Path is relative to `storage/logs` folder:
 
 ```php
 $this->dontSeeLogFile('foobarbaz.log');
