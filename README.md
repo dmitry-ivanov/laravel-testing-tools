@@ -41,7 +41,7 @@ Laravel-specific testing helpers and asserts.
     }
     ```
 
-3. That's it! Now you can use any of provided helpers and asserts in your tests:
+3. Use any of the provided helpers and asserts in your tests:
 
     ```php
     class HelloCommandTest extends TestCase
