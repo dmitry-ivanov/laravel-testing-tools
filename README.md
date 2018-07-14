@@ -621,7 +621,7 @@ $this->dontSeeLogFile('foobarbaz.log');
 
 #### `seeInLogFile()`
 
-Checks if log file contains specified content. Path is relative to `storage/logs` folder.
+Check if the log file contains the specified content. Path is relative to `storage/logs` folder.
 
 ```php
 $this->seeInLogFile('example.log', 'Sample log message!');
