@@ -760,7 +760,7 @@ $this->dontSeeInSchedule('foobarbaz');
 
 #### `seeRegisteredAlias()`
 
-Check that the specified alias was successfully registered by alias loader:
+Check that the specified alias was successfully registered by the alias loader:
 
 ```php
 $this->seeRegisteredAlias('Twitter');
@@ -768,7 +768,7 @@ $this->seeRegisteredAlias('Twitter');
 
 #### `dontSeeRegisteredAlias()`
 
-Check that the specified alias was not registered by alias loader:
+Check that the specified alias was not registered by the alias loader:
 
 ```php
 $this->dontSeeRegisteredAlias('FooBarBaz');
@@ -776,7 +776,7 @@ $this->dontSeeRegisteredAlias('FooBarBaz');
 
 #### `seeRegisteredCommand()`
 
-Checks that specified command was successfully registered by service provider:
+Check that the specified command was successfully registered by the service provider:
 
 ```php
 $this->seeRegisteredCommand('my-command');
@@ -784,7 +784,7 @@ $this->seeRegisteredCommand('my-command');
 
 #### `dontSeeRegisteredCommand()`
 
-Checks that specified command was not registered by service provider:
+Check that the specified command was not registered by the service provider:
 
 ```php
 $this->dontSeeRegisteredCommand('foobarbaz');
