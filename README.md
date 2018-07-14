@@ -415,7 +415,7 @@ $this->assertEloquentIsIncrementing(Post::class);
 
 #### `assertEloquentIsNotIncrementing()`
 
-Checks if Eloquent model has not incrementing primary key:
+Check if an Eloquent model has not incrementing primary key:
 
 ```php
 $this->assertEloquentIsNotIncrementing(Category::class);
