@@ -391,7 +391,7 @@ $this->assertDatabaseMissingMany('posts', [
 
 #### `assertEloquentTableEquals()`
 
-Checks if Eloquent model table equals to specified value:
+Check if Eloquent model table equals to the specified value:
 
 ```php
 $this->assertEloquentTableEquals(User::class, 'users');
