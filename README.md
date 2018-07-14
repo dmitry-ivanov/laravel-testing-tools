@@ -168,7 +168,7 @@ $this->emulateEnvironment('demo');
 
 #### `isTravis()`
 
-Checks if tests are running on [Travis CI](https://travis-ci.org) or not:
+Check if tests are running on [Travis CI](https://travis-ci.org) or not:
 
 ```php
 if ($this->isTravis()) {
