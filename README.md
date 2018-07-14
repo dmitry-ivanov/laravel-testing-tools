@@ -9,7 +9,7 @@
 [![Total Downloads](https://poser.pugx.org/illuminated/testing-tools/downloads)](https://packagist.org/packages/illuminated/testing-tools)
 [![License](https://poser.pugx.org/illuminated/testing-tools/license)](https://packagist.org/packages/illuminated/testing-tools)
 
-Provides Laravel-specific testing helpers and asserts.
+Laravel-specific testing helpers and asserts.
 
 | Laravel | Testing Tools                                                            |
 | ------- | :----------------------------------------------------------------------: |
