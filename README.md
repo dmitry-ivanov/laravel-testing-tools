@@ -423,7 +423,7 @@ $this->assertEloquentIsNotIncrementing(Category::class);
 
 #### `assertEloquentFillableEquals()`
 
-Checks if Eloquent model fillable fields are equal to specified value:
+Check if an Eloquent model fillable fields are equal to the specified value:
 
 ```php
 $this->assertEloquentFillableEquals(Post::class, ['title', 'publish_at']);
