@@ -605,7 +605,7 @@ $this->assertNotFilesCount('./some/folder', 5);
 
 #### `seeLogFile()`
 
-Check if the log file exists by the specified path. Path is relative to `storage/logs` folder:
+Check if the log file exists by the specified path. Path is relative to the `storage/logs` folder:
 
 ```php
 $this->seeLogFile('example.log');
@@ -613,7 +613,7 @@ $this->seeLogFile('example.log');
 
 #### `dontSeeLogFile()`
 
-Check if the log file doesn't exist by the specified path. Path is relative to `storage/logs` folder:
+Check if the log file doesn't exist by the specified path. Path is relative to the `storage/logs` folder:
 
 ```php
 $this->dontSeeLogFile('foobarbaz.log');
@@ -621,7 +621,7 @@ $this->dontSeeLogFile('foobarbaz.log');
 
 #### `seeInLogFile()`
 
-Check if the log file contains the specified content. Path is relative to `storage/logs` folder.
+Check if the log file contains the specified content. Path is relative to the `storage/logs` folder.
 
 ```php
 $this->seeInLogFile('example.log', 'Sample log message!');
@@ -646,7 +646,7 @@ $this->seeInLogFile('example.log', '[%datetime%]: Sample log message!');
 
 #### `dontSeeInLogFile()`
 
-Checks if log file not contains specified content. Path is relative to `storage/logs` folder.
+Checks if log file not contains specified content. Path is relative to the `storage/logs` folder.
 
 ```php
 $this->dontSeeInLogFile('example.log', 'Unexisting log message!');
