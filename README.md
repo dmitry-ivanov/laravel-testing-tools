@@ -198,7 +198,7 @@ $command = $this->runArtisan(new MyCommand, ['--name' => 'Jane']);
 
 #### `willSeeConfirmation()`
 
-Checks if confirmation is seen during artisan command execution:
+Check if confirmation seen during artisan command execution:
 
 ```php
 $this->willSeeConfirmation('Are you sure?', MyCommand::class);
