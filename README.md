@@ -332,7 +332,7 @@ $this->dontSeeArtisanTableRowsCount(5);
 
 #### `assertCollectionsEqual()`
 
-Checks if passed collections are equal according to the specified key:
+Check if passed collections are equal according to the specified key:
 
 ```php
 $this->assertCollectionsEqual($collection1, $collection2, 'id');
