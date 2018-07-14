@@ -234,7 +234,7 @@ $this->dontSeeArtisanOutput('Done!');
 
 #### `seeArtisanOutput()`
 
-Checks if specified string is seen as artisan output:
+Check if the specified string seen as artisan output:
 
 ```php
 $this->seeArtisanOutput('Hello, World!');
