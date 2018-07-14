@@ -366,7 +366,7 @@ $this->assertDatabaseMissingTable('unicorns');
 
 #### `assertDatabaseHasMany()`
 
-Checks if each of the specified rows exists in database:
+Check if each of the specified rows exists in database:
 
 ```php
 $this->assertDatabaseHasMany('posts', [
