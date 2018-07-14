@@ -455,7 +455,7 @@ $this->assertEloquentDatesNotEquals(Post::class, ['publish_at']);
 
 #### `assertEloquentTouchesEquals()`
 
-Checks if Eloquent model touched relations are equal to specified value:
+Check if an Eloquent model touched relations are equal to the specified value:
 
 ```php
 $this->assertEloquentTouchesEquals(Comment::class, ['post']);
@@ -463,7 +463,7 @@ $this->assertEloquentTouchesEquals(Comment::class, ['post']);
 
 #### `assertEloquentTouchesNotEquals()`
 
-Checks if Eloquent model touched relations are not equal to specified value:
+Check if an Eloquent model touched relations are not equal to the specified value:
 
 ```php
 $this->assertEloquentTouchesNotEquals(Comment::class, ['user']);
