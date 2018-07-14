@@ -579,7 +579,7 @@ $this->assertDirectoryEmpty('./some/folder');
 
 #### `assertDirectoryNotEmpty()`
 
-Checks if specified directory is not empty:
+Check if the specified directory is not empty:
 
 ```php
 $this->assertDirectoryNotEmpty('./some/folder');
