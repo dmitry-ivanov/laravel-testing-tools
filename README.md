@@ -314,7 +314,7 @@ $this->dontSeeArtisanTableOutput([
 
 #### `seeArtisanTableRowsCount()`
 
-Check if artisan output table rows count equals to the specified value:
+Check if the artisan output table rows count equals to the specified value:
 
 ```php
 $this->seeArtisanTableRowsCount(3);
@@ -322,7 +322,7 @@ $this->seeArtisanTableRowsCount(3);
 
 #### `dontSeeArtisanTableRowsCount()`
 
-Checks if artisan output table rows count not equals to specified value:
+Check if the artisan output table rows count doesn't equal to the specified value:
 
 ```php
 $this->dontSeeArtisanTableRowsCount(5);
