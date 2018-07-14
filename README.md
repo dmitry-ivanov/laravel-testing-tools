@@ -186,7 +186,7 @@ Run artisan command by the class name, and return it:
 $command = $this->runArtisan(MyCommand::class, ['--name' => 'John']);
 ```
 
-Also, you can run artisan command via command object directly:
+Also, you can run artisan command by the command object:
 
 ```php
 $command = $this->runArtisan(new MyCommand, ['--name' => 'Jane']);
