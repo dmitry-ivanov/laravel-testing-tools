@@ -180,7 +180,7 @@ if ($this->isTravis()) {
 
 #### `runArtisan()`
 
-Runs artisan command directly by the class name, and return it:
+Run artisan command by the class name, and return it:
 
 ```php
 $command = $this->runArtisan(MyCommand::class, ['--name' => 'John']);
