@@ -198,7 +198,7 @@ $command = $this->runArtisan(new MyCommand, ['--name' => 'Jane']);
 
 #### `willSeeConfirmation()`
 
-Check if confirmation is seen during artisan command execution:
+Check if the confirmation is seen during artisan command execution:
 
 ```php
 $this->willSeeConfirmation('Are you sure?', MyCommand::class);
@@ -206,7 +206,7 @@ $this->willSeeConfirmation('Are you sure?', MyCommand::class);
 
 #### `willNotSeeConfirmation()`
 
-Check if confirmation is not seen during artisan command execution:
+Check if the confirmation is not seen during artisan command execution:
 
 ```php
 $this->willNotSeeConfirmation('Are you sure?', MyCommand::class);
@@ -214,7 +214,7 @@ $this->willNotSeeConfirmation('Are you sure?', MyCommand::class);
 
 #### `willGiveConfirmation()`
 
-Check if confirmation is seen during artisan command execution and accept it:
+Check if the confirmation is seen during artisan command execution and accept it:
 
 ```php
 $this->willGiveConfirmation('Are you sure?', MyCommand::class);
@@ -224,7 +224,7 @@ $this->seeArtisanOutput('Done!');
 
 #### `willNotGiveConfirmation()`
 
-Check if confirmation is seen during artisan command execution and refuse it:
+Check if the confirmation is seen during artisan command execution and refuse it:
 
 ```php
 $this->willNotGiveConfirmation('Are you sure?', MyCommand::class);
