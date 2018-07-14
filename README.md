@@ -240,7 +240,7 @@ Check if the specified string is seen as artisan output:
 $this->seeArtisanOutput('Hello, World!');
 ```
 
-The path to the text file containing output can be provided:
+You can pass the path to the text file, containing output:
 
 ```php
 $this->seeArtisanOutput('correct.output.txt');
