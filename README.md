@@ -698,7 +698,7 @@ $this->assertTraitNotUsed(Post::class, Notifiable::class);
 
 #### `assertMethodExists()`
 
-Checks that method exists on specified object or class name:
+Check that method exists on the specified object or class name:
 
 ```php
 $this->assertMethodExists(Post::class, 'save');
@@ -706,7 +706,7 @@ $this->assertMethodExists(Post::class, 'save');
 
 #### `assertMethodNotExists()`
 
-Checks that method not exists on specified object or class name:
+Check that method doesn't exist on the specified object or class name:
 
 ```php
 $this->assertMethodNotExists(Post::class, 'fly');
