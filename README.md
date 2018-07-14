@@ -605,7 +605,7 @@ $this->assertNotFilesCount('./some/folder', 5);
 
 #### `seeLogFile()`
 
-Checks if log file exists by specified path. Path is relative to `storage/logs` folder:
+Check if the log file exists by the specified path. Path is relative to `storage/logs` folder:
 
 ```php
 $this->seeLogFile('example.log');
