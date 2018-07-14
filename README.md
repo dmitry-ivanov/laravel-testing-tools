@@ -666,7 +666,7 @@ $this->dontSeeInLogFile('example.log', [
 
 #### `assertSubclassOf()`
 
-Checks that class is subclass of specified parent class:
+Check that class is a subclass of the specified parent class:
 
 ```php
 $this->assertSubclassOf(Post::class, Model::class);
