@@ -290,7 +290,7 @@ $this->dontSeeInArtisanOutput('wrong-needle.txt');
 
 #### `seeArtisanTableOutput()`
 
-Checks if specified data is seen as artisan table output:
+Check if the specified data is seen as artisan table output:
 
 ```php
 $this->seeArtisanTableOutput([
