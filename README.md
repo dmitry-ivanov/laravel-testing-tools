@@ -646,7 +646,7 @@ $this->seeInLogFile('example.log', '[%datetime%]: Sample log message!');
 
 #### `dontSeeInLogFile()`
 
-Checks if log file not contains specified content. Path is relative to the `storage/logs` folder.
+Check if the log file doesn't contain the specified content. Path is relative to the `storage/logs` folder.
 
 ```php
 $this->dontSeeInLogFile('example.log', 'Unexisting log message!');
