@@ -587,7 +587,7 @@ $this->assertDirectoryNotEmpty('./some/folder');
 
 #### `assertFilesCount()`
 
-Checks if specified directory has specified number of files:
+Check if the specified directory has the specified files count:
 
 ```php
 $this->assertFilesCount('./some/folder', 3);
