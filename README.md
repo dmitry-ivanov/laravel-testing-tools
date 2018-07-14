@@ -350,7 +350,7 @@ $this->assertCollectionsNotEqual($collection1, $collection2, 'id');
 
 #### `assertDatabaseHasTable()`
 
-Check if specified table exists in the database:
+Check if the specified table exists in the database:
 
 ```php
 $this->assertDatabaseHasTable('users');
@@ -358,7 +358,7 @@ $this->assertDatabaseHasTable('users');
 
 #### `assertDatabaseMissingTable()`
 
-Checks if specified table not exists in database:
+Check if the specified table doesn't exist in the database:
 
 ```php
 $this->assertDatabaseMissingTable('unicorns');
