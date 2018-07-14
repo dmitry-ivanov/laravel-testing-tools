@@ -224,7 +224,7 @@ $this->seeArtisanOutput('Done!');
 
 #### `willNotGiveConfirmation()`
 
-Checks if confirmation is seen during artisan command execution and refuses it:
+Check if confirmation is seen during artisan command execution and refuse it:
 
 ```php
 $this->willNotGiveConfirmation('Are you sure?', MyCommand::class);
