@@ -571,7 +571,7 @@ $this->willSeeException(RuntimeException::class, 'Oops! Houston, we have a probl
 
 #### `assertDirectoryEmpty()`
 
-Checks if specified directory is empty:
+Check if the specified directory is empty:
 
 ```php
 $this->assertDirectoryEmpty('./some/folder');
