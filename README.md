@@ -674,7 +674,7 @@ $this->assertSubclassOf(Post::class, Model::class);
 
 #### `assertNotSubclassOf()`
 
-Checks that class is not subclass of specified parent class:
+Check that class is not a subclass of the specified parent class:
 
 ```php
 $this->assertNotSubclassOf(Post::class, Command::class);
