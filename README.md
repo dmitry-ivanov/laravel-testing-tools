@@ -248,7 +248,7 @@ $this->seeArtisanOutput('correct.output.txt');
 
 #### `dontSeeArtisanOutput()`
 
-Checks if specified string is not seen as artisan output:
+Check if the specified string is not seen as artisan output:
 
 ```php
 $this->dontSeeArtisanOutput('Hello, Universe!');
