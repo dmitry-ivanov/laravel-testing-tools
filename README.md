@@ -495,7 +495,7 @@ class Post extends Model
 
 > NOTE: To use this assertion, you have to create model factories for both classes.
 
-Checks if Eloquent model has `create` method for specified `HasMany` relation:
+Check if an Eloquent model has `create` method for the specified `HasMany` relation:
 
 ```php
 $this->assertEloquentHasCreateFor(Post::class, 'comments');
