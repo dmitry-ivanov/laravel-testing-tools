@@ -262,7 +262,7 @@ $this->dontSeeArtisanOutput('incorrect.output.txt');
 
 #### `seeInArtisanOutput()`
 
-Checks if artisan output contains specified string:
+Check if artisan output contains specified string:
 
 ```php
 $this->seeInArtisanOutput('Hello');
