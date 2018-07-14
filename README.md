@@ -539,7 +539,7 @@ class Post extends Model
 
 > NOTE: To use this assertion, you have to create model factories for both classes.
 
-Checks if Eloquent model has specified `BelongsTo` relation:
+Check if an Eloquent model has specified `BelongsTo` relation:
 
 ```php
 $this->assertEloquentBelongsTo(Comment::class, 'post');
