@@ -750,7 +750,7 @@ $this->seeInSchedule('baz', '0 1,13 * * * *');
 
 #### `dontSeeInSchedule()`
 
-Checks that command is not in schedule:
+Check that the command is not in the schedule:
 
 ```php
 $this->dontSeeInSchedule('foobarbaz');
