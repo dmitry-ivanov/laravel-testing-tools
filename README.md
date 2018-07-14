@@ -682,7 +682,7 @@ $this->assertNotSubclassOf(Post::class, Command::class);
 
 #### `assertTraitUsed()`
 
-Checks that class is using specified trait:
+Check that class is using specified trait:
 
 ```php
 $this->assertTraitUsed(User::class, Notifiable::class);
@@ -690,7 +690,7 @@ $this->assertTraitUsed(User::class, Notifiable::class);
 
 #### `assertTraitNotUsed()`
 
-Checks that class is not using specified trait:
+Check that class is not using specified trait:
 
 ```php
 $this->assertTraitNotUsed(Post::class, Notifiable::class);
