@@ -439,7 +439,7 @@ $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body', 'publish_a
 
 #### `assertEloquentDatesEquals()`
 
-Checks if Eloquent model date fields are equal to specified value:
+Check if an Eloquent model date fields are equal to the specified value:
 
 ```php
 $this->assertEloquentDatesEquals(Post::class, ['publish_at', 'created_at', 'updated_at']);
@@ -447,7 +447,7 @@ $this->assertEloquentDatesEquals(Post::class, ['publish_at', 'created_at', 'upda
 
 #### `assertEloquentDatesNotEquals()`
 
-Checks if Eloquent model date fields are not equal to specified value:
+Check if an Eloquent model date fields are not equal to the specified value:
 
 ```php
 $this->assertEloquentDatesNotEquals(Post::class, ['publish_at']);
