@@ -493,7 +493,7 @@ class Post extends Model
 
 #### `assertEloquentHasCreateFor()`
 
-> NOTE: In order to use this assertion, you have to create model factories for both classes.
+> NOTE: To use this assertion, you have to create model factories for both classes.
 
 Checks if Eloquent model has `create` method for specified `HasMany` relation:
 
