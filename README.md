@@ -760,7 +760,7 @@ $this->dontSeeInSchedule('foobarbaz');
 
 #### `seeRegisteredAlias()`
 
-Checks that specified alias was successfully registered by alias loader:
+Check that the specified alias was successfully registered by alias loader:
 
 ```php
 $this->seeRegisteredAlias('Twitter');
