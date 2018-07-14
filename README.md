@@ -627,7 +627,7 @@ Check if the log file contains the specified content. Path is relative to the `s
 $this->seeInLogFile('example.log', 'Sample log message!');
 ```
 
-Or you can pass an array of expected content items:
+You can pass an array of expected content items:
 
 ```php
 $this->seeInLogFile('example.log', [
