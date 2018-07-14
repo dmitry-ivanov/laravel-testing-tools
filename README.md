@@ -254,7 +254,7 @@ Check if the specified string is not seen as artisan output:
 $this->dontSeeArtisanOutput('Hello, Universe!');
 ```
 
-Also, path to text file containing output can be provided:
+You can pass the path to the text file, containing output:
 
 ```php
 $this->dontSeeArtisanOutput('incorrect.output.txt');
