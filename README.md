@@ -302,7 +302,7 @@ $this->seeArtisanTableOutput([
 
 #### `dontSeeArtisanTableOutput()`
 
-Checks if specified data is not seen as artisan table output:
+Check if the specified data is not seen as artisan table output:
 
 ```php
 $this->dontSeeArtisanTableOutput([
