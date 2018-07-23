@@ -1,5 +1,7 @@
 # Laravel Testing Tools
 
+[<img src="https://user-images.githubusercontent.com/1286821/43083932-4915853a-8ea0-11e8-8983-db9e0f04e772.png" alt="Become a Patron" width="160" />](https://www.patreon.com/illuminated)
+
 [![StyleCI](https://styleci.io/repos/75414626/shield?branch=5.4&style=flat)](https://styleci.io/repos/75414626)
 [![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-testing-tools.svg?branch=5.4)](https://travis-ci.org/dmitry-ivanov/laravel-testing-tools)
 [![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-testing-tools/badge.svg?branch=5.4)](https://coveralls.io/github/dmitry-ivanov/laravel-testing-tools?branch=5.4)
@@ -788,3 +790,9 @@ Checks that specified command was not registered by service provider:
 ```php
 $this->dontSeeRegisteredCommand('foobarbaz');
 ```
+
+## License
+
+The MIT License. Please see [License File](LICENSE) for more information.
+
+[<img src="https://user-images.githubusercontent.com/1286821/43086829-ff7c006e-8ea6-11e8-8b03-ecf97ca95b2e.png" alt="Support on Patreon" width="125" />](https://www.patreon.com/illuminated)
