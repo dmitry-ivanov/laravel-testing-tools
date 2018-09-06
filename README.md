@@ -31,7 +31,7 @@ Laravel-specific testing helpers and asserts.
     composer require --dev illuminated/testing-tools
     ```
 
-2. Use `Illuminated\Testing\TestingTools` trait and disable `$mockConsoleOutput`:
+2. Use `Illuminated\Testing\TestingTools` and disable `$mockConsoleOutput`:
 
     ```php
     use Illuminated\Testing\TestingTools;
