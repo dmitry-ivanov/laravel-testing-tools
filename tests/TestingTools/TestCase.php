@@ -36,7 +36,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         $this->artisan('migrate', [
             '--database' => 'testing',
-            '--path' => relative_path(__DIR__, base_path()) . '/fixture/database/migrations/',
+            '--realpath' => true,
+            '--path' => __DIR__ . '/fixture/database/migrations/',
         ]);
         $this->seeInArtisanOutput('Migrated');
     }
