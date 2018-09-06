@@ -16,6 +16,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         parent::setUp();
 
+        $this->withoutMockingConsoleOutput();
         $this->setUpDatabase();
         $this->setUpFactories();
         $this->setUpViews();
