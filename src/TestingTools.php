@@ -30,4 +30,6 @@ trait TestingTools
     use ReflectionAsserts;
     use ScheduleAsserts;
     use ServiceProviderAsserts;
+
+    public $mockConsoleOutput = false;
 }

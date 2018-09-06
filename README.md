@@ -31,7 +31,7 @@ Laravel-specific testing helpers and asserts.
     composer require --dev "illuminated/testing-tools:5.7.*"
     ```
 
-2. Use `Illuminated\Testing\TestingTools` in your `TestCase` class:
+2. Use `Illuminated\Testing\TestingTools` and disable `$mockConsoleOutput`:
 
     ```php
     use Illuminated\Testing\TestingTools;
@@ -39,6 +39,8 @@ Laravel-specific testing helpers and asserts.
     abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
     {
         use TestingTools;
+
+        public $mockConsoleOutput = false;
 
         // ...
     }
