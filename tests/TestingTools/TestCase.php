@@ -12,11 +12,12 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     use TestingTools;
 
+    public $mockConsoleOutput = false;
+
     public function setUp()
     {
         parent::setUp();
 
-        $this->withoutMockingConsoleOutput();
         $this->setUpDatabase();
         $this->setUpFactories();
         $this->setUpViews();
