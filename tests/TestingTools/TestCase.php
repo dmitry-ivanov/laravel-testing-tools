@@ -2,11 +2,11 @@
 
 namespace Illuminated\Testing\TestingTools\Tests;
 
+use Kernel;
 use FixtureServiceProvider;
-use Illuminate\Contracts\Console\Kernel as KernelContract;
 use Illuminate\Support\Facades\DB;
 use Illuminated\Testing\TestingTools;
-use Kernel;
+use Illuminate\Contracts\Console\Kernel as KernelContract;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {

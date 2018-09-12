@@ -2,9 +2,9 @@
 
 namespace Illuminated\Testing\TestingTools\Tests\Asserts;
 
-use ConfirmableTraitCommand;
-use ConfirmationCommand;
 use GenericCommand;
+use ConfirmationCommand;
+use ConfirmableTraitCommand;
 use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class ArtisanAssertsTest extends TestCase

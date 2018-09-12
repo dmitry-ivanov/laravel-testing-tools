@@ -2,10 +2,10 @@
 
 namespace Illuminated\Testing\TestingTools\Tests\Asserts;
 
-use Category;
-use Comment;
-use Illuminated\Testing\TestingTools\Tests\TestCase;
 use Post;
+use Comment;
+use Category;
+use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class EloquentAssertsTest extends TestCase
 {
