@@ -2,8 +2,8 @@
 
 namespace Illuminated\Testing\Asserts;
 
-use Illuminate\Support\Facades\File;
 use Mockery;
+use Illuminate\Support\Facades\File;
 
 trait ArtisanAsserts
 {
