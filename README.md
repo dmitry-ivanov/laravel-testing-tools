@@ -25,7 +25,7 @@ Laravel-specific testing helpers and asserts.
 
 ## Usage
 
-1. Install package through `composer`:
+1. Install the package via Composer:
 
     ```shell
     composer require --dev illuminated/testing-tools
