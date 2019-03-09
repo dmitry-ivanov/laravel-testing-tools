@@ -68,7 +68,8 @@ trait ArtisanAsserts
         }
 
         $output = $this->getArtisanOutput();
-        $this->assertContains($needle, $output, "Failed asserting that artisan output contains `{$needle}`.");
+        $message = "Failed asserting that artisan output contains `{$needle}`.";
+        $this->assertStringContainsString($needle, $output, $message);
     }
 
     protected function dontSeeInArtisanOutput($needle)
@@ -78,7 +79,8 @@ trait ArtisanAsserts
         }
 
         $output = $this->getArtisanOutput();
-        $this->assertNotContains($needle, $output, "Failed asserting that artisan output not contains `{$needle}`.");
+        $message = "Failed asserting that artisan output not contains `{$needle}`.";
+        $this->assertStringNotContainsString($needle, $output, $message);
     }
 
     protected function seeArtisanTableOutput(array $data)

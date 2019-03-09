@@ -3,21 +3,19 @@
     "description": "Laravel-specific testing helpers and asserts.",
     "keywords": ["laravel", "testing", "helpers", "asserts"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Dmitry Ivanov",
-            "email": "dmitry.g.ivanov@gmail.com"
-        }
-    ],
+    "authors": [{
+        "name": "Dmitry Ivanov",
+        "email": "dmitry.g.ivanov@gmail.com"
+    }],
     "require": {
         "php": "^7.1.3",
-        "illuminate/support": "5.7.*",
-        "illuminate/database": "5.7.*",
+        "illuminate/support": "5.8.*",
+        "illuminate/database": "5.8.*",
         "mockery/mockery": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0",
-        "orchestra/testbench": "3.7.*"
+        "phpunit/phpunit": "^7.5|^8.0",
+        "orchestra/testbench": "3.8.*"
     },
     "autoload": {
         "psr-4": {

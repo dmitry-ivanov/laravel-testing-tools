@@ -14,7 +14,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     public $mockConsoleOutput = false;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

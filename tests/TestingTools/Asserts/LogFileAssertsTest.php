@@ -8,7 +8,7 @@ use Illuminated\Testing\TestingTools\Tests\TestCase;
 
 class LogFileAssertsTest extends TestCase
 {
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -81,7 +81,7 @@ class LogFileAssertsTest extends TestCase
         ]);
     }
 
-    public function tearDown()
+    protected function tearDown(): void
     {
         File::delete(storage_path('logs/example.log'));
 

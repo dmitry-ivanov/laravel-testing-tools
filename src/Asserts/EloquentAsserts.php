@@ -137,7 +137,7 @@ trait EloquentAsserts
 
         $parentModel = $belongsToRelation->getRelated();
         $parentKey = $parentModel->getKeyName();
-        $childForeignKey = $belongsToRelation->getForeignKey();
+        $childForeignKey = $belongsToRelation->getForeignKeyName();
 
         $parent = factory(get_class($parentModel))->create();
         $child = factory($class)->create([$childForeignKey => $parent->{$parentKey}]);
