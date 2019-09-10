@@ -23,9 +23,8 @@
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/TestingTools/TestCase.php",
-            "tests/TestingTools/fixture/app"
-        ]
+        "psr-4": {
+            "Illuminated\\TestingTools\\Tests\\": "tests/"
+        }
     }
 }
