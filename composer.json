@@ -1,8 +1,12 @@
 {
     "name": "illuminated/testing-tools",
     "description": "Laravel-specific testing helpers and asserts.",
-    "keywords": ["laravel", "testing", "helpers", "asserts"],
+    "keywords": ["laravel", "testing", "tools", "helpers", "assertions"],
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/dmitry-ivanov/laravel-testing-tools/issues",
+        "source": "https://github.com/dmitry-ivanov/laravel-testing-tools"
+    },
     "authors": [{
         "name": "Dmitry Ivanov",
         "email": "dmitry.g.ivanov@gmail.com"
@@ -27,5 +31,10 @@
             "Illuminated\\Testing\\Tests\\": "tests/",
             "Illuminated\\Testing\\Tests\\App\\": "tests/fixture/app/"
         }
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
