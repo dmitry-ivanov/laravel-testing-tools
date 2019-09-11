@@ -2,8 +2,8 @@
 
 namespace Illuminated\Testing\Tests\Asserts;
 
-use Illuminated\Testing\Tests\TestCase;
 use Illuminated\Testing\Tests\App\Post;
+use Illuminated\Testing\Tests\TestCase;
 
 class DatabaseAssertsTest extends TestCase
 {
