@@ -1,11 +1,11 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Asserts;
+namespace Illuminated\Testing\Tests\Asserts;
 
-use Illuminated\TestingTools\Tests\TestCase;
-use Illuminated\TestingTools\Tests\Fixture\App\Post;
-use Illuminated\TestingTools\Tests\Fixture\App\Comment;
-use Illuminated\TestingTools\Tests\Fixture\App\Category;
+use Illuminated\Testing\Tests\TestCase;
+use Illuminated\Testing\Tests\App\Post;
+use Illuminated\Testing\Tests\App\Comment;
+use Illuminated\Testing\Tests\App\Category;
 
 class EloquentAssertsTest extends TestCase
 {

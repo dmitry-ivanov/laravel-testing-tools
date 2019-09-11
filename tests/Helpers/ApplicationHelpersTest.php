@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Helpers;
+namespace Illuminated\Testing\Tests\Helpers;
 
-use Illuminated\TestingTools\Tests\TestCase;
+use Illuminated\Testing\Tests\TestCase;
 
 class ApplicationHelpersTest extends TestCase
 {

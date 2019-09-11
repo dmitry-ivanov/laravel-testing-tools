@@ -1,12 +1,12 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Asserts;
+namespace Illuminated\Testing\Tests\Asserts;
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
-use Illuminated\TestingTools\Tests\TestCase;
-use Illuminated\TestingTools\Tests\Fixture\App\Post;
-use Illuminated\TestingTools\Tests\Fixture\App\Commentable;
+use Illuminated\Testing\Tests\TestCase;
+use Illuminated\Testing\Tests\App\Post;
+use Illuminated\Testing\Tests\App\Commentable;
 
 class ReflectionAssertsTest extends TestCase
 {

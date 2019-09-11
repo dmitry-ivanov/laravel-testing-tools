@@ -1,12 +1,12 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests;
+namespace Illuminated\Testing\Tests;
 
 use Illuminate\Support\Facades\DB;
 use Illuminated\Testing\TestingTools;
+use Illuminated\Testing\Tests\App\Console\Kernel;
 use Illuminate\Contracts\Console\Kernel as KernelContract;
-use Illuminated\TestingTools\Tests\Fixture\App\Console\Kernel;
-use Illuminated\TestingTools\Tests\Fixture\App\Providers\FixtureServiceProvider;
+use Illuminated\Testing\Tests\App\Providers\FixtureServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {

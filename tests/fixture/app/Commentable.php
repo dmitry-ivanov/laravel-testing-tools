@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Fixture\App;
+namespace Illuminated\Testing\Tests\App;
 
 trait Commentable
 {

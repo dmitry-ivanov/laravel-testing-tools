@@ -1,6 +1,6 @@
 <?php
 
-use Illuminated\TestingTools\Tests\Fixture\App\Post;
+use Illuminated\Testing\Tests\App\Post;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Post::class, function (Faker\Generator $faker) {

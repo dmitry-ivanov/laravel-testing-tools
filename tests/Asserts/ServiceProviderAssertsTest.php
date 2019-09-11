@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Asserts;
+namespace Illuminated\Testing\Tests\Asserts;
 
-use Illuminated\TestingTools\Tests\TestCase;
+use Illuminated\Testing\Tests\TestCase;
 
 class ServiceProviderAssertsTest extends TestCase
 {

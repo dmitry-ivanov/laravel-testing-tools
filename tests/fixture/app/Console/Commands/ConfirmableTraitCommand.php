@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Fixture\App\Console\Commands;
+namespace Illuminated\Testing\Tests\App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;

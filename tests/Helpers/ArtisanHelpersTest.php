@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Helpers;
+namespace Illuminated\Testing\Tests\Helpers;
 
-use Illuminated\TestingTools\Tests\TestCase;
-use Illuminated\TestingTools\Tests\Fixture\App\Console\Commands\GenericCommand;
+use Illuminated\Testing\Tests\TestCase;
+use Illuminated\Testing\Tests\App\Console\Commands\GenericCommand;
 
 class ArtisanHelpersTest extends TestCase
 {

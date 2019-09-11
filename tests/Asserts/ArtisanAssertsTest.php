@@ -1,11 +1,11 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Asserts;
+namespace Illuminated\Testing\Tests\Asserts;
 
-use Illuminated\TestingTools\Tests\TestCase;
-use Illuminated\TestingTools\Tests\Fixture\App\Console\Commands\GenericCommand;
-use Illuminated\TestingTools\Tests\Fixture\App\Console\Commands\ConfirmationCommand;
-use Illuminated\TestingTools\Tests\Fixture\App\Console\Commands\ConfirmableTraitCommand;
+use Illuminated\Testing\Tests\TestCase;
+use Illuminated\Testing\Tests\App\Console\Commands\GenericCommand;
+use Illuminated\Testing\Tests\App\Console\Commands\ConfirmationCommand;
+use Illuminated\Testing\Tests\App\Console\Commands\ConfirmableTraitCommand;
 
 class ArtisanAssertsTest extends TestCase
 {

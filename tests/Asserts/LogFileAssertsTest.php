@@ -1,10 +1,10 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Asserts;
+namespace Illuminated\Testing\Tests\Asserts;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
-use Illuminated\TestingTools\Tests\TestCase;
+use Illuminated\Testing\Tests\TestCase;
 
 class LogFileAssertsTest extends TestCase
 {

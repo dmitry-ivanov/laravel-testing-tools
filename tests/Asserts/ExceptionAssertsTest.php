@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Asserts;
+namespace Illuminated\Testing\Tests\Asserts;
 
 use RuntimeException;
-use Illuminated\TestingTools\Tests\TestCase;
+use Illuminated\Testing\Tests\TestCase;
 
 class ExceptionAssertsTest extends TestCase
 {

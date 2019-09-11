@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests;
+namespace Illuminated\Testing\Tests;
 
 use Illuminated\Testing\TestingTools;
 use Illuminated\Testing\Asserts\ArtisanAsserts;

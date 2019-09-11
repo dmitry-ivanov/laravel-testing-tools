@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Fixture\App\Http\Controllers;
+namespace Illuminated\Testing\Tests\App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Fixture\App\Providers;
+namespace Illuminated\Testing\Tests\App\Providers;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Illuminated\TestingTools\Tests\Fixture\App\Post;
-use Illuminated\TestingTools\Tests\Fixture\App\Console\Commands\RegisteredCommand;
+use Illuminated\Testing\Tests\App\Post;
+use Illuminated\Testing\Tests\App\Console\Commands\RegisteredCommand;
 
 class FixtureServiceProvider extends ServiceProvider
 {

@@ -1,6 +1,6 @@
 <?php
 
-use Illuminated\TestingTools\Tests\Fixture\App\Comment;
+use Illuminated\Testing\Tests\App\Comment;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Comment::class, function (Faker\Generator $faker) {

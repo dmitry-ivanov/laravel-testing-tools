@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminated\TestingTools\Tests\Asserts;
+namespace Illuminated\Testing\Tests\Asserts;
 
-use Illuminated\TestingTools\Tests\TestCase;
-use Illuminated\TestingTools\Tests\Fixture\App\Post;
+use Illuminated\Testing\Tests\TestCase;
+use Illuminated\Testing\Tests\App\Post;
 
 class DatabaseAssertsTest extends TestCase
 {
