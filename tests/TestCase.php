@@ -2,7 +2,6 @@
 
 namespace Illuminated\Testing\Tests;
 
-use Illuminate\Support\Facades\DB;
 use Illuminated\Testing\TestingTools;
 use Illuminated\Testing\Tests\App\Console\Kernel;
 use Illuminate\Contracts\Console\Kernel as KernelContract;
