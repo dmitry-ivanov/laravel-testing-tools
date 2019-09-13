@@ -2,6 +2,7 @@
 
 namespace Illuminated\Testing\Asserts;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -92,7 +93,7 @@ trait EloquentAsserts
         $hasManyRelation = (new $class)->{$relation}();
         $this->assertInstanceOf(HasMany::class, $hasManyRelation);
 
-        $createMethod = !empty($createMethod) ? $createMethod : 'create' . title_case(str_singular($relation));
+        $createMethod = !empty($createMethod) ? $createMethod : 'create' . Str::title(Str::singular($relation));
         $this->assertMethodExists($class, $createMethod);
 
         $parent = factory($class)->create();

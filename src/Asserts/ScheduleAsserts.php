@@ -2,6 +2,7 @@
 
 namespace Illuminated\Testing\Asserts;
 
+use Illuminate\Support\Str;
 use Illuminate\Console\Scheduling\Event;
 use Illuminate\Console\Scheduling\Schedule;
 
@@ -46,7 +47,7 @@ trait ScheduleAsserts
         $schedule = app(Schedule::class);
 
         foreach ($schedule->events() as $event) {
-            if (ends_with($event->command, $command)) {
+            if (Str::endsWith($event->command, $command)) {
                 return $event;
             }
         }

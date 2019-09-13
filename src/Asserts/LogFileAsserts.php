@@ -2,6 +2,7 @@
 
 namespace Illuminated\Testing\Asserts;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
 trait LogFileAsserts
@@ -47,7 +48,7 @@ trait LogFileAsserts
 
     private function normalizeExpectedLogFileContent($content)
     {
-        $content = '/' . preg_quote($content, '/') . (starts_with($content, 'array:') ? '' : '\n') . '/';
+        $content = '/' . preg_quote($content, '/') . (Str::startsWith($content, 'array:') ? '' : '\n') . '/';
         $content = str_replace('%datetime%', '\d{4}-\d{2}-\d{2} \d{2}\:\d{2}\:\d{2}', $content);
 
         return $content;

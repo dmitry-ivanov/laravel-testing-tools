@@ -3,6 +3,7 @@
 namespace Illuminated\Testing\Asserts;
 
 use Mockery;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
 trait ArtisanAsserts
@@ -114,7 +115,7 @@ trait ArtisanAsserts
         $headers = [];
         $outputRows = explode("\n", trim($output));
         foreach ($outputRows as $row) {
-            if (!str_contains($row, '|')) {
+            if (!Str::contains($row, '|')) {
                 continue;
             }
 
