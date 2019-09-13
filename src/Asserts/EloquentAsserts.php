@@ -113,7 +113,7 @@ trait EloquentAsserts
         $hasManyRelation = (new $class)->{$relation}();
         $this->assertInstanceOf(HasMany::class, $hasManyRelation);
 
-        $createManyMethod = !empty($createManyMethod) ? $createManyMethod : 'createMany' . title_case($relation);
+        $createManyMethod = !empty($createManyMethod) ? $createManyMethod : 'createMany' . Str::title($relation);
         $this->assertMethodExists($class, $createManyMethod);
 
         $childModel = $hasManyRelation->getRelated();
