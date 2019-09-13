@@ -21,3 +21,4 @@ about: 'If you want to support a new Laravel version.'
   3. For the new branch, within the `README.md` file:
     - Fix the branch for badges, i.e., from `master` to `6.x`;
     - Set the branch for the installation command, i.e., `illuminated/package:^6.0`;
+  4. Create a new release.
