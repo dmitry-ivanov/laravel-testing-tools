@@ -2,76 +2,182 @@
 
 namespace Illuminated\Testing\Asserts;
 
-use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 trait EloquentAsserts
 {
-    protected function assertEloquentTableEquals($class, $table)
+    /**
+     * Assert that model's table name equals to the given value.
+     *
+     * @param string $class
+     * @param string $table
+     * @return void
+     */
+    protected function assertEloquentTableEquals(string $class, string $table)
     {
+        /** @var \Illuminate\Database\Eloquent\Model $model */
+        $model = new $class;
+
         $message = "Failed asserting that Eloquent table equals to `{$table}`.";
-        $this->assertEquals($table, (new $class)->getTable(), $message);
+        $this->assertEquals($table, $model->getTable(), $message);
     }
 
-    protected function assertEloquentTableNotEquals($class, $table)
+    /**
+     * Assert that model's table name doesn't equal to the given value.
+     *
+     * @param string $class
+     * @param string $table
+     * @return void
+     */
+    protected function assertEloquentTableNotEquals(string $class, string $table)
     {
+        /** @var \Illuminate\Database\Eloquent\Model $model */
+        $model = new $class;
+
         $message = "Failed asserting that Eloquent table not equals to `{$table}`.";
-        $this->assertNotEquals($table, (new $class)->getTable(), $message);
+        $this->assertNotEquals($table, $model->getTable(), $message);
     }
 
-    protected function assertEloquentIsIncrementing($class)
+    /**
+     * Assert that model's primary key is incrementing.
+     *
+     * @param string $class
+     * @return void
+     */
+    protected function assertEloquentIsIncrementing(string $class)
     {
+        /** @var \Illuminate\Database\Eloquent\Model $model */
+        $model = new $class;
+
         $message = 'Failed asserting that Eloquent model has incrementing primary key.';
-        $this->assertTrue((new $class)->getIncrementing(), $message);
+        $this->assertTrue($model->getIncrementing(), $message);
     }
 
-    protected function assertEloquentIsNotIncrementing($class)
+    /**
+     * Assert that model's primary key is not incrementing.
+     *
+     * @param string $class
+     * @return void
+     */
+    protected function assertEloquentIsNotIncrementing(string $class)
     {
+        /** @var \Illuminate\Database\Eloquent\Model $model */
+        $model = new $class;
+
         $message = 'Failed asserting that Eloquent model has not incrementing primary key.';
-        $this->assertFalse((new $class)->getIncrementing(), $message);
+        $this->assertFalse($model->getIncrementing(), $message);
     }
 
-    protected function assertEloquentFillableEquals($class, array $fillable)
+    /**
+     * Assert that model's `fillable` field equals to the given value.
+     *
+     * @param string $class
+     * @param array $fillable
+     * @return void
+     */
+    protected function assertEloquentFillableEquals(string $class, array $fillable)
     {
+        /** @var \Illuminate\Database\Eloquent\Model $model */
+        $model = new $class;
+
         $message = 'Failed asserting that Eloquent fillable equals to specified value.';
-        $this->assertEquals($fillable, (new $class)->getFillable(), $message);
+        $this->assertEquals($fillable, $model->getFillable(), $message);
     }
 
-    protected function assertEloquentFillableNotEquals($class, array $fillable)
+    /**
+     * Assert that model's `fillable` field doesn't equal to the given value.
+     *
+     * @param string $class
+     * @param array $fillable
+     * @return void
+     */
+    protected function assertEloquentFillableNotEquals(string $class, array $fillable)
     {
+        /** @var \Illuminate\Database\Eloquent\Model $model */
+        $model = new $class;
+
         $message = 'Failed asserting that Eloquent fillable not equals to specified value.';
-        $this->assertNotEquals($fillable, (new $class)->getFillable(), $message);
+        $this->assertNotEquals($fillable, $model->getFillable(), $message);
     }
 
-    protected function assertEloquentDatesEquals($class, array $dates)
+    /**
+     * Assert that model's `dates` field equals to the given value.
+     *
+     * @param string $class
+     * @param array $dates
+     * @return void
+     */
+    protected function assertEloquentDatesEquals(string $class, array $dates)
     {
+        /** @var \Illuminate\Database\Eloquent\Model $model */
+        $model = new $class;
+
         $message = 'Failed asserting that Eloquent dates equals to specified value.';
-        $this->assertEquals($dates, (new $class)->getDates(), $message);
+        $this->assertEquals($dates, $model->getDates(), $message);
     }
 
-    protected function assertEloquentDatesNotEquals($class, array $dates)
+    /**
+     * Assert that model's `dates` field doesn't equal to the given value.
+     *
+     * @param string $class
+     * @param array $dates
+     * @return void
+     */
+    protected function assertEloquentDatesNotEquals(string $class, array $dates)
     {
+        /** @var \Illuminate\Database\Eloquent\Model $model */
+        $model = new $class;
+
         $message = 'Failed asserting that Eloquent dates not equals to specified value.';
-        $this->assertNotEquals($dates, (new $class)->getDates(), $message);
+        $this->assertNotEquals($dates, $model->getDates(), $message);
     }
 
-    protected function assertEloquentTouchesEquals($class, array $touches)
+    /**
+     * Assert that model's `touches` field equals to the given value.
+     *
+     * @param string $class
+     * @param array $touches
+     * @return void
+     */
+    protected function assertEloquentTouchesEquals(string $class, array $touches)
     {
+        /** @var \Illuminate\Database\Eloquent\Model $model */
+        $model = new $class;
+
         $message = 'Failed asserting that Eloquent touches equals to specified value.';
-        $this->assertEquals($touches, (new $class)->getTouchedRelations(), $message);
+        $this->assertEquals($touches, $model->getTouchedRelations(), $message);
     }
 
-    protected function assertEloquentTouchesNotEquals($class, array $touches)
+    /**
+     * Assert that model's `touches` field doesn't equal to the given value.
+     *
+     * @param string $class
+     * @param array $touches
+     * @return void
+     */
+    protected function assertEloquentTouchesNotEquals(string $class, array $touches)
     {
+        /** @var \Illuminate\Database\Eloquent\Model $model */
+        $model = new $class;
+
         $message = 'Failed asserting that Eloquent touches not equals to specified value.';
-        $this->assertNotEquals($touches, (new $class)->getTouchedRelations(), $message);
+        $this->assertNotEquals($touches, $model->getTouchedRelations(), $message);
     }
 
-    protected function assertEloquentHasMany($class, $relation)
+    /**
+     * Assert that model has the given `HasMany` relation.
+     *
+     * @param string $class
+     * @param string $relation
+     * @return void
+     */
+    protected function assertEloquentHasMany(string $class, string $relation)
     {
         $this->assertMethodExists($class, $relation);
 
+        /** @var \Illuminate\Database\Eloquent\Relations\HasMany $hasManyRelation */
         $hasManyRelation = (new $class)->{$relation}();
         $this->assertInstanceOf(HasMany::class, $hasManyRelation);
 
@@ -86,16 +192,26 @@ trait EloquentAsserts
         $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
     }
 
-    protected function assertEloquentHasCreateFor($class, $relation, $createMethod = null)
+    /**
+     * Assert that model has `create` method for the given `HasMany` relation.
+     *
+     * @param string $class
+     * @param string $relation
+     * @param string $createMethod
+     * @return void
+     */
+    protected function assertEloquentHasCreateFor(string $class, string $relation, string $createMethod = '')
     {
         $this->assertMethodExists($class, $relation);
 
+        /** @var \Illuminate\Database\Eloquent\Relations\HasMany $hasManyRelation */
         $hasManyRelation = (new $class)->{$relation}();
         $this->assertInstanceOf(HasMany::class, $hasManyRelation);
 
         $createMethod = !empty($createMethod) ? $createMethod : 'create' . Str::title(Str::singular($relation));
         $this->assertMethodExists($class, $createMethod);
 
+        /** @var \Illuminate\Database\Eloquent\Model $child */
         $parent = factory($class)->create();
         $child = $parent->{$createMethod}(
             factory(get_class($hasManyRelation->getRelated()))
@@ -106,10 +222,19 @@ trait EloquentAsserts
         $this->assertEquals($child->fresh()->toArray(), $parent->{$relation}->first()->toArray());
     }
 
-    protected function assertEloquentHasCreateManyFor($class, $relation, $createManyMethod = null)
+    /**
+     * Assert that model has `createMany` method for the given `HasMany` relation.
+     *
+     * @param string $class
+     * @param string $relation
+     * @param string $createManyMethod
+     * @return void
+     */
+    protected function assertEloquentHasCreateManyFor(string $class, string $relation, string $createManyMethod = '')
     {
         $this->assertMethodExists($class, $relation);
 
+        /** @var \Illuminate\Database\Eloquent\Relations\HasMany $hasManyRelation */
         $hasManyRelation = (new $class)->{$relation}();
         $this->assertInstanceOf(HasMany::class, $hasManyRelation);
 
@@ -129,10 +254,18 @@ trait EloquentAsserts
         $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
     }
 
-    protected function assertEloquentBelongsTo($class, $relation)
+    /**
+     * Assert that model has the given `BelongsTo` relation.
+     *
+     * @param string $class
+     * @param string $relation
+     * @return void
+     */
+    protected function assertEloquentBelongsTo(string $class, string $relation)
     {
         $this->assertMethodExists($class, $relation);
 
+        /** @var \Illuminate\Database\Eloquent\Relations\BelongsTo $belongsToRelation */
         $belongsToRelation = (new $class)->{$relation}();
         $this->assertInstanceOf(BelongsTo::class, $belongsToRelation);
 

@@ -9,20 +9,37 @@ use Symfony\Component\Console\Output\BufferedOutput;
 
 trait ArtisanHelpers
 {
+    /**
+     * The artisan output.
+     *
+     * @var \Symfony\Component\Console\Output\BufferedOutput
+     */
     protected static $artisanOutput;
 
+    /**
+     * Run artisan command by the class name, and return it.
+     *
+     * @param \Illuminate\Console\Command|string $command
+     * @param array $parameters
+     * @return \Illuminate\Console\Command
+     */
     protected function runArtisan($command, array $parameters = [])
     {
-        if (!($command instanceof Command)) {
-            $command = new $command;
-        }
+        $command = $command instanceof Command ? $command : new $command;
 
         $command->setLaravel($this->app);
-        $command->run(new ArrayInput($parameters), (self::$artisanOutput = new BufferedOutput));
+
+        self::$artisanOutput = new BufferedOutput;
+        $command->run(new ArrayInput($parameters), self::$artisanOutput);
 
         return $command;
     }
 
+    /**
+     * Get artisan output.
+     *
+     * @return string
+     */
     protected function getArtisanOutput()
     {
         $output = Artisan::output();

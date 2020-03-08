@@ -2,55 +2,103 @@
 
 namespace Illuminated\Testing\Asserts;
 
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 trait LogFileAsserts
 {
-    protected function seeLogFile($path)
+    /**
+     * Assert that the given log file exists.
+     *
+     * The path is relative to `storage/logs` folder.
+     *
+     * @param string $path
+     * @return void
+     */
+    protected function seeLogFile(string $path)
     {
         $message = "Failed asserting that log file `{$path}` exists.";
         $this->assertFileExists($this->composeLogFilePath($path), $message);
     }
 
-    protected function dontSeeLogFile($path)
+    /**
+     * Assert that the given log file doesn't exist.
+     *
+     * The path is relative to `storage/logs` folder.
+     *
+     * @param string $path
+     * @return void
+     */
+    protected function dontSeeLogFile(string $path)
     {
         $message = "Failed asserting that log file `{$path}` not exists.";
         $this->assertFileNotExists($this->composeLogFilePath($path), $message);
     }
 
-    protected function seeInLogFile($path, $expected)
+    /**
+     * Assert that log file contains the given message.
+     *
+     * The path is relative to `storage/logs` folder.
+     *
+     * @param string $path
+     * @param string|array $message
+     * @return void
+     */
+    protected function seeInLogFile(string $path, $message)
     {
-        $content = File::get($this->composeLogFilePath($path));
-        $expected = !is_array($expected) ? [$expected] : $expected;
+        $messages = !is_array($message) ? [$message] : $message;
 
-        foreach ($expected as $item) {
-            $pattern = $this->normalizeExpectedLogFileContent($item);
+        $content = File::get($this->composeLogFilePath($path));
+        foreach ($messages as $item) {
+            $pattern = $this->composeRegexPattern($item);
             $this->assertRegExp($pattern, $content, "Failed asserting that file `{$path}` contains `{$item}`.");
         }
     }
 
-    protected function dontSeeInLogFile($path, $expected)
+    /**
+     * Assert that log file doesn't contain the given message.
+     *
+     * The path is relative to `storage/logs` folder.
+     *
+     * @param string $path
+     * @param string|array $message
+     * @return void
+     */
+    protected function dontSeeInLogFile(string $path, $message)
     {
-        $content = File::get($this->composeLogFilePath($path));
-        $expected = !is_array($expected) ? [$expected] : $expected;
+        $messages = !is_array($message) ? [$message] : $message;
 
-        foreach ($expected as $item) {
-            $pattern = $this->normalizeExpectedLogFileContent($item);
+        $content = File::get($this->composeLogFilePath($path));
+        foreach ($messages as $item) {
+            $pattern = $this->composeRegexPattern($item);
             $this->assertNotRegExp($pattern, $content, "Failed asserting that file `{$path}` not contains `{$item}`.");
         }
     }
 
-    private function composeLogFilePath($path)
+    /**
+     * Compose the log file path.
+     *
+     * @param string $path
+     * @return string
+     */
+    private function composeLogFilePath(string $path)
     {
         return storage_path("logs/{$path}");
     }
 
-    private function normalizeExpectedLogFileContent($content)
+    /**
+     * Compose regex pattern for the given log message.
+     *
+     * @param string $message
+     * @return string
+     */
+    private function composeRegexPattern(string $message)
     {
-        $content = '/' . preg_quote($content, '/') . (Str::startsWith($content, 'array:') ? '' : '\n') . '/';
-        $content = str_replace('%datetime%', '\d{4}-\d{2}-\d{2} \d{2}\:\d{2}\:\d{2}', $content);
+        $pattern = '/'
+            . preg_quote($message, '/')
+            . (Str::startsWith($message, 'array:') ? '' : '\n')
+            . '/';
 
-        return $content;
+        return str_replace('%datetime%', '\d{4}-\d{2}-\d{2} \d{2}\:\d{2}\:\d{2}', $pattern);
     }
 }

@@ -151,7 +151,7 @@ Laravel-specific testing helpers and asserts.
 
 #### `emulateLocal()`
 
-Emulates that application is working at `local` environment:
+Emulate that application is running on the `local` environment:
 
 ```php
 $this->emulateLocal();
@@ -159,7 +159,7 @@ $this->emulateLocal();
 
 #### `emulateProduction()`
 
-Emulates that application is working at `production` environment:
+Emulate that application is running on the `production` environment:
 
 ```php
 $this->emulateProduction();
@@ -167,7 +167,7 @@ $this->emulateProduction();
 
 #### `emulateEnvironment()`
 
-Emulates that application is working at specified environment:
+Emulate that application is running on the given environment:
 
 ```php
 $this->emulateEnvironment('demo');
@@ -175,7 +175,7 @@ $this->emulateEnvironment('demo');
 
 #### `isTravis()`
 
-Check if tests are running on [Travis CI](https://travis-ci.org) or not:
+Check whether application is running on Travis or not:
 
 ```php
 if ($this->isTravis()) {
@@ -193,7 +193,7 @@ Run artisan command by the class name, and return it:
 $command = $this->runArtisan(MyCommand::class, ['--name' => 'John']);
 ```
 
-Also, you can run artisan command by the command object:
+Also, you can pass the command instance as a first argument:
 
 ```php
 $command = $this->runArtisan(new MyCommand, ['--name' => 'Jane']);
@@ -205,7 +205,7 @@ $command = $this->runArtisan(new MyCommand, ['--name' => 'Jane']);
 
 #### `willSeeConfirmation()`
 
-Check if the confirmation is seen during artisan command execution:
+Add expectation that the given confirmation question would be shown:
 
 ```php
 $this->willSeeConfirmation('Are you sure?', MyCommand::class);
@@ -213,7 +213,7 @@ $this->willSeeConfirmation('Are you sure?', MyCommand::class);
 
 #### `willNotSeeConfirmation()`
 
-Check if the confirmation is not seen during artisan command execution:
+Add expectation that the given confirmation question would not be shown:
 
 ```php
 $this->willNotSeeConfirmation('Are you sure?', MyCommand::class);
@@ -221,7 +221,7 @@ $this->willNotSeeConfirmation('Are you sure?', MyCommand::class);
 
 #### `willGiveConfirmation()`
 
-Check if the confirmation is seen during artisan command execution, and accept it:
+Add expectation that the given confirmation question would be shown, and accept it:
 
 ```php
 $this->willGiveConfirmation('Are you sure?', MyCommand::class);
@@ -231,7 +231,7 @@ $this->seeArtisanOutput('Done!');
 
 #### `willNotGiveConfirmation()`
 
-Check if the confirmation is seen during artisan command execution, and refuse it:
+Add expectation that the given confirmation question would be shown, and do not accept it:
 
 ```php
 $this->willNotGiveConfirmation('Are you sure?', MyCommand::class);
@@ -241,13 +241,13 @@ $this->dontSeeArtisanOutput('Done!');
 
 #### `seeArtisanOutput()`
 
-Check if the specified string is seen as artisan output:
+Assert that the given artisan output is seen:
 
 ```php
 $this->seeArtisanOutput('Hello, World!');
 ```
 
-You can pass the path to the text file, containing output:
+Also, you can pass the file path:
 
 ```php
 $this->seeArtisanOutput('correct.output.txt');
@@ -255,13 +255,13 @@ $this->seeArtisanOutput('correct.output.txt');
 
 #### `dontSeeArtisanOutput()`
 
-Check if the specified string is not seen as artisan output:
+Assert that the given artisan output is not seen:
 
 ```php
 $this->dontSeeArtisanOutput('Hello, Universe!');
 ```
 
-You can pass the path to the text file, containing output:
+Also, you can pass the file path:
 
 ```php
 $this->dontSeeArtisanOutput('incorrect.output.txt');
@@ -269,13 +269,13 @@ $this->dontSeeArtisanOutput('incorrect.output.txt');
 
 #### `seeInArtisanOutput()`
 
-Check if artisan output contains specified string:
+Assert that the given string is seen in the artisan output:
 
 ```php
 $this->seeInArtisanOutput('Hello');
 ```
 
-You can pass the path to the text file:
+Also, you can pass the file path:
 
 ```php
 $this->seeInArtisanOutput('needle.txt');
@@ -283,13 +283,13 @@ $this->seeInArtisanOutput('needle.txt');
 
 #### `dontSeeInArtisanOutput()`
 
-Check if artisan output doesn't contain specified string:
+Assert that the given string is not seen in the artisan output:
 
 ```php
 $this->dontSeeInArtisanOutput('Universe');
 ```
 
-You can pass the path to the text file:
+Also, you can pass the file path:
 
 ```php
 $this->dontSeeInArtisanOutput('wrong-needle.txt');
@@ -297,7 +297,7 @@ $this->dontSeeInArtisanOutput('wrong-needle.txt');
 
 #### `seeArtisanTableOutput()`
 
-Check if the specified data is seen as artisan table output:
+Assert that the given data is seen in the artisan output table:
 
 ```php
 $this->seeArtisanTableOutput([
@@ -309,7 +309,7 @@ $this->seeArtisanTableOutput([
 
 #### `dontSeeArtisanTableOutput()`
 
-Check if the specified data is not seen as artisan table output:
+Assert that the given data is not seen in the artisan output table:
 
 ```php
 $this->dontSeeArtisanTableOutput([
@@ -321,7 +321,7 @@ $this->dontSeeArtisanTableOutput([
 
 #### `seeArtisanTableRowsCount()`
 
-Check if the artisan output table rows count equals to the specified value:
+Assert that the artisan output table has the given number of data rows:
 
 ```php
 $this->seeArtisanTableRowsCount(3);
@@ -329,7 +329,7 @@ $this->seeArtisanTableRowsCount(3);
 
 #### `dontSeeArtisanTableRowsCount()`
 
-Check if the artisan output table rows count doesn't equal to the specified value:
+Assert that the artisan output table doesn't have the given number of data rows:
 
 ```php
 $this->dontSeeArtisanTableRowsCount(5);
@@ -339,7 +339,7 @@ $this->dontSeeArtisanTableRowsCount(5);
 
 #### `assertCollectionsEqual()`
 
-Check if passed collections are equal according to the specified key:
+Assert that the given collections are equal based on the specified key:
 
 ```php
 $this->assertCollectionsEqual($collection1, $collection2, 'id');
@@ -347,7 +347,7 @@ $this->assertCollectionsEqual($collection1, $collection2, 'id');
 
 #### `assertCollectionsNotEqual()`
 
-Check if passed collections are not equal according to the specified key:
+Assert that the given collections are not equal based on the specified key:
 
 ```php
 $this->assertCollectionsNotEqual($collection1, $collection2, 'id');
@@ -357,7 +357,7 @@ $this->assertCollectionsNotEqual($collection1, $collection2, 'id');
 
 #### `assertDatabaseHasTable()`
 
-Check if the specified table exists in the database:
+Assert that database has the given table:
 
 ```php
 $this->assertDatabaseHasTable('users');
@@ -365,7 +365,7 @@ $this->assertDatabaseHasTable('users');
 
 #### `assertDatabaseMissingTable()`
 
-Check if the specified table doesn't exist in the database:
+Assert that database doesn't have the given table:
 
 ```php
 $this->assertDatabaseMissingTable('unicorns');
@@ -373,7 +373,7 @@ $this->assertDatabaseMissingTable('unicorns');
 
 #### `assertDatabaseHasMany()`
 
-Check if each of the specified rows exists in the database:
+Assert that database has all of the given rows:
 
 ```php
 $this->assertDatabaseHasMany('posts', [
@@ -385,7 +385,7 @@ $this->assertDatabaseHasMany('posts', [
 
 #### `assertDatabaseMissingMany()`
 
-Check if each of the specified rows doesn't exist in the database:
+Assert that database doesn't have all of the given rows:
 
 ```php
 $this->assertDatabaseMissingMany('posts', [
@@ -398,7 +398,7 @@ $this->assertDatabaseMissingMany('posts', [
 
 #### `assertEloquentTableEquals()`
 
-Check if an Eloquent model table equals to the specified value:
+Assert that model's table name equals to the given value:
 
 ```php
 $this->assertEloquentTableEquals(User::class, 'users');
@@ -406,7 +406,7 @@ $this->assertEloquentTableEquals(User::class, 'users');
 
 #### `assertEloquentTableNotEquals()`
 
-Check if an Eloquent model table doesn't equal to the specified value:
+Assert that model's table name doesn't equal to the given value:
 
 ```php
 $this->assertEloquentTableNotEquals(User::class, 'posts');
@@ -414,7 +414,7 @@ $this->assertEloquentTableNotEquals(User::class, 'posts');
 
 #### `assertEloquentIsIncrementing()`
 
-Check if an Eloquent model has incrementing primary key:
+Assert that model's primary key is incrementing:
 
 ```php
 $this->assertEloquentIsIncrementing(Post::class);
@@ -422,7 +422,7 @@ $this->assertEloquentIsIncrementing(Post::class);
 
 #### `assertEloquentIsNotIncrementing()`
 
-Check if an Eloquent model has not incrementing primary key:
+Assert that model's primary key is not incrementing:
 
 ```php
 $this->assertEloquentIsNotIncrementing(Category::class);
@@ -430,7 +430,7 @@ $this->assertEloquentIsNotIncrementing(Category::class);
 
 #### `assertEloquentFillableEquals()`
 
-Check if an Eloquent model fillable fields are equal to the specified value:
+Assert that model's `fillable` field equals to the given value:
 
 ```php
 $this->assertEloquentFillableEquals(Post::class, ['title', 'publish_at']);
@@ -438,7 +438,7 @@ $this->assertEloquentFillableEquals(Post::class, ['title', 'publish_at']);
 
 #### `assertEloquentFillableNotEquals()`
 
-Check if an Eloquent model fillable fields are not equal to the specified value:
+Assert that model's `fillable` field doesn't equal to the given value:
 
 ```php
 $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body', 'publish_at']);
@@ -446,7 +446,7 @@ $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body', 'publish_a
 
 #### `assertEloquentDatesEquals()`
 
-Check if an Eloquent model date fields are equal to the specified value:
+Assert that model's `dates` field equals to the given value:
 
 ```php
 $this->assertEloquentDatesEquals(Post::class, ['publish_at', 'created_at', 'updated_at']);
@@ -454,7 +454,7 @@ $this->assertEloquentDatesEquals(Post::class, ['publish_at', 'created_at', 'upda
 
 #### `assertEloquentDatesNotEquals()`
 
-Check if an Eloquent model date fields are not equal to the specified value:
+Assert that model's `dates` field doesn't equal to the given value:
 
 ```php
 $this->assertEloquentDatesNotEquals(Post::class, ['publish_at']);
@@ -462,7 +462,7 @@ $this->assertEloquentDatesNotEquals(Post::class, ['publish_at']);
 
 #### `assertEloquentTouchesEquals()`
 
-Check if an Eloquent model touched relations are equal to the specified value:
+Assert that model's `touches` field equals to the given value:
 
 ```php
 $this->assertEloquentTouchesEquals(Comment::class, ['post']);
@@ -470,7 +470,7 @@ $this->assertEloquentTouchesEquals(Comment::class, ['post']);
 
 #### `assertEloquentTouchesNotEquals()`
 
-Check if an Eloquent model touched relations are not equal to the specified value:
+Assert that model's `touches` field doesn't equal to the given value:
 
 ```php
 $this->assertEloquentTouchesNotEquals(Comment::class, ['user']);
@@ -480,7 +480,7 @@ $this->assertEloquentTouchesNotEquals(Comment::class, ['user']);
 
 > NOTE: To use this assertion, you have to create model factories for both classes.
 
-Check if an Eloquent model has specified `HasMany` relation:
+Assert that model has the given `HasMany` relation:
 
 ```php
 $this->assertEloquentHasMany(Post::class, 'comments');
@@ -502,7 +502,7 @@ class Post extends Model
 
 > NOTE: To use this assertion, you have to create model factories for both classes.
 
-Check if an Eloquent model has `create` method for the specified `HasMany` relation:
+Assert that model has `create` method for the given `HasMany` relation:
 
 ```php
 $this->assertEloquentHasCreateFor(Post::class, 'comments');
@@ -524,7 +524,7 @@ class Post extends Model
 
 > NOTE: To use this assertion, you have to create model factories for both classes.
 
-Check if an Eloquent model has `createMany` method for the specified `HasMany` relation:
+Assert that model has `createMany` method for the given `HasMany` relation:
 
 ```php
 $this->assertEloquentHasCreateManyFor(Post::class, 'comments');
@@ -546,7 +546,7 @@ class Post extends Model
 
 > NOTE: To use this assertion, you have to create model factories for both classes.
 
-Check if an Eloquent model has specified `BelongsTo` relation:
+Assert that model has the given `BelongsTo` relation:
 
 ```php
 $this->assertEloquentBelongsTo(Comment::class, 'post');
@@ -568,7 +568,7 @@ class Comment extends Model
 
 #### `willSeeException()`
 
-Add an expectation that exception of the specified class, with the specified message and code, will be thrown:
+Add expectation that the given exception would be thrown:
 
 ```php
 $this->willSeeException(RuntimeException::class, 'Oops! Houston, we have a problem!');
@@ -578,7 +578,7 @@ $this->willSeeException(RuntimeException::class, 'Oops! Houston, we have a probl
 
 #### `assertDirectoryEmpty()`
 
-Check if the specified directory is empty:
+Assert that the given directory is empty:
 
 ```php
 $this->assertDirectoryEmpty('./some/folder');
@@ -586,7 +586,7 @@ $this->assertDirectoryEmpty('./some/folder');
 
 #### `assertDirectoryNotEmpty()`
 
-Check if the specified directory is not empty:
+Assert that the given directory is not empty:
 
 ```php
 $this->assertDirectoryNotEmpty('./some/folder');
@@ -594,7 +594,7 @@ $this->assertDirectoryNotEmpty('./some/folder');
 
 #### `assertFilesCount()`
 
-Check if the specified directory has the specified files count:
+Assert that directory has the given number of files:
 
 ```php
 $this->assertFilesCount('./some/folder', 3);
@@ -602,7 +602,7 @@ $this->assertFilesCount('./some/folder', 3);
 
 #### `assertNotFilesCount()`
 
-Check if the specified directory doesn't have the specified files count:
+Assert that directory doesn't have the given number of files:
 
 ```php
 $this->assertNotFilesCount('./some/folder', 5);
@@ -612,7 +612,7 @@ $this->assertNotFilesCount('./some/folder', 5);
 
 #### `seeLogFile()`
 
-Check if the log file exists by the specified path. Path is relative to the `storage/logs` folder:
+Assert that the given log file exists. The path is relative to `storage/logs` folder:
 
 ```php
 $this->seeLogFile('example.log');
@@ -620,7 +620,7 @@ $this->seeLogFile('example.log');
 
 #### `dontSeeLogFile()`
 
-Check if the log file doesn't exist by the specified path. Path is relative to the `storage/logs` folder:
+Assert that the given log file doesn't exist. The path is relative to `storage/logs` folder:
 
 ```php
 $this->dontSeeLogFile('foobarbaz.log');
@@ -628,13 +628,13 @@ $this->dontSeeLogFile('foobarbaz.log');
 
 #### `seeInLogFile()`
 
-Check if the log file contains the specified content. Path is relative to the `storage/logs` folder.
+Assert that log file contains the given message. The path is relative to `storage/logs` folder:
 
 ```php
 $this->seeInLogFile('example.log', 'Sample log message!');
 ```
 
-You can pass an array of expected content items:
+Also, you can pass an array of messages:
 
 ```php
 $this->seeInLogFile('example.log', [
@@ -644,7 +644,7 @@ $this->seeInLogFile('example.log', [
 ]);
 ```
 
-These placeholders are also available for content:
+You can use these placeholders in messages:
 - `%datetime%` - any datetime string.
 
 ```php
@@ -653,13 +653,13 @@ $this->seeInLogFile('example.log', '[%datetime%]: Sample log message!');
 
 #### `dontSeeInLogFile()`
 
-Check if the log file doesn't contain the specified content. Path is relative to the `storage/logs` folder.
+Assert that log file doesn't contain the given message. The path is relative to `storage/logs` folder:
 
 ```php
 $this->dontSeeInLogFile('example.log', 'Unexisting log message!');
 ```
 
-You can pass an array of unexpected content items:
+Also, you can pass an array of messages:
 
 ```php
 $this->dontSeeInLogFile('example.log', [
@@ -673,7 +673,7 @@ $this->dontSeeInLogFile('example.log', [
 
 #### `assertSubclassOf()`
 
-Check that class is a subclass of the specified parent class:
+Assert that class is a subclass of the given parent:
 
 ```php
 $this->assertSubclassOf(Post::class, Model::class);
@@ -681,7 +681,7 @@ $this->assertSubclassOf(Post::class, Model::class);
 
 #### `assertNotSubclassOf()`
 
-Check that class is not a subclass of the specified parent class:
+Assert that class is not a subclass of the given parent:
 
 ```php
 $this->assertNotSubclassOf(Post::class, Command::class);
@@ -689,7 +689,7 @@ $this->assertNotSubclassOf(Post::class, Command::class);
 
 #### `assertTraitUsed()`
 
-Check that class is using the specified trait:
+Assert that class uses the given trait:
 
 ```php
 $this->assertTraitUsed(User::class, Notifiable::class);
@@ -697,7 +697,7 @@ $this->assertTraitUsed(User::class, Notifiable::class);
 
 #### `assertTraitNotUsed()`
 
-Check that class is not using the specified trait:
+Assert that class doesn't use the given trait:
 
 ```php
 $this->assertTraitNotUsed(Post::class, Notifiable::class);
@@ -705,7 +705,7 @@ $this->assertTraitNotUsed(Post::class, Notifiable::class);
 
 #### `assertMethodExists()`
 
-Check that method exists on the specified object or class name:
+Assert that object has the given method:
 
 ```php
 $this->assertMethodExists(Post::class, 'save');
@@ -713,7 +713,7 @@ $this->assertMethodExists(Post::class, 'save');
 
 #### `assertMethodNotExists()`
 
-Check that method doesn't exist on the specified object or class name:
+Assert that object doesn't have the given method:
 
 ```php
 $this->assertMethodNotExists(Post::class, 'fly');
@@ -723,7 +723,7 @@ $this->assertMethodNotExists(Post::class, 'fly');
 
 #### `seeScheduleCount()`
 
-Check that schedule events count equals to the specified:
+Assert that schedule count equals to the given value:
 
 ```php
 $this->seeScheduleCount(3);
@@ -731,7 +731,7 @@ $this->seeScheduleCount(3);
 
 #### `dontSeeScheduleCount()`
 
-Check that schedule events count doesn't equal to the specified:
+Assert that schedule count doesn't equal to the given value:
 
 ```php
 $this->dontSeeScheduleCount(5);
@@ -739,7 +739,7 @@ $this->dontSeeScheduleCount(5);
 
 #### `seeInSchedule()`
 
-Check that command is in the schedule. Expressions can be the same as schedule event methods:
+Assert that the given command is scheduled:
 
 ```php
 $this->seeInSchedule('foo', 'everyFiveMinutes');
@@ -747,7 +747,7 @@ $this->seeInSchedule('bar', 'hourly');
 $this->seeInSchedule('baz', 'twiceDaily');
 ```
 
-You can pass pure cron expressions:
+Also, you can use cron expressions:
 
 ```php
 $this->seeInSchedule('foo', '*/5 * * * * *');
@@ -757,7 +757,7 @@ $this->seeInSchedule('baz', '0 1,13 * * * *');
 
 #### `dontSeeInSchedule()`
 
-Check that the command is not in the schedule:
+Assert that the given command is not scheduled:
 
 ```php
 $this->dontSeeInSchedule('foobarbaz');
@@ -767,7 +767,7 @@ $this->dontSeeInSchedule('foobarbaz');
 
 #### `seeRegisteredAlias()`
 
-Check that the specified alias was successfully registered by the alias loader:
+Assert that the given alias is registered:
 
 ```php
 $this->seeRegisteredAlias('Twitter');
@@ -775,7 +775,7 @@ $this->seeRegisteredAlias('Twitter');
 
 #### `dontSeeRegisteredAlias()`
 
-Check that the specified alias was not registered by the alias loader:
+Assert that the given alias is not registered:
 
 ```php
 $this->dontSeeRegisteredAlias('FooBarBaz');
@@ -783,7 +783,7 @@ $this->dontSeeRegisteredAlias('FooBarBaz');
 
 #### `seeRegisteredCommand()`
 
-Check that the specified command was successfully registered by the service provider:
+Assert that the given command is registered:
 
 ```php
 $this->seeRegisteredCommand('my-command');
@@ -791,7 +791,7 @@ $this->seeRegisteredCommand('my-command');
 
 #### `dontSeeRegisteredCommand()`
 
-Check that the specified command was not registered by the service provider:
+Assert that the given command is not registered:
 
 ```php
 $this->dontSeeRegisteredCommand('foobarbaz');

@@ -2,10 +2,10 @@
 
 namespace Illuminated\Testing\Tests\Asserts;
 
-use Illuminated\Testing\Tests\TestCase;
-use Illuminated\Testing\Tests\App\Console\Commands\GenericCommand;
-use Illuminated\Testing\Tests\App\Console\Commands\ConfirmationCommand;
 use Illuminated\Testing\Tests\App\Console\Commands\ConfirmableTraitCommand;
+use Illuminated\Testing\Tests\App\Console\Commands\ConfirmationCommand;
+use Illuminated\Testing\Tests\App\Console\Commands\GenericCommand;
+use Illuminated\Testing\Tests\TestCase;
 
 class ArtisanAssertsTest extends TestCase
 {

@@ -2,11 +2,17 @@
 
 namespace Illuminated\Testing\Tests\Asserts;
 
-use Illuminated\Testing\Tests\TestCase;
 use Illuminate\Console\Scheduling\Schedule;
+use Illuminated\Testing\Tests\TestCase;
 
 class ScheduleAssertsTest extends TestCase
 {
+    /**
+     * Resolve application Console Kernel implementation.
+     *
+     * @param \Illuminate\Foundation\Application $app
+     * @return void
+     */
     protected function resolveApplicationConsoleKernel($app)
     {
         parent::resolveApplicationConsoleKernel($app);
@@ -14,6 +20,11 @@ class ScheduleAssertsTest extends TestCase
         $this->createSampleSchedule();
     }
 
+    /**
+     * Create a sample schedule.
+     *
+     * @return void
+     */
     private function createSampleSchedule()
     {
         app()->booted(function () {

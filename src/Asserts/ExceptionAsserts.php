@@ -4,11 +4,19 @@ namespace Illuminated\Testing\Asserts;
 
 trait ExceptionAsserts
 {
-    protected function willSeeException($class, $message = null, $code = 0)
+    /**
+     * Add expectation that the given exception would be thrown.
+     *
+     * @param string $class
+     * @param string $message
+     * @param int $code
+     * @return void
+     */
+    protected function willSeeException(string $class, string $message = '', int $code = 0)
     {
         $this->expectException($class);
 
-        if (!is_null($message)) {
+        if ($message) {
             $this->expectExceptionMessage($message);
         }
 

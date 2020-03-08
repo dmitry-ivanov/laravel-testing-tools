@@ -2,8 +2,8 @@
 
 namespace Illuminated\Testing\Tests\Asserts;
 
-use RuntimeException;
 use Illuminated\Testing\Tests\TestCase;
+use RuntimeException;
 
 class ExceptionAssertsTest extends TestCase
 {

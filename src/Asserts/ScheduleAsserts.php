@@ -2,25 +2,45 @@
 
 namespace Illuminated\Testing\Asserts;
 
-use Illuminate\Support\Str;
 use Illuminate\Console\Scheduling\Event;
 use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Support\Str;
 
 trait ScheduleAsserts
 {
-    protected function seeScheduleCount($count)
+    /**
+     * Assert that schedule count equals to the given value.
+     *
+     * @param int $count
+     * @return void
+     */
+    protected function seeScheduleCount(int $count)
     {
         $message = "Failed asserting that schedule events count is {$count}.";
         $this->assertCount($count, app(Schedule::class)->events(), $message);
     }
 
-    protected function dontSeeScheduleCount($count)
+    /**
+     * Assert that schedule count doesn't equal to the given value.
+     *
+     * @param int $count
+     * @return void
+     */
+    protected function dontSeeScheduleCount(int $count)
     {
         $message = "Failed asserting that schedule events count is not {$count}.";
         $this->assertNotCount($count, app(Schedule::class)->events(), $message);
     }
 
-    protected function seeInSchedule($command, $expression, $runInBackground = false)
+    /**
+     * Assert that the given command is scheduled.
+     *
+     * @param string $command
+     * @param string $expression
+     * @param bool $runInBackground
+     * @return void
+     */
+    protected function seeInSchedule(string $command, string $expression, bool $runInBackground = false)
     {
         $event = $this->getScheduleEvent($command);
 
@@ -36,26 +56,42 @@ trait ScheduleAsserts
         $this->assertEquals($runInBackground, $event->runInBackground, $message);
     }
 
-    protected function dontSeeInSchedule($command)
+    /**
+     * Assert that the given command is not scheduled.
+     *
+     * @param string $command
+     * @return void
+     */
+    protected function dontSeeInSchedule(string $command)
     {
         $message = "Failed asserting that command `{$command}` is not in schedule.";
         $this->assertEmpty($this->getScheduleEvent($command), $message);
     }
 
-    private function getScheduleEvent($command)
+    /**
+     * Get schedule event by the given command.
+     *
+     * @param string $command
+     * @return \Illuminate\Console\Scheduling\Event|null
+     */
+    private function getScheduleEvent(string $command)
     {
         $schedule = app(Schedule::class);
 
-        foreach ($schedule->events() as $event) {
-            if (Str::endsWith($event->command, $command)) {
-                return $event;
-            }
-        }
-
-        return false;
+        return collect($schedule->events())
+            ->first(function (Event $event) use ($command) {
+                return Str::endsWith($event->command, $command);
+            });
     }
 
-    private function normalizeScheduleExpression(Event $event, $expression)
+    /**
+     * Normalize the given schedule expression.
+     *
+     * @param \Illuminate\Console\Scheduling\Event $event
+     * @param string $expression
+     * @return string
+     */
+    private function normalizeScheduleExpression(Event $event, string $expression)
     {
         if (method_exists($event, $expression)) {
             $event->$expression();
