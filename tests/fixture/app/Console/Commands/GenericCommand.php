@@ -6,16 +6,32 @@ use Illuminate\Console\Command;
 
 class GenericCommand extends Command
 {
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
     protected $signature = 'generic {--name= : Name for greeting message}';
 
-    public function getGreetingMessage()
-    {
-        $name = $this->option('name') ?: 'Dude';
-        return "Hello, {$name}!";
-    }
-
+    /**
+     * Handle the command.
+     *
+     * @return void
+     */
     public function handle()
     {
         $this->info('Hello, World!');
+    }
+
+    /**
+     * Get the greeting message.
+     *
+     * @return string
+     */
+    public function getGreetingMessage()
+    {
+        $name = $this->option('name') ?: 'Dude';
+
+        return "Hello, {$name}!";
     }
 }

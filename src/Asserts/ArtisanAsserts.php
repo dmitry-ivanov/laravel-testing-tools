@@ -2,13 +2,21 @@
 
 namespace Illuminated\Testing\Asserts;
 
-use Mockery;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
+use Mockery;
 
 trait ArtisanAsserts
 {
-    protected function willSeeConfirmation($question, $command, array $parameters = [])
+    /**
+     * Add expectation that the given confirmation question would be shown.
+     *
+     * @param string $question
+     * @param string $command
+     * @param array $parameters
+     * @return void
+     */
+    protected function willSeeConfirmation(string $question, string $command, array $parameters = [])
     {
         $mock = Mockery::mock("{$command}[confirm]");
         $mock->shouldReceive('confirm')->once()->with($question);
@@ -16,7 +24,15 @@ trait ArtisanAsserts
         $this->runArtisan($mock, $parameters);
     }
 
-    protected function willNotSeeConfirmation($question, $command, array $parameters = [])
+    /**
+     * Add expectation that the given confirmation question would not be shown.
+     *
+     * @param string $question
+     * @param string $command
+     * @param array $parameters
+     * @return void
+     */
+    protected function willNotSeeConfirmation(string $question, string $command, array $parameters = [])
     {
         $mock = Mockery::mock("{$command}[confirm]");
         $mock->shouldNotReceive('confirm')->with($question);
@@ -24,7 +40,15 @@ trait ArtisanAsserts
         $this->runArtisan($mock, $parameters);
     }
 
-    protected function willGiveConfirmation($question, $command, array $parameters = [])
+    /**
+     * Add expectation that the given confirmation question would be shown, and accept it.
+     *
+     * @param string $question
+     * @param string $command
+     * @param array $parameters
+     * @return void
+     */
+    protected function willGiveConfirmation(string $question, string $command, array $parameters = [])
     {
         $mock = Mockery::mock("{$command}[confirm]");
         $mock->shouldReceive('confirm')->once()->with($question)->andReturn(true);
@@ -32,7 +56,15 @@ trait ArtisanAsserts
         $this->runArtisan($mock, $parameters);
     }
 
-    protected function willNotGiveConfirmation($question, $command, array $parameters = [])
+    /**
+     * Add expectation that the given confirmation question would be shown, and do not accept it.
+     *
+     * @param string $question
+     * @param string $command
+     * @param array $parameters
+     * @return void
+     */
+    protected function willNotGiveConfirmation(string $question, string $command, array $parameters = [])
     {
         $mock = Mockery::mock("{$command}[confirm]");
         $mock->shouldReceive('confirm')->once()->with($question)->andReturn(false);
@@ -40,7 +72,13 @@ trait ArtisanAsserts
         $this->runArtisan($mock, $parameters);
     }
 
-    protected function seeArtisanOutput($output)
+    /**
+     * Assert that the given artisan output is seen.
+     *
+     * @param string $output
+     * @return void
+     */
+    protected function seeArtisanOutput(string $output)
     {
         if (File::exists($output)) {
             $output = File::get($output);
@@ -51,7 +89,13 @@ trait ArtisanAsserts
         $this->assertEquals($expected, $actual, "Failed asserting that artisan output is `{$expected}`.");
     }
 
-    protected function dontSeeArtisanOutput($output)
+    /**
+     * Assert that the given artisan output is not seen.
+     *
+     * @param string $output
+     * @return void
+     */
+    protected function dontSeeArtisanOutput(string $output)
     {
         if (File::exists($output)) {
             $output = File::get($output);
@@ -62,7 +106,13 @@ trait ArtisanAsserts
         $this->assertNotEquals($expected, $actual, "Failed asserting that artisan output is not `{$expected}`.");
     }
 
-    protected function seeInArtisanOutput($needle)
+    /**
+     * Assert that the given string is seen in the artisan output.
+     *
+     * @param string $needle
+     * @return void
+     */
+    protected function seeInArtisanOutput(string $needle)
     {
         if (File::exists($needle)) {
             $needle = File::get($needle);
@@ -73,7 +123,13 @@ trait ArtisanAsserts
         $this->assertStringContainsString($needle, $output, $message);
     }
 
-    protected function dontSeeInArtisanOutput($needle)
+    /**
+     * Assert that the given string is not seen in the artisan output.
+     *
+     * @param string $needle
+     * @return void
+     */
+    protected function dontSeeInArtisanOutput(string $needle)
     {
         if (File::exists($needle)) {
             $needle = File::get($needle);
@@ -84,53 +140,83 @@ trait ArtisanAsserts
         $this->assertStringNotContainsString($needle, $output, $message);
     }
 
+    /**
+     * Assert that the given data is seen in the artisan output table.
+     *
+     * @param array $data
+     * @return void
+     */
     protected function seeArtisanTableOutput(array $data)
     {
         $message = 'Failed asserting that artisan table output consists of expected data.';
         $this->assertEquals($data, $this->parseArtisanTableOutput($this->getArtisanOutput()), $message);
     }
 
+    /**
+     * Assert that the given data is not seen in the artisan output table.
+     *
+     * @param array $data
+     * @return void
+     */
     protected function dontSeeArtisanTableOutput(array $data)
     {
         $message = 'Failed asserting that artisan table output not consists of expected data.';
         $this->assertNotEquals($data, $this->parseArtisanTableOutput($this->getArtisanOutput()), $message);
     }
 
-    protected function seeArtisanTableRowsCount($count)
+    /**
+     * Assert that the artisan output table has the given number of data rows.
+     *
+     * @param int $count
+     * @return void
+     */
+    protected function seeArtisanTableRowsCount(int $count)
     {
         $message = "Failed asserting that artisan table rows count equals to `{$count}`.";
-        $this->assertEquals($count, count($this->parseArtisanTableOutput($this->getArtisanOutput())), $message);
+        $this->assertCount($count, $this->parseArtisanTableOutput($this->getArtisanOutput()), $message);
     }
 
-    protected function dontSeeArtisanTableRowsCount($count)
+    /**
+     * Assert that the artisan output table doesn't have the given number of data rows.
+     *
+     * @param int $count
+     * @return void
+     */
+    protected function dontSeeArtisanTableRowsCount(int $count)
     {
         $message = "Failed asserting that artisan table rows count not equals to `{$count}`.";
-        $this->assertNotEquals($count, count($this->parseArtisanTableOutput($this->getArtisanOutput())), $message);
+        $this->assertNotCount($count, $this->parseArtisanTableOutput($this->getArtisanOutput()), $message);
     }
 
-    private function parseArtisanTableOutput($output)
+    /**
+     * Parse the artisan table output.
+     *
+     * Return data rows with headers as keys.
+     *
+     * @param string $output
+     * @return array
+     */
+    private function parseArtisanTableOutput(string $output)
     {
-        $parsed = [];
+        $output = explode("\n", trim($output));
 
-        $headers = [];
-        $outputRows = explode("\n", trim($output));
-        foreach ($outputRows as $row) {
-            if (!Str::contains($row, '|')) {
-                continue;
-            }
+        // Filter and normalize the output
+        $output = collect($output)
+            ->reject(function (string $line) {
+                return !Str::contains($line, '|');
+            })
+            ->map(function (string $line) {
+                $line = explode('|', $line);
+                $line = array_filter($line);
+                return array_map('trim', $line);
+            });
 
-            $row = explode('|', $row);
-            $row = array_filter($row);
-            $row = array_map('trim', $row);
+        // The first item is headers
+        $headers = $output->shift();
 
-            if (empty($headers)) {
-                $headers = $row;
-                continue;
-            }
-
-            $parsed[] = array_combine($headers, $row);
-        }
-
-        return $parsed;
+        // Combine headers with the line values
+        return $output->map(function (array $values) use ($headers) {
+            return array_combine($headers, $values);
+        })->toArray();
     }
 }

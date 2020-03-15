@@ -6,27 +6,37 @@ use Illuminate\Support\Collection;
 
 trait CollectionAsserts
 {
-    protected function assertCollectionsEqual(Collection $collection1, Collection $collection2, $key)
+    /**
+     * Assert that the given collections are equal based on the specified key.
+     *
+     * @param \Illuminate\Support\Collection $collection1
+     * @param \Illuminate\Support\Collection $collection2
+     * @param string $key
+     * @return void
+     */
+    protected function assertCollectionsEqual(Collection $collection1, Collection $collection2, string $key)
     {
-        $keys1 = $collection1->pluck($key)->toArray();
-        $keys2 = $collection2->pluck($key)->toArray();
-
-        $diff1 = array_diff($keys1, $keys2);
-        $diff2 = array_diff($keys2, $keys1);
-
-        $bothDiffsAreEmpty = (empty($diff1) && empty($diff2));
-        $this->assertTrue($bothDiffsAreEmpty, 'Failed asserting that collections are equal.');
+        $this->assertEquals(
+            $collection1->pluck($key)->sort()->values(),
+            $collection2->pluck($key)->sort()->values(),
+            'Failed asserting that collections are equal.'
+        );
     }
 
-    protected function assertCollectionsNotEqual(Collection $collection1, Collection $collection2, $key)
+    /**
+     * Assert that the given collections are not equal based on the specified key.
+     *
+     * @param \Illuminate\Support\Collection $collection1
+     * @param \Illuminate\Support\Collection $collection2
+     * @param string $key
+     * @return void
+     */
+    protected function assertCollectionsNotEqual(Collection $collection1, Collection $collection2, string $key)
     {
-        $keys1 = $collection1->pluck($key)->toArray();
-        $keys2 = $collection2->pluck($key)->toArray();
-
-        $diff1 = array_diff($keys1, $keys2);
-        $diff2 = array_diff($keys2, $keys1);
-
-        $atLeastOneDiffIsNotEmpty = (!empty($diff1) || !empty($diff2));
-        $this->assertTrue($atLeastOneDiffIsNotEmpty, 'Failed asserting that collections are not equal.');
+        $this->assertNotEquals(
+            $collection1->pluck($key)->sort()->values(),
+            $collection2->pluck($key)->sort()->values(),
+            'Failed asserting that collections are not equal.'
+        );
     }
 }

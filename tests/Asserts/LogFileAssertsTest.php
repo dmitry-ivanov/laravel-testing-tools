@@ -8,6 +8,11 @@ use Illuminated\Testing\Tests\TestCase;
 
 class LogFileAssertsTest extends TestCase
 {
+    /**
+     * Setup the test environment.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -15,6 +20,11 @@ class LogFileAssertsTest extends TestCase
         $this->createSampleLogFile();
     }
 
+    /**
+     * Create a sample log file.
+     *
+     * @return void
+     */
     private function createSampleLogFile()
     {
         $date = Carbon::now();
@@ -81,6 +91,11 @@ class LogFileAssertsTest extends TestCase
         ]);
     }
 
+    /**
+     * Clean up the testing environment before the next test.
+     *
+     * @return void
+     */
     protected function tearDown(): void
     {
         File::delete(storage_path('logs/example.log'));

@@ -4,9 +4,9 @@ namespace Illuminated\Testing\Tests\Asserts;
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
+use Illuminated\Testing\Tests\App\Commentable;
 use Illuminated\Testing\Tests\App\Post;
 use Illuminated\Testing\Tests\TestCase;
-use Illuminated\Testing\Tests\App\Commentable;
 
 class ReflectionAssertsTest extends TestCase
 {
