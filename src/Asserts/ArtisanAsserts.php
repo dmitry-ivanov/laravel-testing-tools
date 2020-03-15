@@ -203,7 +203,7 @@ trait ArtisanAsserts
         // Filter and normalize the output
         $output = collect($output)
             ->reject(function (string $line) {
-                return ! Str::contains($line, '|');
+                return !Str::contains($line, '|');
             })
             ->map(function (string $line) {
                 $line = explode('|', $line);
