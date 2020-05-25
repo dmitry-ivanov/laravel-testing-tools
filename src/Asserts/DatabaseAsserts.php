@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 trait DatabaseAsserts
 {
     /**
-     * Assert that database has the given table.
+     * Assert that the database has the given table.
      *
      * @param string $table
      * @return void
@@ -21,7 +21,7 @@ trait DatabaseAsserts
     }
 
     /**
-     * Assert that database doesn't have the given table.
+     * Assert that the database doesn't have the given table.
      *
      * @param string $table
      * @return void
@@ -35,7 +35,7 @@ trait DatabaseAsserts
     }
 
     /**
-     * Assert that database has all of the given rows.
+     * Assert that the database has all the given rows.
      *
      * @param string $table
      * @param array $rows
@@ -51,7 +51,7 @@ trait DatabaseAsserts
     }
 
     /**
-     * Assert that database doesn't have all of the given rows.
+     * Assert that the database doesn't have all the given rows.
      *
      * @param string $table
      * @param array $rows
