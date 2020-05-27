@@ -812,6 +812,6 @@ $this->dontSeeRegisteredCommand('foobarbaz');
 
 ## License
 
-The MIT License. Check the [License File](LICENSE.md) for more information.
+Laravel Testing Tools is open-sourced software licensed under the [MIT license](LICENSE.md).
 
 [<img src="https://user-images.githubusercontent.com/1286821/43086829-ff7c006e-8ea6-11e8-8b03-ecf97ca95b2e.png" alt="Support on Patreon" width="125" />](https://patreon.com/dmitryivanov)
