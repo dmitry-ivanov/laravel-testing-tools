@@ -40,7 +40,7 @@ trait ApplicationHelpers
     }
 
     /**
-     * Check whether application is running on Travis or not.
+     * Check whether the application is running on Travis or not.
      *
      * @return bool
      */

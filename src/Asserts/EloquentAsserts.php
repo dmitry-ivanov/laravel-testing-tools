@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 trait EloquentAsserts
 {
     /**
-     * Assert that model's table name equals to the given value.
+     * Assert that the model's table name equals to the given value.
      *
      * @param string $class
      * @param string $table
@@ -25,7 +25,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model's table name doesn't equal to the given value.
+     * Assert that the model's table name doesn't equal to the given value.
      *
      * @param string $class
      * @param string $table
@@ -41,7 +41,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model's primary key is incrementing.
+     * Assert that the model's primary key is incrementing.
      *
      * @param string $class
      * @return void
@@ -56,7 +56,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model's primary key is not incrementing.
+     * Assert that the model's primary key is not incrementing.
      *
      * @param string $class
      * @return void
@@ -71,7 +71,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model's `fillable` field equals to the given value.
+     * Assert that the model's `fillable` field equals to the given value.
      *
      * @param string $class
      * @param array $fillable
@@ -87,7 +87,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model's `fillable` field doesn't equal to the given value.
+     * Assert that the model's `fillable` field doesn't equal to the given value.
      *
      * @param string $class
      * @param array $fillable
@@ -103,7 +103,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model's `dates` field equals to the given value.
+     * Assert that the model's `dates` field equals to the given value.
      *
      * @param string $class
      * @param array $dates
@@ -119,7 +119,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model's `dates` field doesn't equal to the given value.
+     * Assert that the model's `dates` field doesn't equal to the given value.
      *
      * @param string $class
      * @param array $dates
@@ -135,7 +135,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model's `touches` field equals to the given value.
+     * Assert that the model's `touches` field equals to the given value.
      *
      * @param string $class
      * @param array $touches
@@ -151,7 +151,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model's `touches` field doesn't equal to the given value.
+     * Assert that the model's `touches` field doesn't equal to the given value.
      *
      * @param string $class
      * @param array $touches
@@ -167,7 +167,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model has the given `HasMany` relation.
+     * Assert that the model has the given `HasMany` relation.
      *
      * @param string $class
      * @param string $relation
@@ -193,7 +193,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model has `create` method for the given `HasMany` relation.
+     * Assert that the model has `create` method for the given `HasMany` relation.
      *
      * @param string $class
      * @param string $relation
@@ -223,7 +223,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model has `createMany` method for the given `HasMany` relation.
+     * Assert that the model has `createMany` method for the given `HasMany` relation.
      *
      * @param string $class
      * @param string $relation
@@ -255,7 +255,7 @@ trait EloquentAsserts
     }
 
     /**
-     * Assert that model has the given `BelongsTo` relation.
+     * Assert that the model has the given `BelongsTo` relation.
      *
      * @param string $class
      * @param string $relation

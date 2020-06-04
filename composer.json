@@ -1,6 +1,6 @@
 {
     "name": "illuminated/testing-tools",
-    "description": "Laravel-specific testing helpers and asserts.",
+    "description": "Laravel-specific testing helpers and assertions.",
     "keywords": ["laravel", "testing", "tools", "helpers", "assertions"],
     "license": "MIT",
     "support": {

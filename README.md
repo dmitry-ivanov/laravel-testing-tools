@@ -11,7 +11,7 @@
 [![Total Downloads](https://poser.pugx.org/illuminated/testing-tools/downloads)](https://packagist.org/packages/illuminated/testing-tools)
 [![License](https://poser.pugx.org/illuminated/testing-tools/license)](https://packagist.org/packages/illuminated/testing-tools)
 
-Laravel-specific testing helpers and asserts.
+Laravel-specific testing helpers and assertions.
 
 | Laravel | Testing Tools                                                            |
 | ------- | :----------------------------------------------------------------------: |
@@ -30,7 +30,7 @@ Laravel-specific testing helpers and asserts.
 
 1. Install the package via Composer:
 
-    ```shell
+    ```shell script
     composer require --dev "illuminated/testing-tools:^7.0"
     ```
 
@@ -49,7 +49,7 @@ Laravel-specific testing helpers and asserts.
     }
     ```
 
-3. Use any of the provided helpers and asserts in your tests:
+3. Use any of the provided helpers and assertions in your tests:
 
     ```php
     class HelloCommandTest extends TestCase
@@ -66,7 +66,7 @@ Laravel-specific testing helpers and asserts.
 
 ## Available helpers
 
-> New helpers are always adding. Feel free to contribute.
+> Feel free to contribute.
 
 - [ApplicationHelpers](#applicationhelpers)
   - [emulateLocal](#emulatelocal)
@@ -76,9 +76,9 @@ Laravel-specific testing helpers and asserts.
 - [ArtisanHelpers](#artisanhelpers)
   - [runArtisan](#runartisan)
 
-## Available asserts
+## Available assertions
 
-> New asserts are always adding. Feel free to contribute.
+> Feel free to contribute.
 
 - [ArtisanAsserts](#artisanasserts)
   - [willSeeConfirmation](#willseeconfirmation)
@@ -176,31 +176,35 @@ $this->emulateEnvironment('demo');
 
 #### `isTravis()`
 
-Check whether application is running on Travis or not:
+Check whether the application is running on Travis or not:
 
 ```php
-if ($this->isTravis()) {
-    // Yep, it's Travis.
-}
+$this->isTravis();
+
+// true
 ```
 
 ### ArtisanHelpers
 
 #### `runArtisan()`
 
-Run artisan command by the class name, and return it:
+Run the given artisan console command:
 
 ```php
 $command = $this->runArtisan(MyCommand::class, ['--name' => 'John']);
+
+// \Illuminate\Console\Command
 ```
 
 Also, you can pass the command instance as a first argument:
 
 ```php
 $command = $this->runArtisan(new MyCommand, ['--name' => 'Jane']);
+
+// \Illuminate\Console\Command
 ```
 
-## Asserts
+## Assertions
 
 ### ArtisanAsserts
 
@@ -248,7 +252,7 @@ Assert that the given artisan output is seen:
 $this->seeArtisanOutput('Hello, World!');
 ```
 
-Also, you can pass the file path:
+Also, you can specify a path to the file containing output:
 
 ```php
 $this->seeArtisanOutput('correct.output.txt');
@@ -262,7 +266,7 @@ Assert that the given artisan output is not seen:
 $this->dontSeeArtisanOutput('Hello, Universe!');
 ```
 
-Also, you can pass the file path:
+Also, you can specify a path to the file containing output:
 
 ```php
 $this->dontSeeArtisanOutput('incorrect.output.txt');
@@ -276,7 +280,7 @@ Assert that the given string is seen in the artisan output:
 $this->seeInArtisanOutput('Hello');
 ```
 
-Also, you can pass the file path:
+Also, you can specify a path to the file containing the string:
 
 ```php
 $this->seeInArtisanOutput('needle.txt');
@@ -287,10 +291,10 @@ $this->seeInArtisanOutput('needle.txt');
 Assert that the given string is not seen in the artisan output:
 
 ```php
-$this->dontSeeInArtisanOutput('Universe');
+$this->dontSeeInArtisanOutput('FooBar');
 ```
 
-Also, you can pass the file path:
+Also, you can specify a path to the file containing the string:
 
 ```php
 $this->dontSeeInArtisanOutput('wrong-needle.txt');
@@ -298,7 +302,7 @@ $this->dontSeeInArtisanOutput('wrong-needle.txt');
 
 #### `seeArtisanTableOutput()`
 
-Assert that the given data is seen in the artisan output table:
+Assert that the given data is seen in the artisan table output:
 
 ```php
 $this->seeArtisanTableOutput([
@@ -310,7 +314,7 @@ $this->seeArtisanTableOutput([
 
 #### `dontSeeArtisanTableOutput()`
 
-Assert that the given data is not seen in the artisan output table:
+Assert that the given data is not seen in the artisan table output:
 
 ```php
 $this->dontSeeArtisanTableOutput([
@@ -322,7 +326,7 @@ $this->dontSeeArtisanTableOutput([
 
 #### `seeArtisanTableRowsCount()`
 
-Assert that the artisan output table has the given number of data rows:
+Assert that the artisan table output has the given number of data rows:
 
 ```php
 $this->seeArtisanTableRowsCount(3);
@@ -330,7 +334,7 @@ $this->seeArtisanTableRowsCount(3);
 
 #### `dontSeeArtisanTableRowsCount()`
 
-Assert that the artisan output table doesn't have the given number of data rows:
+Assert that the artisan table output doesn't have the given number of data rows:
 
 ```php
 $this->dontSeeArtisanTableRowsCount(5);
@@ -358,7 +362,7 @@ $this->assertCollectionsNotEqual($collection1, $collection2, 'id');
 
 #### `assertDatabaseHasTable()`
 
-Assert that database has the given table:
+Assert that the database has the given table:
 
 ```php
 $this->assertDatabaseHasTable('users');
@@ -366,7 +370,7 @@ $this->assertDatabaseHasTable('users');
 
 #### `assertDatabaseMissingTable()`
 
-Assert that database doesn't have the given table:
+Assert that the database doesn't have the given table:
 
 ```php
 $this->assertDatabaseMissingTable('unicorns');
@@ -374,7 +378,7 @@ $this->assertDatabaseMissingTable('unicorns');
 
 #### `assertDatabaseHasMany()`
 
-Assert that database has all of the given rows:
+Assert that the database has all the given rows:
 
 ```php
 $this->assertDatabaseHasMany('posts', [
@@ -386,7 +390,7 @@ $this->assertDatabaseHasMany('posts', [
 
 #### `assertDatabaseMissingMany()`
 
-Assert that database doesn't have all of the given rows:
+Assert that the database doesn't have all the given rows:
 
 ```php
 $this->assertDatabaseMissingMany('posts', [
@@ -399,7 +403,7 @@ $this->assertDatabaseMissingMany('posts', [
 
 #### `assertEloquentTableEquals()`
 
-Assert that model's table name equals to the given value:
+Assert that the model's table name equals to the given value:
 
 ```php
 $this->assertEloquentTableEquals(User::class, 'users');
@@ -407,7 +411,7 @@ $this->assertEloquentTableEquals(User::class, 'users');
 
 #### `assertEloquentTableNotEquals()`
 
-Assert that model's table name doesn't equal to the given value:
+Assert that the model's table name doesn't equal to the given value:
 
 ```php
 $this->assertEloquentTableNotEquals(User::class, 'posts');
@@ -415,7 +419,7 @@ $this->assertEloquentTableNotEquals(User::class, 'posts');
 
 #### `assertEloquentIsIncrementing()`
 
-Assert that model's primary key is incrementing:
+Assert that the model's primary key is incrementing:
 
 ```php
 $this->assertEloquentIsIncrementing(Post::class);
@@ -423,7 +427,7 @@ $this->assertEloquentIsIncrementing(Post::class);
 
 #### `assertEloquentIsNotIncrementing()`
 
-Assert that model's primary key is not incrementing:
+Assert that the model's primary key is not incrementing:
 
 ```php
 $this->assertEloquentIsNotIncrementing(Category::class);
@@ -431,7 +435,7 @@ $this->assertEloquentIsNotIncrementing(Category::class);
 
 #### `assertEloquentFillableEquals()`
 
-Assert that model's `fillable` field equals to the given value:
+Assert that the model's `fillable` field equals to the given value:
 
 ```php
 $this->assertEloquentFillableEquals(Post::class, ['title', 'publish_at']);
@@ -439,7 +443,7 @@ $this->assertEloquentFillableEquals(Post::class, ['title', 'publish_at']);
 
 #### `assertEloquentFillableNotEquals()`
 
-Assert that model's `fillable` field doesn't equal to the given value:
+Assert that the model's `fillable` field doesn't equal to the given value:
 
 ```php
 $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body', 'publish_at']);
@@ -447,7 +451,7 @@ $this->assertEloquentFillableNotEquals(Post::class, ['title', 'body', 'publish_a
 
 #### `assertEloquentDatesEquals()`
 
-Assert that model's `dates` field equals to the given value:
+Assert that the model's `dates` field equals to the given value:
 
 ```php
 $this->assertEloquentDatesEquals(Post::class, ['publish_at', 'created_at', 'updated_at']);
@@ -455,7 +459,7 @@ $this->assertEloquentDatesEquals(Post::class, ['publish_at', 'created_at', 'upda
 
 #### `assertEloquentDatesNotEquals()`
 
-Assert that model's `dates` field doesn't equal to the given value:
+Assert that the model's `dates` field doesn't equal to the given value:
 
 ```php
 $this->assertEloquentDatesNotEquals(Post::class, ['publish_at']);
@@ -463,7 +467,7 @@ $this->assertEloquentDatesNotEquals(Post::class, ['publish_at']);
 
 #### `assertEloquentTouchesEquals()`
 
-Assert that model's `touches` field equals to the given value:
+Assert that the model's `touches` field equals to the given value:
 
 ```php
 $this->assertEloquentTouchesEquals(Comment::class, ['post']);
@@ -471,7 +475,7 @@ $this->assertEloquentTouchesEquals(Comment::class, ['post']);
 
 #### `assertEloquentTouchesNotEquals()`
 
-Assert that model's `touches` field doesn't equal to the given value:
+Assert that the model's `touches` field doesn't equal to the given value:
 
 ```php
 $this->assertEloquentTouchesNotEquals(Comment::class, ['user']);
@@ -481,7 +485,7 @@ $this->assertEloquentTouchesNotEquals(Comment::class, ['user']);
 
 > NOTE: To use this assertion, you have to create model factories for both classes.
 
-Assert that model has the given `HasMany` relation:
+Assert that the model has the given `HasMany` relation:
 
 ```php
 $this->assertEloquentHasMany(Post::class, 'comments');
@@ -503,13 +507,13 @@ class Post extends Model
 
 > NOTE: To use this assertion, you have to create model factories for both classes.
 
-Assert that model has `create` method for the given `HasMany` relation:
+Assert that the model has `create` method for the given `HasMany` relation:
 
 ```php
 $this->assertEloquentHasCreateFor(Post::class, 'comments');
 ```
 
-Assuming that `Post` class has `createComment` method:
+Assuming that `Post` class has `createComment()` method:
 
 ```php
 class Post extends Model
@@ -525,13 +529,13 @@ class Post extends Model
 
 > NOTE: To use this assertion, you have to create model factories for both classes.
 
-Assert that model has `createMany` method for the given `HasMany` relation:
+Assert that the model has `createMany` method for the given `HasMany` relation:
 
 ```php
 $this->assertEloquentHasCreateManyFor(Post::class, 'comments');
 ```
 
-Assuming that `Post` class has `createManyComments` method:
+Assuming that `Post` class has `createManyComments()` method:
 
 ```php
 class Post extends Model
@@ -547,7 +551,7 @@ class Post extends Model
 
 > NOTE: To use this assertion, you have to create model factories for both classes.
 
-Assert that model has the given `BelongsTo` relation:
+Assert that the model has the given `BelongsTo` relation:
 
 ```php
 $this->assertEloquentBelongsTo(Comment::class, 'post');
@@ -582,7 +586,7 @@ $this->willSeeException(RuntimeException::class, 'Oops! Houston, we have a probl
 Assert that the given directory is empty:
 
 ```php
-$this->assertDirectoryEmpty('./some/folder');
+$this->assertDirectoryEmpty('./my/dir/');
 ```
 
 #### `assertDirectoryNotEmpty()`
@@ -590,7 +594,7 @@ $this->assertDirectoryEmpty('./some/folder');
 Assert that the given directory is not empty:
 
 ```php
-$this->assertDirectoryNotEmpty('./some/folder');
+$this->assertDirectoryNotEmpty('./my/dir/');
 ```
 
 #### `assertFilesCount()`
@@ -598,7 +602,7 @@ $this->assertDirectoryNotEmpty('./some/folder');
 Assert that directory has the given number of files:
 
 ```php
-$this->assertFilesCount('./some/folder', 3);
+$this->assertFilesCount('./my/dir/', 3);
 ```
 
 #### `assertNotFilesCount()`
@@ -606,14 +610,16 @@ $this->assertFilesCount('./some/folder', 3);
 Assert that directory doesn't have the given number of files:
 
 ```php
-$this->assertNotFilesCount('./some/folder', 5);
+$this->assertNotFilesCount('./my/dir/', 5);
 ```
 
 ### LogFileAsserts
 
 #### `seeLogFile()`
 
-Assert that the given log file exists. The path is relative to `storage/logs` folder:
+Assert that the given log file exists.
+
+The path is relative to the `storage/logs` folder:
 
 ```php
 $this->seeLogFile('example.log');
@@ -621,7 +627,9 @@ $this->seeLogFile('example.log');
 
 #### `dontSeeLogFile()`
 
-Assert that the given log file doesn't exist. The path is relative to `storage/logs` folder:
+Assert that the given log file doesn't exist.
+
+The path is relative to the `storage/logs` folder:
 
 ```php
 $this->dontSeeLogFile('foobarbaz.log');
@@ -629,13 +637,15 @@ $this->dontSeeLogFile('foobarbaz.log');
 
 #### `seeInLogFile()`
 
-Assert that log file contains the given message. The path is relative to `storage/logs` folder:
+Assert that the log file contains the given message.
+
+The path is relative to the `storage/logs` folder:
 
 ```php
 $this->seeInLogFile('example.log', 'Sample log message!');
 ```
 
-Also, you can pass an array of messages:
+Also, you can specify an array of messages:
 
 ```php
 $this->seeInLogFile('example.log', [
@@ -654,19 +664,21 @@ $this->seeInLogFile('example.log', '[%datetime%]: Sample log message!');
 
 #### `dontSeeInLogFile()`
 
-Assert that log file doesn't contain the given message. The path is relative to `storage/logs` folder:
+Assert that the log file doesn't contain the given message.
+
+The path is relative to the `storage/logs` folder:
 
 ```php
-$this->dontSeeInLogFile('example.log', 'Unexisting log message!');
+$this->dontSeeInLogFile('example.log', 'Non-existing log message!');
 ```
 
-Also, you can pass an array of messages:
+Also, you can specify an array of messages:
 
 ```php
 $this->dontSeeInLogFile('example.log', [
-    'Unexisting log message 1!',
-    'Unexisting log message 2!',
-    'Unexisting log message 3!',
+    'Non-existing log message 1!',
+    'Non-existing log message 2!',
+    'Non-existing log message 3!',
 ]);
 ```
 
@@ -800,6 +812,6 @@ $this->dontSeeRegisteredCommand('foobarbaz');
 
 ## License
 
-The MIT License. Please see [License File](LICENSE.md) for more information.
+Laravel Testing Tools is open-sourced software licensed under the [MIT license](LICENSE.md).
 
 [<img src="https://user-images.githubusercontent.com/1286821/43086829-ff7c006e-8ea6-11e8-8b03-ecf97ca95b2e.png" alt="Support on Patreon" width="125" />](https://patreon.com/dmitryivanov)

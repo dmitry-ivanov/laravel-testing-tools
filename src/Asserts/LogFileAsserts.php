@@ -10,7 +10,7 @@ trait LogFileAsserts
     /**
      * Assert that the given log file exists.
      *
-     * The path is relative to `storage/logs` folder.
+     * The path is relative to the `storage/logs` folder.
      *
      * @param string $path
      * @return void
@@ -24,7 +24,7 @@ trait LogFileAsserts
     /**
      * Assert that the given log file doesn't exist.
      *
-     * The path is relative to `storage/logs` folder.
+     * The path is relative to the `storage/logs` folder.
      *
      * @param string $path
      * @return void
@@ -36,9 +36,9 @@ trait LogFileAsserts
     }
 
     /**
-     * Assert that log file contains the given message.
+     * Assert that the log file contains the given message.
      *
-     * The path is relative to `storage/logs` folder.
+     * The path is relative to the `storage/logs` folder.
      *
      * @param string $path
      * @param string|array $message
@@ -56,9 +56,9 @@ trait LogFileAsserts
     }
 
     /**
-     * Assert that log file doesn't contain the given message.
+     * Assert that the log file doesn't contain the given message.
      *
-     * The path is relative to `storage/logs` folder.
+     * The path is relative to the `storage/logs` folder.
      *
      * @param string $path
      * @param string|array $message

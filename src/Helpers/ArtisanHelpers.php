@@ -17,7 +17,7 @@ trait ArtisanHelpers
     protected static $artisanOutput;
 
     /**
-     * Run artisan command by the class name, and return it.
+     * Run the given artisan console command.
      *
      * @param \Illuminate\Console\Command|string $command
      * @param array $parameters

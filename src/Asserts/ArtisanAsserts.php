@@ -141,7 +141,7 @@ trait ArtisanAsserts
     }
 
     /**
-     * Assert that the given data is seen in the artisan output table.
+     * Assert that the given data is seen in the artisan table output.
      *
      * @param array $data
      * @return void
@@ -153,7 +153,7 @@ trait ArtisanAsserts
     }
 
     /**
-     * Assert that the given data is not seen in the artisan output table.
+     * Assert that the given data is not seen in the artisan table output.
      *
      * @param array $data
      * @return void
@@ -165,7 +165,7 @@ trait ArtisanAsserts
     }
 
     /**
-     * Assert that the artisan output table has the given number of data rows.
+     * Assert that the artisan table output has the given number of data rows.
      *
      * @param int $count
      * @return void
@@ -177,7 +177,7 @@ trait ArtisanAsserts
     }
 
     /**
-     * Assert that the artisan output table doesn't have the given number of data rows.
+     * Assert that the artisan table output doesn't have the given number of data rows.
      *
      * @param int $count
      * @return void
