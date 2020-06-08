@@ -1,7 +1,7 @@
 {
     "name": "illuminated/testing-tools",
     "description": "Laravel-specific Testing Helpers and Assertions.",
-    "keywords": ["laravel", "testing", "tools", "helpers", "assertions"],
+    "keywords": ["laravel", "testing", "tools", "helpers", "assertions", "assertion-methods", "assertion-functions"],
     "license": "MIT",
     "support": {
         "issues": "https://github.com/dmitry-ivanov/laravel-testing-tools/issues",
