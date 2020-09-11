@@ -32,7 +32,7 @@ trait LogFileAsserts
     protected function dontSeeLogFile(string $path)
     {
         $message = "Failed asserting that log file `{$path}` not exists.";
-        $this->assertFileNotExists($this->composeLogFilePath($path), $message);
+        self::assertFileDoesNotExist($this->composeLogFilePath($path), $message);
     }
 
     /**
@@ -51,7 +51,7 @@ trait LogFileAsserts
         $content = File::get($this->composeLogFilePath($path));
         foreach ($messages as $item) {
             $pattern = $this->composeRegexPattern($item);
-            $this->assertRegExp($pattern, $content, "Failed asserting that file `{$path}` contains `{$item}`.");
+            self::assertMatchesRegularExpression($pattern, $content, "Failed asserting that file `{$path}` contains `{$item}`.");
         }
     }
 
@@ -71,7 +71,7 @@ trait LogFileAsserts
         $content = File::get($this->composeLogFilePath($path));
         foreach ($messages as $item) {
             $pattern = $this->composeRegexPattern($item);
-            $this->assertNotRegExp($pattern, $content, "Failed asserting that file `{$path}` not contains `{$item}`.");
+            self::assertDoesNotMatchRegularExpression($pattern, $content, "Failed asserting that file `{$path}` not contains `{$item}`.");
         }
     }
 
