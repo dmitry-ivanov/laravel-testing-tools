@@ -2,6 +2,7 @@
 
 namespace Illuminated\Testing\Asserts;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
@@ -186,8 +187,10 @@ trait EloquentAsserts
         $childKey = $childModel->getKeyName();
         $childForeignKey = $hasManyRelation->getForeignKeyName();
 
-        $parent = factory($class)->create();
-        $children = factory(get_class($childModel), 3)->create([$childForeignKey => $parent->{$parentKey}]);
+        $parent = Factory::factoryForModel($class)->create();
+        $children = Factory::factoryForModel(get_class($childModel))
+            ->count(3)
+            ->create([$childForeignKey => $parent->{$parentKey}]);
 
         $this->assertCollectionsEqual($children, $parent->{$relation}, $childKey);
     }
@@ -212,9 +215,9 @@ trait EloquentAsserts
         $this->assertMethodExists($class, $createMethod);
 
         /** @var \Illuminate\Database\Eloquent\Model $child */
-        $parent = factory($class)->create();
+        $parent = Factory::factoryForModel($class)->create();
         $child = $parent->{$createMethod}(
-            factory(get_class($hasManyRelation->getRelated()))
+            Factory::factoryForModel(get_class($hasManyRelation->getRelated()))
                 ->make()
                 ->toArray()
         );
@@ -244,9 +247,10 @@ trait EloquentAsserts
         $childModel = $hasManyRelation->getRelated();
         $childKey = $childModel->getKeyName();
 
-        $parent = factory($class)->create();
+        $parent = Factory::factoryForModel($class)->create();
         $children = $parent->{$createManyMethod}(
-            factory(get_class($childModel), 3)
+            Factory::factoryForModel(get_class($childModel))
+                ->count(3)
                 ->make()
                 ->toArray()
         );
@@ -273,8 +277,8 @@ trait EloquentAsserts
         $parentKey = $parentModel->getKeyName();
         $childForeignKey = $belongsToRelation->getForeignKeyName();
 
-        $parent = factory(get_class($parentModel))->create();
-        $child = factory($class)->create([$childForeignKey => $parent->{$parentKey}]);
+        $parent = Factory::factoryForModel(get_class($parentModel))->create();
+        $child = Factory::factoryForModel($class)->create([$childForeignKey => $parent->{$parentKey}]);
 
         $this->assertEquals($parent->fresh()->toArray(), $child->{$relation}->toArray());
     }

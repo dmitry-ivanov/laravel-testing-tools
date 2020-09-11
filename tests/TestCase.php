@@ -3,6 +3,7 @@
 namespace Illuminated\Testing\Tests;
 
 use Illuminate\Contracts\Console\Kernel as KernelContract;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminated\Testing\TestingTools;
 use Illuminated\Testing\Tests\App\Console\Kernel;
 use Illuminated\Testing\Tests\App\Providers\FixtureServiceProvider;
@@ -69,7 +70,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      */
     private function setUpFactories()
     {
-        $this->withFactories(__DIR__ . '/fixture/database/factories');
+        Factory::useNamespace('Illuminated\\Testing\\Tests\\Database\\Factories\\');
     }
 
     /**
