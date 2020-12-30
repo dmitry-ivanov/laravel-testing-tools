@@ -36,14 +36,11 @@ jobs:
           max_attempts: 5
           command: composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress
 
-      - name: Install coveralls
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 5
-          max_attempts: 5
-          command: composer require --prefer-dist --no-interaction --no-progress --dev php-coveralls/php-coveralls
-
       - name: Execute tests
-        run: |
-          vendor/bin/phpunit --verbose --coverage-clover build/logs/clover.xml
-          php vendor/bin/php-coveralls --verbose
+        run: vendor/bin/phpunit --verbose --coverage-clover ./build/logs/clover.xml
+
+      - name: Tests coverage
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./build/logs/clover.xml
