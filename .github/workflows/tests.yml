@@ -9,8 +9,9 @@ jobs:
       fail-fast: false
       matrix:
         php: [7.3, 7.4, 8.0]
+        stability: [prefer-lowest, prefer-stable]
 
-    name: PHP ${{ matrix.php }}
+    name: PHP ${{ matrix.php }} (--${{ matrix.stability }})
 
     steps:
       - name: Checkout code
@@ -33,7 +34,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer update --prefer-dist --prefer-stable --no-interaction --no-progress --ansi
+          command: composer update --prefer-dist --${{ matrix.stability }} --no-interaction --no-progress --ansi
 
       - name: Run tests
         run: vendor/bin/phpunit --verbose --colors=always --coverage-clover ./build/logs/clover.xml
