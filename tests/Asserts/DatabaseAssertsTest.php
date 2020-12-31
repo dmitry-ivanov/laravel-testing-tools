@@ -22,11 +22,9 @@ class DatabaseAssertsTest extends TestCase
     /** @test */
     public function it_has_database_has_many_assertion()
     {
-        Post::factory()->createMany([
-            ['title' => 'First Post'],
-            ['title' => 'Second Post'],
-            ['title' => 'Third Post'],
-        ]);
+        Post::factory()->create(['title' => 'First Post']);
+        Post::factory()->create(['title' => 'Second Post']);
+        Post::factory()->create(['title' => 'Third Post']);
 
         $this->assertDatabaseHasMany('posts', [
             ['title' => 'First Post'],
