@@ -35,10 +35,10 @@ jobs:
           max_attempts: 5
           command: composer update --prefer-dist --prefer-stable --no-interaction --no-progress --ansi
 
-      - name: Execute tests
+      - name: Run tests
         run: vendor/bin/phpunit --verbose --colors=always --coverage-clover ./build/logs/clover.xml
 
-      - name: Tests coverage
+      - name: Code coverage
         uses: codecov/codecov-action@v1
         with:
           file: ./build/logs/clover.xml
