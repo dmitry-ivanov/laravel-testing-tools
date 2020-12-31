@@ -5,7 +5,7 @@
 [<img src="https://user-images.githubusercontent.com/1286821/43083932-4915853a-8ea0-11e8-8983-db9e0f04e772.png" alt="Become a Patron" width="160" />](https://patreon.com/dmitryivanov)
 
 [![StyleCI](https://github.styleci.io/repos/75414626/shield?branch=8.x&style=flat)](https://github.styleci.io/repos/75414626?branch=8.x)
-[![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-testing-tools/tests/8.x)](https://github.com/dmitry-ivanov/laravel-testing-tools/actions?query=workflow%3Atests+branch%8.x)
+[![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-testing-tools/tests/8.x)](https://github.com/dmitry-ivanov/laravel-testing-tools/actions?query=workflow%3Atests+branch%3A8.x)
 [![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-testing-tools/8.x)](https://app.codecov.io/gh/dmitry-ivanov/laravel-testing-tools/branch/8.x)
 
 [![Latest Stable Version](https://poser.pugx.org/illuminated/testing-tools/v/stable)](https://packagist.org/packages/illuminated/testing-tools)
