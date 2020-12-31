@@ -4,7 +4,7 @@
 
 [<img src="https://user-images.githubusercontent.com/1286821/43083932-4915853a-8ea0-11e8-8983-db9e0f04e772.png" alt="Become a Patron" width="160" />](https://patreon.com/dmitryivanov)
 
-[![StyleCI](https://styleci.io/repos/75414626/shield?branch=master&style=flat)](https://styleci.io/repos/75414626)
+[![StyleCI](https://github.styleci.io/repos/75414626/shield?branch=master&style=flat)](https://github.styleci.io/repos/75414626?branch=master)
 [![Build Status](https://travis-ci.com/dmitry-ivanov/laravel-testing-tools.svg?branch=master)](https://travis-ci.com/dmitry-ivanov/laravel-testing-tools)
 [![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-testing-tools/badge.svg?branch=master)](https://coveralls.io/github/dmitry-ivanov/laravel-testing-tools?branch=master)
 
