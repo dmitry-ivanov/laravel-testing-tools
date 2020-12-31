@@ -2,9 +2,9 @@
 
 [<img src="https://user-images.githubusercontent.com/1286821/43083932-4915853a-8ea0-11e8-8983-db9e0f04e772.png" alt="Become a Patron" width="160" />](https://patreon.com/dmitryivanov)
 
-[![StyleCI](https://styleci.io/repos/75414626/shield?branch=6.x&style=flat)](https://styleci.io/repos/75414626)
-[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-testing-tools.svg?branch=6.x)](https://travis-ci.org/dmitry-ivanov/laravel-testing-tools)
-[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-testing-tools/badge.svg?branch=6.x)](https://coveralls.io/github/dmitry-ivanov/laravel-testing-tools?branch=6.x)
+[![StyleCI](https://github.styleci.io/repos/75414626/shield?branch=6.x&style=flat)](https://github.styleci.io/repos/75414626?branch=6.x)
+[![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-testing-tools/tests/6.x)](https://github.com/dmitry-ivanov/laravel-testing-tools/actions?query=workflow%3Atests+branch%3A6.x)
+[![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-testing-tools/6.x)](https://app.codecov.io/gh/dmitry-ivanov/laravel-testing-tools/branch/6.x)
 
 [![Latest Stable Version](https://poser.pugx.org/illuminated/testing-tools/v/stable)](https://packagist.org/packages/illuminated/testing-tools)
 [![Latest Unstable Version](https://poser.pugx.org/illuminated/testing-tools/v/unstable)](https://packagist.org/packages/illuminated/testing-tools)
