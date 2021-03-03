@@ -8,10 +8,10 @@
 [![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-testing-tools/tests/master)](https://github.com/dmitry-ivanov/laravel-testing-tools/actions?query=workflow%3Atests+branch%3Amaster)
 [![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-testing-tools/master)](https://app.codecov.io/gh/dmitry-ivanov/laravel-testing-tools/branch/master)
 
-[![Latest Stable Version](https://poser.pugx.org/illuminated/testing-tools/v/stable)](https://packagist.org/packages/illuminated/testing-tools)
-[![Latest Unstable Version](https://poser.pugx.org/illuminated/testing-tools/v/unstable)](https://packagist.org/packages/illuminated/testing-tools)
-[![Total Downloads](https://poser.pugx.org/illuminated/testing-tools/downloads)](https://packagist.org/packages/illuminated/testing-tools)
-[![License](https://poser.pugx.org/illuminated/testing-tools/license)](https://packagist.org/packages/illuminated/testing-tools)
+![Packagist Version](https://img.shields.io/packagist/v/illuminated/testing-tools)
+![Packagist Stars](https://img.shields.io/packagist/stars/illuminated/testing-tools)
+![Packagist Downloads](https://img.shields.io/packagist/dt/illuminated/testing-tools)
+![Packagist License](https://img.shields.io/packagist/l/illuminated/testing-tools)
 
 Laravel-specific Testing Helpers and Assertions.
 
