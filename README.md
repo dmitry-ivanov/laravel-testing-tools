@@ -813,6 +813,10 @@ Assert that the given command is not registered:
 $this->dontSeeRegisteredCommand('foobarbaz');
 ```
 
+## Sponsors
+
+[![Laravel Idea](art/sponsor-laravel-idea.png)](https://laravel-idea.com)
+
 ## License
 
 Laravel Testing Tools is open-sourced software licensed under the [MIT license](LICENSE.md).
