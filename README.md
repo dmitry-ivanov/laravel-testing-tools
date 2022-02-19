@@ -16,7 +16,8 @@
 Laravel-specific Testing Helpers and Assertions.
 
 | Laravel | Testing Tools                                                            |
-| ------- | :----------------------------------------------------------------------: |
+|---------|--------------------------------------------------------------------------|
+| 9.x     | [9.x](https://github.com/dmitry-ivanov/laravel-testing-tools/tree/9.x)   |
 | 8.x     | [8.x](https://github.com/dmitry-ivanov/laravel-testing-tools/tree/8.x)   |
 | 7.x     | [7.x](https://github.com/dmitry-ivanov/laravel-testing-tools/tree/7.x)   |
 | 6.x     | [6.x](https://github.com/dmitry-ivanov/laravel-testing-tools/tree/6.x)   |
