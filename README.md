@@ -4,9 +4,9 @@
 
 [<img src="https://user-images.githubusercontent.com/1286821/43083932-4915853a-8ea0-11e8-8983-db9e0f04e772.png" alt="Become a Patron" width="160" />](https://patreon.com/dmitryivanov)
 
-[![StyleCI](https://github.styleci.io/repos/75414626/shield?branch=master&style=flat)](https://github.styleci.io/repos/75414626?branch=master)
-[![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-testing-tools/tests/master)](https://github.com/dmitry-ivanov/laravel-testing-tools/actions?query=workflow%3Atests+branch%3Amaster)
-[![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-testing-tools/master)](https://app.codecov.io/gh/dmitry-ivanov/laravel-testing-tools/branch/master)
+[![StyleCI](https://github.styleci.io/repos/75414626/shield?branch=9.x&style=flat)](https://github.styleci.io/repos/75414626?branch=9.x)
+[![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-testing-tools/tests/9.x)](https://github.com/dmitry-ivanov/laravel-testing-tools/actions?query=workflow%3Atests+branch%3A9.x)
+[![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-testing-tools/9.x)](https://app.codecov.io/gh/dmitry-ivanov/laravel-testing-tools/branch/9.x)
 
 ![Packagist Version](https://img.shields.io/packagist/v/illuminated/testing-tools)
 ![Packagist Stars](https://img.shields.io/packagist/stars/illuminated/testing-tools)
@@ -35,7 +35,7 @@ Laravel-specific Testing Helpers and Assertions.
 1. Install the package via Composer:
 
     ```shell script
-    composer require --dev illuminated/testing-tools
+    composer require --dev "illuminated/testing-tools:^9.0"
     ```
 
 2. Use `Illuminated\Testing\TestingTools` and disable `$mockConsoleOutput`:
