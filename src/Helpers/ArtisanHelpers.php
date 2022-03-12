@@ -11,19 +11,13 @@ trait ArtisanHelpers
 {
     /**
      * The artisan output.
-     *
-     * @var \Symfony\Component\Console\Output\BufferedOutput
      */
-    protected static $artisanOutput;
+    protected static BufferedOutput|string $artisanOutput;
 
     /**
      * Run the given artisan console command.
-     *
-     * @param \Illuminate\Console\Command|string $command
-     * @param array $parameters
-     * @return \Illuminate\Console\Command
      */
-    protected function runArtisan($command, array $parameters = [])
+    protected function runArtisan(Command|string $command, array $parameters = []): Command
     {
         $command = $command instanceof Command ? $command : new $command;
 
@@ -37,10 +31,8 @@ trait ArtisanHelpers
 
     /**
      * Get artisan output.
-     *
-     * @return string
      */
-    protected function getArtisanOutput()
+    protected function getArtisanOutput(): string
     {
         $output = Artisan::output();
         if (!empty($output)) {

@@ -8,31 +8,24 @@ trait ApplicationHelpers
 {
     /**
      * Emulate that application is running on the `local` environment.
-     *
-     * @return void
      */
-    protected function emulateLocal()
+    protected function emulateLocal(): void
     {
         $this->emulateEnvironment('local');
     }
 
     /**
      * Emulate that application is running on the `production` environment.
-     *
-     * @return void
      */
-    protected function emulateProduction()
+    protected function emulateProduction(): void
     {
         $this->emulateEnvironment('production');
     }
 
     /**
      * Emulate that application is running on the given environment.
-     *
-     * @param string $environment
-     * @return void
      */
-    protected function emulateEnvironment(string $environment)
+    protected function emulateEnvironment(string $environment): void
     {
         App::detectEnvironment(function () use ($environment) {
             return $environment;
@@ -41,10 +34,8 @@ trait ApplicationHelpers
 
     /**
      * Check whether the application is running on Travis or not.
-     *
-     * @return bool
      */
-    protected function isTravis()
+    protected function isTravis(): bool
     {
         return (bool) getenv('TRAVIS');
     }

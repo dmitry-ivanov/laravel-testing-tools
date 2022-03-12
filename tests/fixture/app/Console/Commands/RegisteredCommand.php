@@ -15,10 +15,8 @@ class RegisteredCommand extends Command
 
     /**
      * Handle the command.
-     *
-     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         $this->info('Done!');
     }

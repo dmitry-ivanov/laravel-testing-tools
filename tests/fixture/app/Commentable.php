@@ -6,8 +6,6 @@ trait Commentable
 {
     /**
      * Just a random trait property for tests.
-     *
-     * @var bool
      */
-    protected $something = true;
+    protected bool $something = true;
 }

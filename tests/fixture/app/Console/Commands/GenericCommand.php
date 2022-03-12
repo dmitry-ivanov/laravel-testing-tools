@@ -15,20 +15,16 @@ class GenericCommand extends Command
 
     /**
      * Handle the command.
-     *
-     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         $this->info('Hello, World!');
     }
 
     /**
      * Get the greeting message.
-     *
-     * @return string
      */
-    public function getGreetingMessage()
+    public function getGreetingMessage(): string
     {
         $name = $this->option('name') ?: 'Dude';
 

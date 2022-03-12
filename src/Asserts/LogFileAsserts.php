@@ -11,11 +11,8 @@ trait LogFileAsserts
      * Assert that the given log file exists.
      *
      * The path is relative to the `storage/logs` folder.
-     *
-     * @param string $path
-     * @return void
      */
-    protected function seeLogFile(string $path)
+    protected function seeLogFile(string $path): void
     {
         $message = "Failed asserting that log file `{$path}` exists.";
         $this->assertFileExists($this->composeLogFilePath($path), $message);
@@ -25,11 +22,8 @@ trait LogFileAsserts
      * Assert that the given log file doesn't exist.
      *
      * The path is relative to the `storage/logs` folder.
-     *
-     * @param string $path
-     * @return void
      */
-    protected function dontSeeLogFile(string $path)
+    protected function dontSeeLogFile(string $path): void
     {
         $message = "Failed asserting that log file `{$path}` not exists.";
         $this->assertFileDoesNotExist($this->composeLogFilePath($path), $message);
@@ -39,12 +33,8 @@ trait LogFileAsserts
      * Assert that the log file contains the given message.
      *
      * The path is relative to the `storage/logs` folder.
-     *
-     * @param string $path
-     * @param string|array $message
-     * @return void
      */
-    protected function seeInLogFile(string $path, $message)
+    protected function seeInLogFile(string $path, array|string $message): void
     {
         $messages = !is_array($message) ? [$message] : $message;
 
@@ -59,12 +49,8 @@ trait LogFileAsserts
      * Assert that the log file doesn't contain the given message.
      *
      * The path is relative to the `storage/logs` folder.
-     *
-     * @param string $path
-     * @param string|array $message
-     * @return void
      */
-    protected function dontSeeInLogFile(string $path, $message)
+    protected function dontSeeInLogFile(string $path, array|string $message): void
     {
         $messages = !is_array($message) ? [$message] : $message;
 
@@ -77,22 +63,16 @@ trait LogFileAsserts
 
     /**
      * Compose the log file path.
-     *
-     * @param string $path
-     * @return string
      */
-    private function composeLogFilePath(string $path)
+    private function composeLogFilePath(string $path): string
     {
         return storage_path("logs/{$path}");
     }
 
     /**
      * Compose regex pattern for the given log message.
-     *
-     * @param string $message
-     * @return string
      */
-    private function composeRegexPattern(string $message)
+    private function composeRegexPattern(string $message): string
     {
         $pattern = '/'
             . preg_quote($message, '/')

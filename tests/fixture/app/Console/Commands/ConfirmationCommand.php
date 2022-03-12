@@ -15,10 +15,8 @@ class ConfirmationCommand extends Command
 
     /**
      * Handle the command.
-     *
-     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         if (!$this->confirm('Are you sure?')) {
             return;
