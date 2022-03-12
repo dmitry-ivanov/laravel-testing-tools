@@ -18,10 +18,8 @@ class ConfirmableTraitCommand extends Command
 
     /**
      * Handle the command.
-     *
-     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         if (!$this->confirmToProceed('Attention, please!', true)) {
             return;

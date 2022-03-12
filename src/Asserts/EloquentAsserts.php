@@ -11,12 +11,8 @@ trait EloquentAsserts
 {
     /**
      * Assert that the model's table name equals to the given value.
-     *
-     * @param string $class
-     * @param string $table
-     * @return void
      */
-    protected function assertEloquentTableEquals(string $class, string $table)
+    protected function assertEloquentTableEquals(string $class, string $table): void
     {
         /** @var \Illuminate\Database\Eloquent\Model $model */
         $model = new $class;
@@ -27,12 +23,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model's table name doesn't equal to the given value.
-     *
-     * @param string $class
-     * @param string $table
-     * @return void
      */
-    protected function assertEloquentTableNotEquals(string $class, string $table)
+    protected function assertEloquentTableNotEquals(string $class, string $table): void
     {
         /** @var \Illuminate\Database\Eloquent\Model $model */
         $model = new $class;
@@ -43,11 +35,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model's primary key is incrementing.
-     *
-     * @param string $class
-     * @return void
      */
-    protected function assertEloquentIsIncrementing(string $class)
+    protected function assertEloquentIsIncrementing(string $class): void
     {
         /** @var \Illuminate\Database\Eloquent\Model $model */
         $model = new $class;
@@ -58,11 +47,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model's primary key is not incrementing.
-     *
-     * @param string $class
-     * @return void
      */
-    protected function assertEloquentIsNotIncrementing(string $class)
+    protected function assertEloquentIsNotIncrementing(string $class): void
     {
         /** @var \Illuminate\Database\Eloquent\Model $model */
         $model = new $class;
@@ -73,12 +59,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model's `fillable` field equals to the given value.
-     *
-     * @param string $class
-     * @param array $fillable
-     * @return void
      */
-    protected function assertEloquentFillableEquals(string $class, array $fillable)
+    protected function assertEloquentFillableEquals(string $class, array $fillable): void
     {
         /** @var \Illuminate\Database\Eloquent\Model $model */
         $model = new $class;
@@ -89,12 +71,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model's `fillable` field doesn't equal to the given value.
-     *
-     * @param string $class
-     * @param array $fillable
-     * @return void
      */
-    protected function assertEloquentFillableNotEquals(string $class, array $fillable)
+    protected function assertEloquentFillableNotEquals(string $class, array $fillable): void
     {
         /** @var \Illuminate\Database\Eloquent\Model $model */
         $model = new $class;
@@ -105,12 +83,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model's `dates` field equals to the given value.
-     *
-     * @param string $class
-     * @param array $dates
-     * @return void
      */
-    protected function assertEloquentDatesEquals(string $class, array $dates)
+    protected function assertEloquentDatesEquals(string $class, array $dates): void
     {
         /** @var \Illuminate\Database\Eloquent\Model $model */
         $model = new $class;
@@ -121,12 +95,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model's `dates` field doesn't equal to the given value.
-     *
-     * @param string $class
-     * @param array $dates
-     * @return void
      */
-    protected function assertEloquentDatesNotEquals(string $class, array $dates)
+    protected function assertEloquentDatesNotEquals(string $class, array $dates): void
     {
         /** @var \Illuminate\Database\Eloquent\Model $model */
         $model = new $class;
@@ -137,12 +107,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model's `touches` field equals to the given value.
-     *
-     * @param string $class
-     * @param array $touches
-     * @return void
      */
-    protected function assertEloquentTouchesEquals(string $class, array $touches)
+    protected function assertEloquentTouchesEquals(string $class, array $touches): void
     {
         /** @var \Illuminate\Database\Eloquent\Model $model */
         $model = new $class;
@@ -153,12 +119,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model's `touches` field doesn't equal to the given value.
-     *
-     * @param string $class
-     * @param array $touches
-     * @return void
      */
-    protected function assertEloquentTouchesNotEquals(string $class, array $touches)
+    protected function assertEloquentTouchesNotEquals(string $class, array $touches): void
     {
         /** @var \Illuminate\Database\Eloquent\Model $model */
         $model = new $class;
@@ -169,12 +131,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model has the given `HasMany` relation.
-     *
-     * @param string $class
-     * @param string $relation
-     * @return void
      */
-    protected function assertEloquentHasMany(string $class, string $relation)
+    protected function assertEloquentHasMany(string $class, string $relation): void
     {
         $this->assertMethodExists($class, $relation);
 
@@ -197,13 +155,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model has `create` method for the given `HasMany` relation.
-     *
-     * @param string $class
-     * @param string $relation
-     * @param string $createMethod
-     * @return void
      */
-    protected function assertEloquentHasCreateFor(string $class, string $relation, string $createMethod = '')
+    protected function assertEloquentHasCreateFor(string $class, string $relation, string $createMethod = ''): void
     {
         $this->assertMethodExists($class, $relation);
 
@@ -227,13 +180,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model has `createMany` method for the given `HasMany` relation.
-     *
-     * @param string $class
-     * @param string $relation
-     * @param string $createManyMethod
-     * @return void
      */
-    protected function assertEloquentHasCreateManyFor(string $class, string $relation, string $createManyMethod = '')
+    protected function assertEloquentHasCreateManyFor(string $class, string $relation, string $createManyMethod = ''): void
     {
         $this->assertMethodExists($class, $relation);
 
@@ -260,12 +208,8 @@ trait EloquentAsserts
 
     /**
      * Assert that the model has the given `BelongsTo` relation.
-     *
-     * @param string $class
-     * @param string $relation
-     * @return void
      */
-    protected function assertEloquentBelongsTo(string $class, string $relation)
+    protected function assertEloquentBelongsTo(string $class, string $relation): void
     {
         $this->assertMethodExists($class, $relation);
 

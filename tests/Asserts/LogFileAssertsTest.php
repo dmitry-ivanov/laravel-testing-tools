@@ -10,8 +10,6 @@ class LogFileAssertsTest extends TestCase
 {
     /**
      * Setup the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -22,10 +20,8 @@ class LogFileAssertsTest extends TestCase
 
     /**
      * Create a sample log file.
-     *
-     * @return void
      */
-    private function createSampleLogFile()
+    private function createSampleLogFile(): void
     {
         $date = Carbon::now();
         $path = storage_path('logs/example.log');
@@ -93,8 +89,6 @@ class LogFileAssertsTest extends TestCase
 
     /**
      * Clean up the testing environment before the next test.
-     *
-     * @return void
      */
     protected function tearDown(): void
     {

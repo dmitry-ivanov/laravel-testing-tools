@@ -8,40 +8,30 @@ trait DatabaseAsserts
 {
     /**
      * Assert that the database has the given table.
-     *
-     * @param string $table
-     * @return void
      */
-    protected function assertDatabaseHasTable(string $table)
+    protected function assertDatabaseHasTable(string $table): void
     {
         $this->assertTrue(
             Schema::hasTable($table),
-            "Failed asserting that database has table `{$table}`."
+            "Failed asserting that database has table `{$table}`.",
         );
     }
 
     /**
      * Assert that the database doesn't have the given table.
-     *
-     * @param string $table
-     * @return void
      */
-    protected function assertDatabaseMissingTable(string $table)
+    protected function assertDatabaseMissingTable(string $table): void
     {
         $this->assertFalse(
             Schema::hasTable($table),
-            "Failed asserting that database missing table `{$table}`."
+            "Failed asserting that database missing table `{$table}`.",
         );
     }
 
     /**
      * Assert that the database has all the given rows.
-     *
-     * @param string $table
-     * @param array $rows
-     * @return $this
      */
-    protected function assertDatabaseHasMany(string $table, array $rows)
+    protected function assertDatabaseHasMany(string $table, array $rows): self
     {
         foreach ($rows as $row) {
             $this->assertDatabaseHas($table, $row);
@@ -52,12 +42,8 @@ trait DatabaseAsserts
 
     /**
      * Assert that the database doesn't have all the given rows.
-     *
-     * @param string $table
-     * @param array $rows
-     * @return $this
      */
-    protected function assertDatabaseMissingMany(string $table, array $rows)
+    protected function assertDatabaseMissingMany(string $table, array $rows): self
     {
         foreach ($rows as $row) {
             $this->assertDatabaseMissing($table, $row);

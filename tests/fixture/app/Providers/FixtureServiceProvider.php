@@ -11,10 +11,8 @@ class FixtureServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerAliases();
         $this->registerCommands();
@@ -22,10 +20,8 @@ class FixtureServiceProvider extends ServiceProvider
 
     /**
      * Register aliases.
-     *
-     * @return void
      */
-    private function registerAliases()
+    private function registerAliases(): void
     {
         $this->app->booting(function () {
             $loader = AliasLoader::getInstance();
@@ -35,10 +31,8 @@ class FixtureServiceProvider extends ServiceProvider
 
     /**
      * Register commands.
-     *
-     * @return void
      */
-    private function registerCommands()
+    private function registerCommands(): void
     {
         $this->app->singleton('command.fixture.registered', RegisteredCommand::class);
 

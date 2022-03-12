@@ -21,8 +21,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Setup the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -47,10 +45,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Setup the database.
-     *
-     * @return void
      */
-    protected function setUpDatabase()
+    protected function setUpDatabase(): void
     {
         config(['database.default' => 'testing']);
         config(['database.connections.testing.foreign_key_constraints' => true]);
@@ -65,30 +61,24 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Setup factories.
-     *
-     * @return void
      */
-    private function setUpFactories()
+    private function setUpFactories(): void
     {
         Factory::useNamespace('Illuminated\\Testing\\Tests\\Database\\Factories\\');
     }
 
     /**
      * Setup views.
-     *
-     * @return void
      */
-    private function setUpViews()
+    private function setUpViews(): void
     {
         app('view')->addLocation(__DIR__ . '/fixture/resources/views');
     }
 
     /**
      * Setup storage.
-     *
-     * @return void
      */
-    private function setUpStorage()
+    private function setUpStorage(): void
     {
         $this->app->useStoragePath(__DIR__ . '/fixture/storage');
     }

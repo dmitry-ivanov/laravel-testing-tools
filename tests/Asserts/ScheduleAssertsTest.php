@@ -22,10 +22,8 @@ class ScheduleAssertsTest extends TestCase
 
     /**
      * Create a sample schedule.
-     *
-     * @return void
      */
-    private function createSampleSchedule()
+    private function createSampleSchedule(): void
     {
         app()->booted(function () {
             $schedule = app(Schedule::class);

@@ -8,8 +8,6 @@ class HomeController extends Controller
 {
     /**
      * The index action.
-     *
-     * @return \Illuminate\View\View
      */
     public function index()
     {

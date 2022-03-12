@@ -10,13 +10,8 @@ trait ArtisanAsserts
 {
     /**
      * Add expectation that the given confirmation question would be shown.
-     *
-     * @param string $question
-     * @param string $command
-     * @param array $parameters
-     * @return void
      */
-    protected function willSeeConfirmation(string $question, string $command, array $parameters = [])
+    protected function willSeeConfirmation(string $question, string $command, array $parameters = []): void
     {
         $mock = Mockery::mock("{$command}[confirm]");
         $mock->shouldReceive('confirm')->once()->with($question);
@@ -26,13 +21,8 @@ trait ArtisanAsserts
 
     /**
      * Add expectation that the given confirmation question would not be shown.
-     *
-     * @param string $question
-     * @param string $command
-     * @param array $parameters
-     * @return void
      */
-    protected function willNotSeeConfirmation(string $question, string $command, array $parameters = [])
+    protected function willNotSeeConfirmation(string $question, string $command, array $parameters = []): void
     {
         $mock = Mockery::mock("{$command}[confirm]");
         $mock->shouldNotReceive('confirm')->with($question);
@@ -42,13 +32,8 @@ trait ArtisanAsserts
 
     /**
      * Add expectation that the given confirmation question would be shown, and accept it.
-     *
-     * @param string $question
-     * @param string $command
-     * @param array $parameters
-     * @return void
      */
-    protected function willGiveConfirmation(string $question, string $command, array $parameters = [])
+    protected function willGiveConfirmation(string $question, string $command, array $parameters = []): void
     {
         $mock = Mockery::mock("{$command}[confirm]");
         $mock->shouldReceive('confirm')->once()->with($question)->andReturn(true);
@@ -58,13 +43,8 @@ trait ArtisanAsserts
 
     /**
      * Add expectation that the given confirmation question would be shown, and do not accept it.
-     *
-     * @param string $question
-     * @param string $command
-     * @param array $parameters
-     * @return void
      */
-    protected function willNotGiveConfirmation(string $question, string $command, array $parameters = [])
+    protected function willNotGiveConfirmation(string $question, string $command, array $parameters = []): void
     {
         $mock = Mockery::mock("{$command}[confirm]");
         $mock->shouldReceive('confirm')->once()->with($question)->andReturn(false);
@@ -74,11 +54,8 @@ trait ArtisanAsserts
 
     /**
      * Assert that the given artisan output is seen.
-     *
-     * @param string $output
-     * @return void
      */
-    protected function seeArtisanOutput(string $output)
+    protected function seeArtisanOutput(string $output): void
     {
         if (File::exists($output)) {
             $output = File::get($output);
@@ -91,11 +68,8 @@ trait ArtisanAsserts
 
     /**
      * Assert that the given artisan output is not seen.
-     *
-     * @param string $output
-     * @return void
      */
-    protected function dontSeeArtisanOutput(string $output)
+    protected function dontSeeArtisanOutput(string $output): void
     {
         if (File::exists($output)) {
             $output = File::get($output);
@@ -108,11 +82,8 @@ trait ArtisanAsserts
 
     /**
      * Assert that the given string is seen in the artisan output.
-     *
-     * @param string $needle
-     * @return void
      */
-    protected function seeInArtisanOutput(string $needle)
+    protected function seeInArtisanOutput(string $needle): void
     {
         if (File::exists($needle)) {
             $needle = File::get($needle);
@@ -125,11 +96,8 @@ trait ArtisanAsserts
 
     /**
      * Assert that the given string is not seen in the artisan output.
-     *
-     * @param string $needle
-     * @return void
      */
-    protected function dontSeeInArtisanOutput(string $needle)
+    protected function dontSeeInArtisanOutput(string $needle): void
     {
         if (File::exists($needle)) {
             $needle = File::get($needle);
@@ -142,11 +110,8 @@ trait ArtisanAsserts
 
     /**
      * Assert that the given data is seen in the artisan table output.
-     *
-     * @param array $data
-     * @return void
      */
-    protected function seeArtisanTableOutput(array $data)
+    protected function seeArtisanTableOutput(array $data): void
     {
         $message = 'Failed asserting that artisan table output consists of expected data.';
         $this->assertEquals($data, $this->parseArtisanTableOutput($this->getArtisanOutput()), $message);
@@ -154,11 +119,8 @@ trait ArtisanAsserts
 
     /**
      * Assert that the given data is not seen in the artisan table output.
-     *
-     * @param array $data
-     * @return void
      */
-    protected function dontSeeArtisanTableOutput(array $data)
+    protected function dontSeeArtisanTableOutput(array $data): void
     {
         $message = 'Failed asserting that artisan table output not consists of expected data.';
         $this->assertNotEquals($data, $this->parseArtisanTableOutput($this->getArtisanOutput()), $message);
@@ -166,11 +128,8 @@ trait ArtisanAsserts
 
     /**
      * Assert that the artisan table output has the given number of data rows.
-     *
-     * @param int $count
-     * @return void
      */
-    protected function seeArtisanTableRowsCount(int $count)
+    protected function seeArtisanTableRowsCount(int $count): void
     {
         $message = "Failed asserting that artisan table rows count equals to `{$count}`.";
         $this->assertCount($count, $this->parseArtisanTableOutput($this->getArtisanOutput()), $message);
@@ -178,11 +137,8 @@ trait ArtisanAsserts
 
     /**
      * Assert that the artisan table output doesn't have the given number of data rows.
-     *
-     * @param int $count
-     * @return void
      */
-    protected function dontSeeArtisanTableRowsCount(int $count)
+    protected function dontSeeArtisanTableRowsCount(int $count): void
     {
         $message = "Failed asserting that artisan table rows count not equals to `{$count}`.";
         $this->assertNotCount($count, $this->parseArtisanTableOutput($this->getArtisanOutput()), $message);
@@ -192,11 +148,8 @@ trait ArtisanAsserts
      * Parse the artisan table output.
      *
      * Return data rows with headers as keys.
-     *
-     * @param string $output
-     * @return array
      */
-    private function parseArtisanTableOutput(string $output)
+    private function parseArtisanTableOutput(string $output): array
     {
         $output = explode("\n", trim($output));
 

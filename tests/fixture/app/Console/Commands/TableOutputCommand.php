@@ -15,10 +15,8 @@ class TableOutputCommand extends Command
 
     /**
      * Handle the command.
-     *
-     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         $rows = $this->getRows();
         $headers = array_keys($rows[0]);
@@ -27,10 +25,8 @@ class TableOutputCommand extends Command
 
     /**
      * Get the rows.
-     *
-     * @return array
      */
-    private function getRows()
+    private function getRows(): array
     {
         return [
             ['System' => 'Node-1', 'Status' => 'Enabled'],

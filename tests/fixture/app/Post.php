@@ -2,8 +2,10 @@
 
 namespace Illuminated\Testing\Tests\App;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends Model
 {
@@ -33,32 +35,24 @@ class Post extends Model
 
     /**
      * Get the comments.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function comments()
+    public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
     }
 
     /**
      * Create a comment.
-     *
-     * @param array $attributes
-     * @return \Illuminate\Database\Eloquent\Model
      */
-    public function createComment(array $attributes)
+    public function createComment(array $attributes): Comment
     {
         return $this->comments()->create($attributes);
     }
 
     /**
      * Create many comments.
-     *
-     * @param array $comments
-     * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function createManyComments(array $comments)
+    public function createManyComments(array $comments): Collection
     {
         return $this->comments()->createMany($comments);
     }
@@ -66,12 +60,9 @@ class Post extends Model
     /**
      * Attach a comment.
      *
-     * @param array $attributes
-     * @return \Illuminate\Database\Eloquent\Model
-     *
      * @noinspection PhpUnused
      */
-    public function attachComment(array $attributes)
+    public function attachComment(array $attributes): Comment
     {
         return $this->createComment($attributes);
     }
@@ -79,12 +70,9 @@ class Post extends Model
     /**
      * Attach many comments.
      *
-     * @param array $comments
-     * @return \Illuminate\Database\Eloquent\Collection
-     *
      * @noinspection PhpUnused
      */
-    public function attachManyComments(array $comments)
+    public function attachManyComments(array $comments): Collection
     {
         return $this->createManyComments($comments);
     }
