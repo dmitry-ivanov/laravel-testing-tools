@@ -816,8 +816,8 @@ $this->dontSeeRegisteredCommand('foobarbaz');
 
 ## Sponsors
 
-[![Laravel Idea](art/sponsor-laravel-idea.png)](https://laravel-idea.com)
 [![Material Theme UI Plugin](art/sponsor-material-theme.png)](https://material-theme.com)
+[![Laravel Idea](art/sponsor-laravel-idea.png)](https://laravel-idea.com)
 
 ## License
 
