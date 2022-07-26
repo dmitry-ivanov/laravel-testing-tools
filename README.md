@@ -38,7 +38,7 @@ Laravel-specific Testing Helpers and Assertions.
     composer require --dev illuminated/testing-tools
     ```
 
-2. Use `Illuminated\Testing\TestingTools` and disable `$mockConsoleOutput`:
+2. Use `Illuminated\Testing\TestingTools` trait:
 
     ```php
     use Illuminated\Testing\TestingTools;
@@ -47,8 +47,6 @@ Laravel-specific Testing Helpers and Assertions.
     {
         use TestingTools;
 
-        public $mockConsoleOutput = false;
-
         // ...
     }
     ```
@@ -56,14 +54,14 @@ Laravel-specific Testing Helpers and Assertions.
 3. Use any of the provided helpers and assertions in your tests:
 
     ```php
-    class HelloCommandTest extends TestCase
+    class ExampleCommandTest extends TestCase
     {
         /** @test */
-        public function it_outputs_hello_world()
+        public function it_logs_hello_world()
         {
-            $this->artisan('hello');
+            $this->artisan('example');
 
-            $this->seeArtisanOutput('Hello, World!');
+            $this->seeInLogFile('example.log', 'Hello World!');
         }
     }
     ```
@@ -77,26 +75,11 @@ Laravel-specific Testing Helpers and Assertions.
   - [emulateProduction](#emulateproduction)
   - [emulateEnvironment](#emulateenvironment)
   - [isTravis](#istravis)
-- [ArtisanHelpers](#artisanhelpers)
-  - [runArtisan](#runartisan)
 
 ## Available assertions
 
 > Feel free to contribute.
 
-- [ArtisanAsserts](#artisanasserts)
-  - [willSeeConfirmation](#willseeconfirmation)
-  - [willNotSeeConfirmation](#willnotseeconfirmation)
-  - [willGiveConfirmation](#willgiveconfirmation)
-  - [willNotGiveConfirmation](#willnotgiveconfirmation)
-  - [seeArtisanOutput](#seeartisanoutput)
-  - [dontSeeArtisanOutput](#dontseeartisanoutput)
-  - [seeInArtisanOutput](#seeinartisanoutput)
-  - [dontSeeInArtisanOutput](#dontseeinartisanoutput)
-  - [seeArtisanTableOutput](#seeartisantableoutput)
-  - [dontSeeArtisanTableOutput](#dontseeartisantableoutput)
-  - [seeArtisanTableRowsCount](#seeartisantablerowscount)
-  - [dontSeeArtisanTableRowsCount](#dontseeartisantablerowscount)
 - [CollectionAsserts](#collectionasserts)
   - [assertCollectionsEqual](#assertcollectionsequal)
   - [assertCollectionsNotEqual](#assertcollectionsnotequal)
@@ -188,161 +171,7 @@ $this->isTravis();
 // true
 ```
 
-### ArtisanHelpers
-
-#### `runArtisan()`
-
-Run the given artisan console command:
-
-```php
-$command = $this->runArtisan(MyCommand::class, ['--name' => 'John']);
-
-// \Illuminate\Console\Command
-```
-
-Also, you can pass the command instance as a first argument:
-
-```php
-$command = $this->runArtisan(new MyCommand, ['--name' => 'Jane']);
-
-// \Illuminate\Console\Command
-```
-
 ## Assertions
-
-### ArtisanAsserts
-
-#### `willSeeConfirmation()`
-
-Add expectation that the given confirmation question would be shown:
-
-```php
-$this->willSeeConfirmation('Are you sure?', MyCommand::class);
-```
-
-#### `willNotSeeConfirmation()`
-
-Add expectation that the given confirmation question would not be shown:
-
-```php
-$this->willNotSeeConfirmation('Are you sure?', MyCommand::class);
-```
-
-#### `willGiveConfirmation()`
-
-Add expectation that the given confirmation question would be shown, and accept it:
-
-```php
-$this->willGiveConfirmation('Are you sure?', MyCommand::class);
-
-$this->seeArtisanOutput('Done!');
-```
-
-#### `willNotGiveConfirmation()`
-
-Add expectation that the given confirmation question would be shown, and do not accept it:
-
-```php
-$this->willNotGiveConfirmation('Are you sure?', MyCommand::class);
-
-$this->dontSeeArtisanOutput('Done!');
-```
-
-#### `seeArtisanOutput()`
-
-Assert that the given artisan output is seen:
-
-```php
-$this->seeArtisanOutput('Hello, World!');
-```
-
-Also, you can specify a path to the file containing output:
-
-```php
-$this->seeArtisanOutput('correct.output.txt');
-```
-
-#### `dontSeeArtisanOutput()`
-
-Assert that the given artisan output is not seen:
-
-```php
-$this->dontSeeArtisanOutput('Hello, Universe!');
-```
-
-Also, you can specify a path to the file containing output:
-
-```php
-$this->dontSeeArtisanOutput('incorrect.output.txt');
-```
-
-#### `seeInArtisanOutput()`
-
-Assert that the given string is seen in the artisan output:
-
-```php
-$this->seeInArtisanOutput('Hello');
-```
-
-Also, you can specify a path to the file containing the string:
-
-```php
-$this->seeInArtisanOutput('needle.txt');
-```
-
-#### `dontSeeInArtisanOutput()`
-
-Assert that the given string is not seen in the artisan output:
-
-```php
-$this->dontSeeInArtisanOutput('FooBar');
-```
-
-Also, you can specify a path to the file containing the string:
-
-```php
-$this->dontSeeInArtisanOutput('wrong-needle.txt');
-```
-
-#### `seeArtisanTableOutput()`
-
-Assert that the given data is seen in the artisan table output:
-
-```php
-$this->seeArtisanTableOutput([
-    ['System' => 'Node-1', 'Status' => 'Enabled'],
-    ['System' => 'Node-2', 'Status' => 'Enabled'],
-    ['System' => 'Node-3', 'Status' => 'Enabled'],
-]);
-```
-
-#### `dontSeeArtisanTableOutput()`
-
-Assert that the given data is not seen in the artisan table output:
-
-```php
-$this->dontSeeArtisanTableOutput([
-    ['System' => 'Node-1', 'Status' => 'Disabled'],
-    ['System' => 'Node-2', 'Status' => 'Disabled'],
-    ['System' => 'Node-3', 'Status' => 'Disabled'],
-]);
-```
-
-#### `seeArtisanTableRowsCount()`
-
-Assert that the artisan table output has the given number of data rows:
-
-```php
-$this->seeArtisanTableRowsCount(3);
-```
-
-#### `dontSeeArtisanTableRowsCount()`
-
-Assert that the artisan table output doesn't have the given number of data rows:
-
-```php
-$this->dontSeeArtisanTableRowsCount(5);
-```
 
 ### CollectionAsserts
 
