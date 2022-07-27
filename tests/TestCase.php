@@ -48,7 +48,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '--database' => 'testing',
             '--realpath' => true,
             '--path' => __DIR__ . '/fixture/database/migrations/',
-        ])->expectsOutputToContain('DONE');
+        ])->assertSuccessful();
     }
 
     /**
