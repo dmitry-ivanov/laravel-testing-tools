@@ -13,13 +13,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     use TestingTools;
 
     /**
-     * Indicates if the console output should be mocked.
-     *
-     * @var bool
-     */
-    public $mockConsoleOutput = false;
-
-    /**
      * Setup the test environment.
      */
     protected function setUp(): void
@@ -55,8 +48,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '--database' => 'testing',
             '--realpath' => true,
             '--path' => __DIR__ . '/fixture/database/migrations/',
-        ]);
-        $this->seeInArtisanOutput('Migrated');
+        ])->assertSuccessful();
     }
 
     /**
