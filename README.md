@@ -74,7 +74,6 @@ Laravel-specific Testing Helpers and Assertions.
   - [emulateLocal](#emulatelocal)
   - [emulateProduction](#emulateproduction)
   - [emulateEnvironment](#emulateenvironment)
-  - [isTravis](#istravis)
 
 ## Available assertions
 
@@ -159,16 +158,6 @@ Emulate that application is running on the given environment:
 
 ```php
 $this->emulateEnvironment('demo');
-```
-
-#### `isTravis()`
-
-Check whether the application is running on Travis or not:
-
-```php
-$this->isTravis();
-
-// true
 ```
 
 ## Assertions
