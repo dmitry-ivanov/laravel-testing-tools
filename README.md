@@ -102,11 +102,6 @@ Laravel-specific Testing Helpers and Assertions.
   - [dontSeeScheduleCount](#dontseeschedulecount)
   - [seeInSchedule](#seeinschedule)
   - [dontSeeInSchedule](#dontseeinschedule)
-- [ServiceProviderAsserts](#serviceproviderasserts)
-  - [seeRegisteredAlias](#seeregisteredalias)
-  - [dontSeeRegisteredAlias](#dontseeregisteredalias)
-  - [seeRegisteredCommand](#seeregisteredcommand)
-  - [dontSeeRegisteredCommand](#dontseeregisteredcommand)
 
 ## Helpers
 
@@ -342,40 +337,6 @@ Assert that the given command is not scheduled:
 
 ```php
 $this->dontSeeInSchedule('foobarbaz');
-```
-
-### ServiceProviderAsserts
-
-#### `seeRegisteredAlias()`
-
-Assert that the given alias is registered:
-
-```php
-$this->seeRegisteredAlias('Twitter');
-```
-
-#### `dontSeeRegisteredAlias()`
-
-Assert that the given alias is not registered:
-
-```php
-$this->dontSeeRegisteredAlias('FooBarBaz');
-```
-
-#### `seeRegisteredCommand()`
-
-Assert that the given command is registered:
-
-```php
-$this->seeRegisteredCommand('my-command');
-```
-
-#### `dontSeeRegisteredCommand()`
-
-Assert that the given command is not registered:
-
-```php
-$this->dontSeeRegisteredCommand('foobarbaz');
 ```
 
 ## Sponsors

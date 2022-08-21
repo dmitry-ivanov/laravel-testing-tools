@@ -5,8 +5,6 @@ namespace Illuminated\Testing\Tests;
 use Illuminate\Contracts\Console\Kernel as KernelContract;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminated\Testing\TestingTools;
-use Illuminated\Testing\Tests\App\Console\Kernel;
-use Illuminated\Testing\Tests\App\Providers\FixtureServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -22,17 +20,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->setUpDatabase();
         $this->setUpFactories();
         $this->setUpStorage();
-    }
-
-    /**
-     * Get package providers.
-     *
-     * @param \Illuminate\Foundation\Application $app
-     * @return array
-     */
-    protected function getPackageProviders($app)
-    {
-        return [FixtureServiceProvider::class];
     }
 
     /**
@@ -74,7 +61,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      */
     protected function resolveApplicationConsoleKernel($app)
     {
-        $app->singleton(KernelContract::class, Kernel::class);
+        parent::resolveApplicationConsoleKernel($app);
 
         app(KernelContract::class);
     }

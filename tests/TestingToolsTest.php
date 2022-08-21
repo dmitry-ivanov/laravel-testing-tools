@@ -7,7 +7,6 @@ use Illuminated\Testing\Asserts\DatabaseAsserts;
 use Illuminated\Testing\Asserts\FilesystemAsserts;
 use Illuminated\Testing\Asserts\LogFileAsserts;
 use Illuminated\Testing\Asserts\ScheduleAsserts;
-use Illuminated\Testing\Asserts\ServiceProviderAsserts;
 use Illuminated\Testing\Helpers\ApplicationHelpers;
 use Illuminated\Testing\TestingTools;
 
@@ -27,6 +26,5 @@ class TestingToolsTest extends TestCase
         $this->assertTraitUsed(TestingTools::class, FilesystemAsserts::class);
         $this->assertTraitUsed(TestingTools::class, LogFileAsserts::class);
         $this->assertTraitUsed(TestingTools::class, ScheduleAsserts::class);
-        $this->assertTraitUsed(TestingTools::class, ServiceProviderAsserts::class);
     }
 }
