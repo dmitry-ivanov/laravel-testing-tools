@@ -4,7 +4,6 @@ namespace Illuminated\Testing;
 
 use Illuminated\Testing\Asserts\CollectionAsserts;
 use Illuminated\Testing\Asserts\DatabaseAsserts;
-use Illuminated\Testing\Asserts\EloquentAsserts;
 use Illuminated\Testing\Asserts\ExceptionAsserts;
 use Illuminated\Testing\Asserts\FilesystemAsserts;
 use Illuminated\Testing\Asserts\LogFileAsserts;
@@ -21,7 +20,6 @@ trait TestingTools
     /** Asserts */
     use CollectionAsserts;
     use DatabaseAsserts;
-    use EloquentAsserts;
     use ExceptionAsserts;
     use FilesystemAsserts;
     use LogFileAsserts;
