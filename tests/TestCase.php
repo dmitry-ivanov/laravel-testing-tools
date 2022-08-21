@@ -78,4 +78,13 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         app(KernelContract::class);
     }
+
+    /**
+     * Assert that class uses the given trait.
+     */
+    protected function assertTraitUsed(string $class, string $trait): void
+    {
+        $message = "Failed asserting that class `{$class}` is using trait `{$trait}`.";
+        $this->assertContains($trait, class_uses($class), $message);
+    }
 }
