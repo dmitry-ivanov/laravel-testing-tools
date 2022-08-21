@@ -54,14 +54,16 @@ Laravel-specific Testing Helpers and Assertions.
 3. Use any of the provided helpers and assertions in your tests:
 
     ```php
-    class ExampleCommandTest extends TestCase
+    class ExampleTest extends TestCase
     {
         /** @test */
-        public function it_logs_hello_world()
+        public function it_has_lots_of_useful_assertions()
         {
-            $this->artisan('example');
-
-            $this->seeInLogFile('example.log', 'Hello World!');
+            $this->assertDatabaseHasMany('posts', [
+                ['title' => 'Awesome!'],
+                ['title' => 'Multiple rows check'],
+                ['title' => 'Can be done in one assertion'],
+            ]);
         }
     }
     ```
