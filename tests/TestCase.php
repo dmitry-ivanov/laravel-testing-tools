@@ -21,7 +21,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         $this->setUpDatabase();
         $this->setUpFactories();
-        $this->setUpViews();
         $this->setUpStorage();
     }
 
@@ -57,14 +56,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     private function setUpFactories(): void
     {
         Factory::useNamespace('Illuminated\\Testing\\Tests\\Database\\Factories\\');
-    }
-
-    /**
-     * Setup views.
-     */
-    private function setUpViews(): void
-    {
-        app('view')->addLocation(__DIR__ . '/fixture/resources/views');
     }
 
     /**

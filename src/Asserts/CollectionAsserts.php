@@ -11,9 +11,9 @@ trait CollectionAsserts
      */
     protected function assertCollectionsEqual(Collection $collection1, Collection $collection2, string $key): void
     {
-        $this->assertEquals(
-            $collection1->pluck($key)->sort()->values(),
-            $collection2->pluck($key)->sort()->values(),
+        $this->assertEqualsCanonicalizing(
+            $collection1->pluck($key),
+            $collection2->pluck($key),
             'Failed asserting that collections are equal.',
         );
     }
@@ -23,9 +23,9 @@ trait CollectionAsserts
      */
     protected function assertCollectionsNotEqual(Collection $collection1, Collection $collection2, string $key): void
     {
-        $this->assertNotEquals(
-            $collection1->pluck($key)->sort()->values(),
-            $collection2->pluck($key)->sort()->values(),
+        $this->assertNotEqualsCanonicalizing(
+            $collection1->pluck($key),
+            $collection2->pluck($key),
             'Failed asserting that collections are not equal.',
         );
     }

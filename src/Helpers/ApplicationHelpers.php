@@ -31,12 +31,4 @@ trait ApplicationHelpers
             return $environment;
         });
     }
-
-    /**
-     * Check whether the application is running on Travis or not.
-     */
-    protected function isTravis(): bool
-    {
-        return (bool) getenv('TRAVIS');
-    }
 }

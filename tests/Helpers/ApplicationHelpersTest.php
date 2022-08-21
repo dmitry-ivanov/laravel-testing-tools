@@ -29,11 +29,4 @@ class ApplicationHelpersTest extends TestCase
 
         $this->assertEquals('demo', $this->app->environment());
     }
-
-    /** @test */
-    public function it_can_check_if_tests_are_running_on_travis()
-    {
-        $expected = (bool) getenv('TRAVIS');
-        $this->assertEquals($expected, $this->isTravis());
-    }
 }
