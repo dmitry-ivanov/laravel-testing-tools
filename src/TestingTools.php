@@ -7,7 +7,6 @@ use Illuminated\Testing\Asserts\DatabaseAsserts;
 use Illuminated\Testing\Asserts\FilesystemAsserts;
 use Illuminated\Testing\Asserts\LogFileAsserts;
 use Illuminated\Testing\Asserts\ScheduleAsserts;
-use Illuminated\Testing\Asserts\ServiceProviderAsserts;
 use Illuminated\Testing\Helpers\ApplicationHelpers;
 
 trait TestingTools
@@ -21,5 +20,4 @@ trait TestingTools
     use FilesystemAsserts;
     use LogFileAsserts;
     use ScheduleAsserts;
-    use ServiceProviderAsserts;
 }
