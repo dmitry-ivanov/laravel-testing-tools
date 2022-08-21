@@ -61,8 +61,8 @@ Laravel-specific Testing Helpers and Assertions.
         {
             $this->assertDatabaseHasMany('posts', [
                 ['title' => 'Awesome!'],
-                ['title' => 'Multiple rows check'],
-                ['title' => 'Can be done in one assertion'],
+                ['title' => 'Check multiple rows'],
+                ['title' => 'In one simple assertion 🤟'],
             ]);
         }
     }
