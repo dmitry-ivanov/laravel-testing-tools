@@ -97,13 +97,6 @@ Laravel-specific Testing Helpers and Assertions.
   - [dontSeeLogFile](#dontseelogfile)
   - [seeInLogFile](#seeinlogfile)
   - [dontSeeInLogFile](#dontseeinlogfile)
-- [ReflectionAsserts](#reflectionasserts)
-  - [assertSubclassOf](#assertsubclassof)
-  - [assertNotSubclassOf](#assertnotsubclassof)
-  - [assertTraitUsed](#asserttraitused)
-  - [assertTraitNotUsed](#asserttraitnotused)
-  - [assertMethodExists](#assertmethodexists)
-  - [assertMethodNotExists](#assertmethodnotexists)
 - [ScheduleAsserts](#scheduleasserts)
   - [seeScheduleCount](#seeschedulecount)
   - [dontSeeScheduleCount](#dontseeschedulecount)
@@ -305,56 +298,6 @@ $this->dontSeeInLogFile('example.log', [
     'Non-existing log message 2!',
     'Non-existing log message 3!',
 ]);
-```
-
-### ReflectionAsserts
-
-#### `assertSubclassOf()`
-
-Assert that class is a subclass of the given parent:
-
-```php
-$this->assertSubclassOf(Post::class, Model::class);
-```
-
-#### `assertNotSubclassOf()`
-
-Assert that class is not a subclass of the given parent:
-
-```php
-$this->assertNotSubclassOf(Post::class, Command::class);
-```
-
-#### `assertTraitUsed()`
-
-Assert that class uses the given trait:
-
-```php
-$this->assertTraitUsed(User::class, Notifiable::class);
-```
-
-#### `assertTraitNotUsed()`
-
-Assert that class doesn't use the given trait:
-
-```php
-$this->assertTraitNotUsed(Post::class, Notifiable::class);
-```
-
-#### `assertMethodExists()`
-
-Assert that object has the given method:
-
-```php
-$this->assertMethodExists(Post::class, 'save');
-```
-
-#### `assertMethodNotExists()`
-
-Assert that object doesn't have the given method:
-
-```php
-$this->assertMethodNotExists(Post::class, 'fly');
 ```
 
 ### ScheduleAsserts
