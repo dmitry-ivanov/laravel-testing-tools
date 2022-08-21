@@ -87,8 +87,6 @@ Laravel-specific Testing Helpers and Assertions.
   - [assertDatabaseMissingTable](#assertdatabasemissingtable)
   - [assertDatabaseHasMany](#assertdatabasehasmany)
   - [assertDatabaseMissingMany](#assertdatabasemissingmany)
-- [ExceptionAsserts](#exceptionasserts)
-  - [willSeeException](#willseeexception)
 - [FilesystemAsserts](#filesystemasserts)
   - [assertDirectoryEmpty](#assertdirectoryempty)
   - [assertDirectoryNotEmpty](#assertdirectorynotempty)
@@ -204,16 +202,6 @@ $this->assertDatabaseMissingMany('posts', [
     ['title' => 'Fourth Post'],
     ['title' => 'Fifth Post'],
 ]);
-```
-
-### ExceptionAsserts
-
-#### `willSeeException()`
-
-Add expectation that the given exception would be thrown:
-
-```php
-$this->willSeeException(RuntimeException::class, 'Oops! Houston, we have a problem!');
 ```
 
 ### FilesystemAsserts
