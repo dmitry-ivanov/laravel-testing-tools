@@ -1,8 +1,11 @@
 ![Laravel-specific Testing Helpers and Assertions](art/1380x575-optimized.jpg)
 
 # Laravel Testing Tools
+### This is a fork from the original Repository to support Laravel v10.x
 
-[<img src="https://user-images.githubusercontent.com/1286821/181085373-12eee197-187a-4438-90fe-571ac6d68900.png" alt="Buy me a coffee" width="200" />](https://buymeacoffee.com/dmitry.ivanov)
+---
+
+[<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" />](https://www.buymeacoffee.com/frank.stuhec)
 
 [![StyleCI](https://github.styleci.io/repos/75414626/shield?branch=master&style=flat)](https://github.styleci.io/repos/75414626?branch=master)
 [![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-testing-tools/tests/master)](https://github.com/dmitry-ivanov/laravel-testing-tools/actions?query=workflow%3Atests+branch%3Amaster)
@@ -17,6 +20,7 @@ Laravel-specific Testing Helpers and Assertions.
 
 | Laravel | Testing Tools                                                            |
 |---------|--------------------------------------------------------------------------|
+| 10.x    | [10.x](https://github.com/srd2010/laravel-testing-tools/tree/10.x)       |
 | 9.x     | [9.x](https://github.com/dmitry-ivanov/laravel-testing-tools/tree/9.x)   |
 | 8.x     | [8.x](https://github.com/dmitry-ivanov/laravel-testing-tools/tree/8.x)   |
 | 7.x     | [7.x](https://github.com/dmitry-ivanov/laravel-testing-tools/tree/7.x)   |
