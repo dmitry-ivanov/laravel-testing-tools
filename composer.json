@@ -1,6 +1,6 @@
 {
-    "name": "illuminated/testing-tools",
-    "description": "Laravel-specific Testing Helpers and Assertions.",
+    "name": "srd2010/testing-tools",
+    "description": "Laravel-specific Testing Helpers and Assertions. Fork for Laravel 10.x",
     "keywords": ["laravel", "testing", "tools", "helpers", "assertions", "assertion-methods", "assertion-functions"],
     "license": "MIT",
     "support": {
