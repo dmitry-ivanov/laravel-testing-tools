@@ -6,7 +6,7 @@
 
 [![StyleCI](https://github.styleci.io/repos/75414626/shield?branch=10.x&style=flat)](https://github.styleci.io/repos/75414626?branch=10.x)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/dmitry-ivanov/laravel-testing-tools/tests.yml?branch=10.x)](https://github.com/dmitry-ivanov/laravel-testing-tools/actions?query=workflow%3Atests+branch%3A10.x)
-[![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-testing-tools/10.x)](https://app.codecov.io/gh/dmitry-ivanov/laravel-testing-tools/branch/10.x)
+[![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-testing-tools/10.x)](https://app.codecov.io/gh/dmitry-ivanov/laravel-testing-tools/tree/10.x)
 
 ![Packagist Version](https://img.shields.io/packagist/v/illuminated/testing-tools)
 ![Packagist Stars](https://img.shields.io/packagist/stars/illuminated/testing-tools)
