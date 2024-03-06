@@ -38,7 +38,7 @@ jobs:
           command: composer update --prefer-dist --${{ matrix.stability }} --no-interaction --no-progress --ansi
 
       - name: Run tests
-        run: vendor/bin/phpunit --verbose --colors=always --coverage-clover ./build/logs/clover.xml
+        run: vendor/bin/phpunit --colors=always --coverage-clover ./build/logs/clover.xml
 
       - name: Code coverage
         uses: codecov/codecov-action@v1
