@@ -17,7 +17,7 @@ Laravel-specific Testing Helpers and Assertions.
 
 | Laravel | Testing Tools                                                            |
 |---------|--------------------------------------------------------------------------|
-| 11.x    | _[Support](https://buymeacoffee.com/dmitry.ivanov)_ ☕                    |
+| 11.x    | [11.x](https://github.com/dmitry-ivanov/laravel-testing-tools/tree/11.x) |
 | 10.x    | [10.x](https://github.com/dmitry-ivanov/laravel-testing-tools/tree/10.x) |
 | 9.x     | [9.x](https://github.com/dmitry-ivanov/laravel-testing-tools/tree/9.x)   |
 | 8.x     | [8.x](https://github.com/dmitry-ivanov/laravel-testing-tools/tree/8.x)   |
@@ -58,7 +58,7 @@ Laravel-specific Testing Helpers and Assertions.
     ```php
     class ExampleTest extends TestCase
     {
-        /** @test */
+        #[Test]
         public function it_has_lots_of_useful_assertions()
         {
             $this->assertDatabaseHasMany('posts', [
@@ -249,7 +249,7 @@ Assert that the given log file doesn't exist.
 The path is relative to the `storage/logs` folder:
 
 ```php
-$this->dontSeeLogFile('foobarbaz.log');
+$this->dontSeeLogFile('foo.log');
 ```
 
 #### `seeInLogFile()`
@@ -340,7 +340,7 @@ $this->seeInSchedule('baz', '0 1,13 * * * *');
 Assert that the given command is not scheduled:
 
 ```php
-$this->dontSeeInSchedule('foobarbaz');
+$this->dontSeeInSchedule('foo');
 ```
 
 ## Sponsors
