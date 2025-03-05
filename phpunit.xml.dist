@@ -5,6 +5,9 @@
     bootstrap="vendor/autoload.php"
     colors="true"
     displayDetailsOnPhpunitDeprecations="true"
+    displayDetailsOnTestsThatTriggerErrors="true"
+    displayDetailsOnTestsThatTriggerNotices="true"
+    displayDetailsOnTestsThatTriggerWarnings="true"
 >
     <testsuites>
         <testsuite name="Laravel Testing Tools Test Suite">
