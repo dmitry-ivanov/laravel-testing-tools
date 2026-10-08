@@ -41,7 +41,7 @@ jobs:
         run: vendor/bin/phpunit --colors=always --coverage-clover ./build/logs/clover.xml
 
       - name: Code coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v7
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./build/logs/clover.xml
