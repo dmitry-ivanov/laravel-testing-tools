@@ -57,7 +57,7 @@ trait ScheduleAsserts
     /**
      * Get schedule event by the given command.
      */
-    private function getScheduleEvent(string $command): Event|null
+    private function getScheduleEvent(string $command): ?Event
     {
         $schedule = app(Schedule::class);
 
