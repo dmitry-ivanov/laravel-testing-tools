@@ -345,11 +345,6 @@ Assert that the given command is not scheduled:
 $this->dontSeeInSchedule('foo');
 ```
 
-## Sponsors
-
-[![Laravel Idea](art/sponsor-laravel-idea.png)](https://laravel-idea.com)<br>
-[![Material Theme UI Plugin](art/sponsor-material-theme.png)](https://material-theme.com)<br>
-
 ## License
 
 Laravel Testing Tools is open-sourced software licensed under the [MIT license](LICENSE.md).
